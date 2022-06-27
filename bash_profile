@@ -10,7 +10,7 @@ export DEV=$HOME/dev
 export IN=$DEV/in
 export OUT=$DEV/out
 export HIST=$DEV/history
-export IO=$DEV/pgsql-io
+export IO=$DEV/io
 export SRC=$IN/sources
 export BLD=/opt/pgbin-build/pgbin/bin
 
