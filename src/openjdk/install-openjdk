@@ -1,0 +1,21 @@
+set -x
+
+ver=$1
+if [ "$ver" == "" ]; then
+  echo "ERROR: You must supply version number to be installed"
+  exit 1
+fi
+
+source getPKMG.sh
+
+if [[ "$PKGM" == "yum" ]]; then
+  sudo yum -y install java-$ver-openjdk-devel
+elif [[ "$PKGM" == "apt" ]]; then
+  sudo apt -y install openjdk-$ver-jdk
+elif [[ "$PKGM" == "brew" ]]; then
+  brew install openjdk@$ver
+else
+  echo "platform not supported yet"
+  exit 1
+fi
+

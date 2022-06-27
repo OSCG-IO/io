@@ -1,0 +1,298 @@
+
+<!-------------   _header()  ------------------------>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+function copyToClipboard(text) {
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = text;
+    sampleTextarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+}
+
+function myFunction(element){
+    var copyText = document.getElementById(element);
+    copyToClipboard(copyText.value);
+}
+</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style type="text/css">
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+
+	.dropdown-menu li{
+		position: relative;
+	}
+	.dropdown-menu .submenu{ 
+		display: none;
+		position: absolute;
+		left:100%; top:-7px;
+	}
+	.dropdown-menu .submenu-left{
+		right:100%; left:auto;
+	}
+
+	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
+	.dropdown-menu > li:hover > .submenu{
+		display: block;
+	}
+}
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+
+.dropdown-menu .dropdown-menu{
+		margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
+}
+
+}
+/* ============ small devices .end// ============ */
+
+</style>
+
+
+<script type="text/javascript">
+
+	document.addEventListener("DOMContentLoaded", function(){
+
+    	/////// Prevent closing from click inside dropdown
+		document.querySelectorAll('.dropdown-menu').forEach(function(element){
+			element.addEventListener('click', function (e) {
+			  e.stopPropagation();
+			});
+		})
+
+		// make it as accordion for smaller screens
+		if (window.innerWidth < 992) {
+
+			// close all inner dropdowns when parent is closed
+			document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
+				everydropdown.addEventListener('hidden.bs.dropdown', function () {
+					// after dropdown is hidden, then find all submenus
+					  this.querySelectorAll('.submenu').forEach(function(everysubmenu){
+					  	// hide every submenu as well
+					  	everysubmenu.style.display = 'none';
+					  });
+				})
+			});
+			
+			document.querySelectorAll('.dropdown-menu a').forEach(function(element){
+				element.addEventListener('click', function (e) {
+
+				  	let nextEl = this.nextElementSibling;
+				  	if(nextEl && nextEl.classList.contains('submenu')) {	
+				  		// prevent opening link if link needs to open dropdown
+				  		e.preventDefault();
+				  		console.log(nextEl);
+				  		if(nextEl.style.display == 'block'){
+				  			nextEl.style.display = 'none';
+				  		} else {
+				  			nextEl.style.display = 'block';
+				  		}
+
+				  	}
+				});
+			})
+		}
+		// end if innerWidth
+
+	}); 
+	// DOMContentLoaded  end
+</script>
+
+<title>
+OSCG: Postgres
+</title>
+</head>
+
+
+<div class="container-fluid">
+
+<!-- ======== MULTILEVEL_MENU ============= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <div class="container-fluid">
+        <a class="navbar-brand" href="https://oscg.io"><img src=img/oscg-bigsql-logo.png height=50 width=50 /></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="main_nav">
+	
+
+	<ul class="navbar-nav">
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">  Platform  </a>
+		    <ul class="dropdown-menu">
+			  <li><a class="dropdown-item"> PostgreSQL &raquo; </a>
+			  	 <ul class="submenu dropdown-menu">
+				    <li><a class="dropdown-item" href="index.html">Core PostgreSQL&reg;</a></li>
+				    <li><a class="dropdown-item" >Postgres Community &raquo; </a>
+				    	<ul class="submenu dropdown-menu">
+						    <li><a class="dropdown-item" href="postgres-variants.html">Solutions</a></li>
+						    <li><a class="dropdown-item" href="postgres-fdws.html">FDWs</a></li>
+						    <li><a class="dropdown-item" href="postgres-extensions.html">Extensions</a></li>
+						    <li><a class="dropdown-item" href="postgres-apps.html">Applications</a></li>
+						    <li><a class="dropdown-item" href="postgres-devs.html">For DevOps</a></li>
+						</ul>
+				    </li>
+				 </ul>
+			  </li>
+			  <li><a class="dropdown-item" href="sql-datastores.html"> Other RDBMS </a></li>
+			  <li><a class="dropdown-item" href="change-data-capture.html"> Streaming & CDC </a></li>
+			  <li><a class="dropdown-item" href="nosql-datastores.html"> InMem, NoSQL & Search </a></li>
+		    </ul>
+		</li>
+		<li class="nav-item"><a class="nav-link" href="downloads.html"> Usage & Downloads </a></li>
+		<li class="nav-item"><a class="nav-link" href="tutorial.html"> Tutorial </a></li>
+		<li class="nav-item"><a class="nav-link" href="about.html"> About Us </a></li>
+		<li class="nav-item"><a class="nav-link" href="contact_us.html"> Contact Us </a></li>
+		<li class="nav-item"><a class="nav-link" href="services.html"> Services </a></li>
+	</ul>
+
+  </div> <!-- navbar-collapse.// -->
+</nav>
+<br>
+<table><tr> 
+  <td><img src=img/index.png height=40 width=125 /></td> 
+  <td><h4><font color=black><i>Core PostgreSQL&reg;</i></font></h4></td> 
+</tr></table>
+
+<!--------------- component print_top() --------------->
+<div class=row>
+
+ <!--------------- component print_card()  --------------->
+ <div class='card mb-3 m-2' style='min-width: 325px; max-width: 325px;'>
+  <div class='row g-0'>
+    <div class='col-md-2'>
+       <br><br><img src=img/postgresql.png height=45 width=45 />&nbsp;
+    </div>
+    <div class=col-md-10>
+      <div class=card-body>
+        <h5 class=card-title></h5> 
+        <p class=card-text><i><font size=-1>New in <a href=https://www.postgresql.org/docs/14/release-14.html>2021</a></font></i></p> 
+        <p class=card-text>pg14&nbsp; 
+          <a href='https://github.com/postgres/postgres/tags'>v14.4</a> 
+          <font size=-1> 
+            <sup><font color=red>16-Jun</font></sup> 
+          </font> 
+        </p> 
+        <p class=card-text>[linux, osx]</p>
+      </div>                                                                       
+    </div>                                                                         
+  </div>
+ </div>
+
+ <!--------------- component print_card()  --------------->
+ <div class='card mb-3 m-2' style='min-width: 325px; max-width: 325px;'>
+  <div class='row g-0'>
+    <div class='col-md-2'>
+       <br><br><img src=img/postgresql.png height=45 width=45 />&nbsp;
+    </div>
+    <div class=col-md-10>
+      <div class=card-body>
+        <h5 class=card-title></h5> 
+        <p class=card-text><i><font size=-1>New in <a href=https://www.postgresql.org/docs/13/release-13.html>2020</a></font></i></p> 
+        <p class=card-text>pg13&nbsp; 
+          <a href='https://github.com/postgres/postgres/tags'>v13.7</a> 
+          <font size=-1> 
+            <sup><font color=red>12-May</font></sup> 
+          </font> 
+        </p> 
+        <p class=card-text>[linux]</p>
+      </div>                                                                       
+    </div>                                                                         
+  </div>
+ </div>
+
+ <!--------------- component print_card()  --------------->
+ <div class='card mb-3 m-2' style='min-width: 325px; max-width: 325px;'>
+  <div class='row g-0'>
+    <div class='col-md-2'>
+       <br><br><img src=img/postgresql.png height=45 width=45 />&nbsp;
+    </div>
+    <div class=col-md-10>
+      <div class=card-body>
+        <h5 class=card-title>PostgreSQL</h5> 
+        <p class=card-text><i><font size=-1>New in <a href=https://www.postgresql.org/docs/12/release-12.html>2019</a></font></i></p> 
+        <p class=card-text>pg12&nbsp; 
+          <a href='https://github.com/postgres/postgres/tags'>v12.11</a> 
+          <font size=-1> 
+            <sup><font color=red>12-May</font></sup> 
+          </font> 
+        </p> 
+        <p class=card-text>[linux]</p>
+      </div>                                                                       
+    </div>                                                                         
+  </div>
+ </div>
+
+ <!--------------- component print_card()  --------------->
+ <div class='card mb-3 m-2' style='min-width: 325px; max-width: 325px;'>
+  <div class='row g-0'>
+    <div class='col-md-2'>
+       <br><br><img src=img/postgresql.png height=45 width=45 />&nbsp;
+    </div>
+    <div class=col-md-10>
+      <div class=card-body>
+        <h5 class=card-title>PostgreSQL</h5> 
+        <p class=card-text><i><font size=-1>New in <a href=https://www.postgresql.org/docs/11/release-11.html>2018</a></font></i></p> 
+        <p class=card-text>pg11&nbsp; 
+          <a href='https://github.com/postgres/postgres/tags'>v11.16</a> 
+          <font size=-1> 
+            <sup><font color=red>12-May</font></sup> 
+          </font> 
+        </p> 
+        <p class=card-text>[linux]</p>
+      </div>                                                                       
+    </div>                                                                         
+  </div>
+ </div>
+
+ <!--------------- component print_card()  --------------->
+ <div class='card mb-3 m-2' style='min-width: 325px; max-width: 325px;'>
+  <div class='row g-0'>
+    <div class='col-md-2'>
+       <br><br><img src=img/postgresql.png height=45 width=45 />&nbsp;
+    </div>
+    <div class=col-md-10>
+      <div class=card-body>
+        <h5 class=card-title></h5> 
+        <p class=card-text><i><font size=-1 color=red><b>New in <a href=https://sql-info.de/postgresql/postgresql-15/articles-about-new-features-in-postgresql-15.html>2022!</a></b></font></i></p> 
+        <p class=card-text>pg15&nbsp; 
+          <a href='https://github.com/postgres/postgres/tags'>v15beta1</a> 
+          <font size=-1> 
+            <sup><font color=red>19-May</font></sup> 
+          </font> 
+        </p> 
+        <p class=card-text>[linux, osx]</p>
+      </div>                                                                       
+    </div>                                                                         
+  </div>
+ </div>
+
+
+<!------------- component print_bottom() -------------->
+</div>
+
+<!-------------   _footer()  ------------------------>
+<table class=table>
+  <thead><td colspan=2>&nbsp;</rs></tr></thead>
+  <tr>
+    <td>&copy; 2022 OSCG Partners.&nbsp;All rights reserved.</td>
+    <td>luss@oscg.io</td>
+  </tr>
+</table>
+
+    </div>
+  </div>
+</div>
+</div>
