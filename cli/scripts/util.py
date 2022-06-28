@@ -137,6 +137,9 @@ def get_arch():
     arch = arch.replace("AMD64", "amd")
     arch = arch.replace("aarch64", "arm")
 
+  if arch == "amd" and is_el8():
+    arch = "el8"
+
   return arch
 
 
@@ -771,10 +774,11 @@ def verify(p_json):
           verify_comp(comp_ver + "-win")
         elif "osx" in plat:
           verify_comp(comp_ver + "-osx")
-        elif "alpine" in plat:
-          verify_comp(comp_ver + "-alpine")
         elif "linux" in plat:
-          verify_comp(comp_ver + "-amd")
+          if is_el8():
+            verify_comp(comp_ver + "-el8")
+          else:
+            verify_comp(comp_ver + "-amd")
   except Exception as e:
     fatal_sql_error(e,sql,"verify()")
 
@@ -2087,7 +2091,10 @@ def get_os():
       if "CPU architecture" in cpuinfo:
         return "arm"
       else:
-        return "amd"
+        if is_el8():
+          return "el8"
+        else:
+          return "amd"
       
   except Exception as e:
     pass

@@ -3,8 +3,8 @@
 ivory14V=14.3.1.3
 ivory14BuildV=1
 
-pg15V=15beta1
-pg15BuildV=2
+pg15V=15beta2
+pg15BuildV=1
 
 pg14V=14.4
 pg14BuildV=1
