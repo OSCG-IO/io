@@ -146,7 +146,6 @@ INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'test',
   '<font size=-1 color=red><b>New in <a href=https://sql-info.de/postgresql/postgresql-15/articles-about-new-features-in-postgresql-15.html>2022!</a></b></font>',
   1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('pg15', '15beta2-1',  'el8', 1, '20220630','', 'LIBC-2.28', '');
-INSERT INTO versions VALUES ('pg15', '15beta1-1',  'amd, el8, osx', 0, '20220519','', '', '');
 
 INSERT INTO projects VALUES ('ivory14', 6, 5432, 'hub', 1, 'https://github.com/ivorysql/ivorysql/tags',
   'IvorySQL', 0, 'highgo.png', 'Postgres w/ mode=oracle', 'https://ivorysql.org');
