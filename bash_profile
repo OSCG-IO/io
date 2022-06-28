@@ -1,7 +1,7 @@
-# PGSQL-IO for ~/.bash... ############################################################
-alias git-push="cd ~/dev/pgsql-io; git status; git add .; git commit -m wip; git push"
-alias bp="cd ~/dev/pgsql-io; . ./bp.sh"
-alias ver="vi ~/dev/pgsql-io/src/conf/versions.sql"
+# OSCG-IO for ~/.bash... ############################################################
+alias git-push="cd ~/dev/io; git status; git add .; git commit -m wip; git push"
+alias bp="cd ~/dev/io; . ./bp.sh"
+alias ver="vi ~/dev/io/src/conf/versions.sql"
 
 export REGION=us-west-2
 export BUCKET=s3://oscg-io-download

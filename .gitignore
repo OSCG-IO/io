@@ -1,0 +1,12 @@
+*.pyc
+out/
+devel/pg/src
+devel/pg/1*
+devel/pg/9*
+web/static/html/*.html
+web/static/*.db
+cli/scripts/*.out
+cli/scripts/conf
+src/instantclient/*.zip
+.DS_STORE
+__pycache__
