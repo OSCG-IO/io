@@ -393,7 +393,7 @@ def info(p_json, p_home, p_repo, print_flag=True):
   print(style_start + ("#" * 70) + style_end)
   print(style_start + "#           OSCG.IO: " + style_end + "v" + ver + "  " + p_home)
   print(style_start + "#       User & Host: " + style_end + p_user + admin_display + "  " + host_display)
-  print(style_start + "#  Operating System: " + style_end + os.rstrip() + " " + os_arch + " " + glibc_v_display)
+  print(style_start + "#  Operating System: " + style_end + os.rstrip() + " " + glibc_v_display + "-" + os_arch)
   print(style_start + "#           Machine: " + style_end + mem + ", " + cores + " vCPU, " + cpu)
   print(style_start + "# Programming Langs: " + style_end + langs)
 

@@ -2052,8 +2052,14 @@ def get_platform():
 
 
 def is_el8():
-  rc = os.system ("grep el8 /etc/os-release > /dev/null")
-  if rc == 0:
+  if platform.system() != "Linux":
+    return False
+
+  #rc = os.system ("grep el8 /etc/os-release > /dev/null")
+  #if rc == 0:
+  #  return True
+
+  if get_glibc_version() >= "2.28":
     return True
 
   return False
