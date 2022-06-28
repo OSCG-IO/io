@@ -77,7 +77,7 @@ mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
              "upgrade", "downgrade", "enable", "disable", "install", "tune",
              "remove", "reload", "activity", "help", "get", "set", "unset",
              "repolist", "repo-pkgs", "discover", "backrest", "install-recipe",
-             "register", "top", "--autostart", "--fips", "--relnotes", "--start",
+             "register", "top", "--autostart", "--relnotes", "--start",
              "--help", "--json", "--jsonp", "--test", "--extensions", "--svcs",
              "--list", "--old", "--showduplicates", "-y", "-t", "-d"  ,
              "--verbose", "--debug", "--debug2"]
@@ -1157,11 +1157,11 @@ if "--svcs" in args and 'list' in args:
   os.environ['isSVCS'] = "True"
   args.remove("--svcs")
 
-isFIPS = False
-if "--fips" in args and 'install' in args:
-  isFIPS = True
-  os.environ['isFIPS'] = "True"
-  args.remove("--fips")
+#isFIPS = False
+#if "--fips" in args and 'install' in args:
+#  isFIPS = True
+#  os.environ['isFIPS'] = "True"
+#  args.remove("--fips")
 
 isAUTOSTART = False
 if "--autostart" in args and 'install' in args:
