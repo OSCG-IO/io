@@ -14,6 +14,9 @@ import json, uuid, logging, tempfile, shutil, filecmp, traceback, time
 
 import api, meta
 
+ONE_DAY = 86400
+ONE_WEEK = ONE_DAY * 7
+
 isPy3 = False
 PIP = "pip"
 PYTHON = "python"

@@ -14,6 +14,7 @@ export IO=$DEV/io
 export SRC=$IN/sources
 export BLD=/opt/pgbin-build/pgbin/bin
 
+export IO_NO_AUTO_UPDATE=1
 export HTML=$IO/web/static
 export IMG=$HTML/html/img
 export DEVEL=$IO/devel

@@ -15,18 +15,6 @@ import util
 ## Set Global variables ############################################
 rc = 0
 
-def verify_metadata():
-  try:
-    c = cL.cursor()
-    c.execute("SELECT count(*) FROM sqlite_master WHERE tbl_name = 'settings'")
-    data = c.fetchone()
-    kount = data[0]
-    c.close()
-  except Exception as e:
-    print("ERROR verify_metadata(): " + str(e.args[0]))
-    sys.exit(1)
-  return
-
 
 ################ run_sql() #######################################
 def run_sql(cmd):

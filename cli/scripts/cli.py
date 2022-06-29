@@ -55,9 +55,6 @@ if not util.is_writable(os.path.join(os.getenv('MY_HOME'), 'conf')):
   print("You must run as administrator/root.")
   exit()
 
-## Verify that the SQLite MetaData is up to date
-update_hub.verify_metadata()
-
 if util.get_value("GLOBAL", "PLATFORM", "") in ("", "posix", "windoze"):
   util.set_value("GLOBAL", "PLATFORM", util.get_default_pf())
 
@@ -1018,6 +1015,26 @@ def fire_api(prog):
   return
 
 
+def update_if_needed():
+  if os.getenv("IO_NO_AUTO_UPDATE") == "1":
+    return
+
+  [last_update_utc, xx, yy ] = util.read_hosts("localhost")
+  if last_update_utc == None:
+    delta_secs = util.ONE_WEEK + 1
+  else:
+    last_upd_utc = datetime.datetime.strptime(
+        last_update_utc, "%Y-%m-%d %H:%M:%S")
+    delta_dt = datetime.datetime.utcnow() - last_upd_utc
+    delta_secs = delta_dt.seconds
+
+  if delta_secs < util.ONE_WEEK:
+    return
+
+  print("DEBUG: an update is recommended")
+  return
+
+
 ####################################################################
 ########                    MAINLINE                      ##########
 ####################################################################
@@ -1049,6 +1066,7 @@ if len(args) == 1:
 if ((args[1] == "--version") or (args[1] == "-v")):
   print("v" + util.get_version())
   exit_cleanly(0)
+
 
 p_mode = ""
 p_comp = "all"
@@ -1258,6 +1276,8 @@ try:
   if len(p_comp_list) >= 1:
     p_comp = p_comp_list[0]
 
+  if p_mode != "update":
+    update_if_needed()
 
   ## DISCOVER ####################################################################
   if p_mode == "discover":
