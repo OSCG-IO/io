@@ -6,7 +6,7 @@ majorV=${ver:0:2}
 minorV=${ver:3:2}
 
 if [ "$ver" == "" ]; then
-  echo "ERROR: missing ora2pg version # on the command line"
+  echo "ERROR: missing version # on the command line"
   exit 1
 fi
 

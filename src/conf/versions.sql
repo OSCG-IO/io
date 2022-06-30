@@ -230,10 +230,8 @@ INSERT INTO versions VALUES ('cassandrafdw-pg12', '3.1.5-1', 'amd', 0, '20191230
 
 INSERT INTO projects VALUES ('decoderbufs', 10, 0, 'hub', 0, 'https://github.com/debezium/postgres-decoderbufs', 
   'decoderbufs', 1, 'protobuf.png', 'Logical decoding via ProtoBuf', 'https://github.com/debezium/postgres-decoderbufs');
-INSERT INTO releases VALUES ('decoderbufs-pg13',  4, 'decoderbufs', 'DecoderBufs', '', 'prod', '', 1, 'MIT', '', '');
 INSERT INTO releases VALUES ('decoderbufs-pg14',  4, 'decoderbufs', 'DecoderBufs', '', 'prod', '', 1, 'MIT', '', '');
-INSERT INTO versions VALUES ('decoderbufs-pg13', '1.7.0-1', 'amd', 1, '20211001', 'pg13', '', '');
-INSERT INTO versions VALUES ('decoderbufs-pg14', '1.7.0-1', 'amd', 0, '20211001', 'pg14', '', '');
+INSERT INTO versions VALUES ('decoderbufs-pg14', '1.7.0-1', 'amd, el8', 1, '20211001', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('wal2json', 10, 0, 'hub', 0, 'https://github.com/eulerto/wal2json/tags', 
   'wal2json', 1, 'wal2json.png', 'Logical decoding via JSON ', 'https://github.com/eulerto/wal2json#introduction');
@@ -244,11 +242,8 @@ INSERT INTO versions VALUES ('wal2json-pg14', '2.4-1', 'amd', 0, '20210831', 'pg
 
 INSERT INTO projects VALUES ('mongofdw', 5, 0, 'hub', 0, 'https://github.com/EnterpriseDB/mongo_fdw/tags', 
   'mongofdw', 1, 'mongodb.png', 'MongoDB from PG', 'https://github.com/EnterpriseDB/mongo_fdw#mongo_fdw');
-INSERT INTO releases VALUES ('mongofdw-pg13',  3, 'mongofdw', 'MongoFDW', '', 'prod', '', 1, 'AGPLv3', '', '');
 INSERT INTO releases VALUES ('mongofdw-pg14',  3, 'mongofdw', 'MongoFDW', '', 'prod', '', 1, 'AGPLv3', '', '');
-INSERT INTO versions VALUES ('mongofdw-pg13', '5.3.0-1', 'amd', 0, '20211117', 'pg13', '', '');
-INSERT INTO versions VALUES ('mongofdw-pg14', '5.4.0-1', 'amd', 1, '20220519', 'pg14', '', '');
-INSERT INTO versions VALUES ('mongofdw-pg14', '5.3.0-1', 'amd', 0, '20211117', 'pg14', '', '');
+INSERT INTO versions VALUES ('mongofdw-pg14', '5.4.0-1', 'amd, el8', 1, '20220519', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('hivefdw', 5, 0, 'hub', 0, 'https://github.com/pgsql-io/hive_fdw/tags', 
   'hivefdw', 1, 'hive.png', 'Big Data Queries from PG', 'https://github.com/pgsql-io/hive_fdw#hive_fdw');
@@ -263,9 +258,7 @@ INSERT INTO versions VALUES ('pgredis-pg14', '2.0-1', 'amd', 0, '20210620', 'pg1
 INSERT INTO projects VALUES ('mysqlfdw', 5, 0, 'hub', 0, 'https://github.com/EnterpriseDB/mysql_fdw/tags', 
   'mysqlfdw', 1, 'mysql.png', 'MySQL & MariaDB from PG', 'https://github.com/EnterpriseDb/mysql_fdw');
 INSERT INTO releases VALUES ('mysqlfdw-pg14',  4, 'mysqlfdw', 'MySQL FDW',  '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO releases VALUES ('mysqlfdw-pg13',  4, 'mysqlfdw', 'MySQL FDW',  '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('mysqlfdw-pg13', '2.7.0-1', 'amd', 0, '20211117', 'pg13', '', '');
-INSERT INTO versions VALUES ('mysqlfdw-pg14', '2.7.0-1', 'amd', 1, '20211117', 'pg14', '', '');
+INSERT INTO versions VALUES ('mysqlfdw-pg14', '2.7.0-1', 'amd, el8', 1, '20211117', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('tdsfdw', 5, 0, 'hub', 0, 'https://github.com/tds-fdw/tds_fdw/tags',
   'tdsfdw', 1, 'tds.png', 'SQL Svr & Sybase from PG', 'https://github.com/tds-fdw/tds_fdw/#tds-foreign-data-wrapper');
@@ -284,16 +277,12 @@ INSERT INTO versions VALUES ('pgtop-pg12', '4.0.0-1', 'amd',  0, '20201008', 'pg
 
 INSERT INTO projects VALUES ('bqfdw', 5, 0, 'multicorn2', 1, 'https://pypi.org/project/bigquery-fdw/#history',
   'bqfdw', 1, 'bigquery.png', 'BigQuery from PG', 'https://pypi.org/project/bigquery-fdw');
-INSERT INTO releases VALUES ('bqfdw-pg13',  3, 'bqfdw', 'BigQueryFDW', '', 'prod', '', 1, 'MIT', '', '');
 INSERT INTO releases VALUES ('bqfdw-pg14',  3, 'bqfdw', 'BigQueryFDW', '', 'prod', '', 1, 'MIT', '', '');
-INSERT INTO versions VALUES ('bqfdw-pg13', '1.9', 'amd',  0, '20211218', 'pg13', '', '');
 INSERT INTO versions VALUES ('bqfdw-pg14', '1.9', 'amd',  1, '20211218', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('esfdw', 5, 0, 'multicorn2', 1, 'https://pypi.org/project/pg-es-fdw/#history',
   'esfdw', 1, 'esfdw.png', 'ElasticSearch from PG', 'https://pypi.org/project/pg-es-fdw/');
-INSERT INTO releases VALUES ('esfdw-pg13',  4, 'esfdw', 'ElasticSearchFDW', '', 'prod', '', 1, 'MIT', '', '');
 INSERT INTO releases VALUES ('esfdw-pg14',  4, 'esfdw', 'ElasticSearchFDW', '', 'prod', '', 1, 'MIT', '', '');
-INSERT INTO versions VALUES ('esfdw-pg13', '0.11.1', 'amd',  0, '20210409', 'pg13', '', '');
 INSERT INTO versions VALUES ('esfdw-pg14', '0.11.1', 'amd',  1, '20210409', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('ora2pg', 6, 0, 'hub', 0, 'https://github.com/darold/ora2pg/tags',
@@ -303,10 +292,8 @@ INSERT INTO versions VALUES ('ora2pg', '23.1', '', 1, '20220512', '', '', 'https
 
 INSERT INTO projects VALUES ('oraclefdw', 6, 0, 'hub', 0, 'https://github.com/laurenz/oracle_fdw/tags',
   'oraclefdw', 1, 'oracle_fdw.png', 'Oracle from PG', 'https://github.com/laurenz/oracle_fdw');
-INSERT INTO releases VALUES ('oraclefdw-pg13', 2, 'oraclefdw', 'OracleFDW', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('oraclefdw-pg14', 2, 'oraclefdw', 'OracleFDW', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('oraclefdw-pg13','2.4.0-1', 'amd', 0, '20210923', 'pg13', '', 'https://github.com/laurenz/oracle_fdw/releases/tag/ORACLE_FDW_2_4_0');
-INSERT INTO versions VALUES ('oraclefdw-pg14','2.4.0-1', 'amd', 1, '20210923', 'pg14', '', 'https://github.com/laurenz/oracle_fdw/releases/tag/ORACLE_FDW_2_4_0');
+INSERT INTO versions VALUES ('oraclefdw-pg14','2.4.0-1', 'amd, el8', 1, '20210923', 'pg14', '', 'https://github.com/laurenz/oracle_fdw/releases/tag/ORACLE_FDW_2_4_0');
 
 INSERT INTO projects VALUES ('oracle',  2, 1521, 'hub', 0, 'https://www.oracle.com/database/technologies/oracle-database-software-downloads.html#19c', 
   'oracle', 0, 'oracle.png', 'Oracle Express for Linux', 'https://www.oracle.com/database/technologies');
@@ -578,9 +565,5 @@ INSERT INTO versions VALUES ('statmonitor-pg13', '0.9.1-1', 'amd', 0, '20210414'
 
 INSERT INTO projects VALUES ('multicorn2', 5, 0, 'hub', 0, 'https://github.com/pgsql-io/multicorn2/tags',
   'multicorn2', 1, 'multicorn.png', 'Python FDW Library', 'http://multicorn2.org');
-INSERT INTO releases VALUES ('multicorn2-pg13', 01, 'multicorn2', 'Multicorn2', '', 'prod','',  1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('multicorn2-pg14', 01, 'multicorn2', 'Multicorn2', '', 'prod','',  1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('multicorn2-pg13', '2.2-1', 'amd', 0, '20220419', 'pg13', '', '');
-INSERT INTO versions VALUES ('multicorn2-pg13', '2.3-1', 'amd', 0, '20220509', 'pg13', '', '');
-INSERT INTO versions VALUES ('multicorn2-pg14', '2.2-1', 'amd', 0, '20220419', 'pg14', '', '');
-INSERT INTO versions VALUES ('multicorn2-pg14', '2.3-1', 'amd', 1, '20220509', 'pg14', '', '');
+INSERT INTO versions VALUES ('multicorn2-pg14', '2.3-1', 'amd, el8', 1, '20220509', 'pg14', '', '');

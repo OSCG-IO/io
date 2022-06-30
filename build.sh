@@ -474,7 +474,12 @@ initPG () {
     initC "timescaledb-pg$pgM" "timescaledb" "$timescaleV"  "$outPlat" "postgres/timescale" "" "" "nil"
     initC "postgis-pg$pgM" "postgis" "$postgisV" "$outPlat" "postgres/postgis" "" "" "nil"
 
-    #initC "spock-pg$pgM" "spock" "$spockV" "$outPlat" "postgres/spock" "" "" "nil"
+    initC "multicorn2-pg$pgM" "multicorn2" "$multicorn2V" "$outPlat" "postgres/multicorn2" "" "" "nil"
+    initC "decoderbufs-pg$pgM" "decoderbufs" "$decbufsV" "$outPlat" "postgres/decoderbufs" "" "" "nil"
+    initC "oraclefdw-pg$pgM" "oraclefdw" "$oraclefdwV" "$outPlat" "postgres/oraclefdw" "" "" "nil"
+    initC "mysqlfdw-pg$pgM" "mysqlfdw" "$mysqlfdwV" "$outPlat" "postgres/mysqlfdw" "" "" "nil"
+    initC "mongofdw-pg$pgM" "mongofdw" "$mongofdwV" "$outPlat" "postgres/mongofdw" "" "" "nil"
+
     #initC "anon-pg$pgM" "anon" "$anonV" "$outPlat" "postgres/anon" "" "" "nil"
 
   fi
@@ -485,7 +490,6 @@ initPG () {
   
 
   if [ "$pgM" == "14" ]; then 
-    initC "multicorn2-pg$pgM" "multicorn2" "$multicorn2V" "$outPlat" "postgres/multicorn2" "" "" "nil"
     initC "esfdw-pg$pgM" "esfdw" "$esfdwV" "$outPlat" "postgres/esfdw" "" "" "Y"
     initC "bqfdw-pg$pgM" "bqfdw" "$bqfdwV" "$outPlat" "postgres/bqfdw" "" "" "Y"
 
