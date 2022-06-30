@@ -453,7 +453,7 @@ INSERT INTO projects VALUES ('postgis', 4, 1, 'hub', 3, 'http://postgis.net/sour
 INSERT INTO releases VALUES ('postgis-pg13', 3, 'postgis', 'PostGIS', '', 'prod', '', 1, 'GPLv2', '', '');
 INSERT INTO releases VALUES ('postgis-pg14', 3, 'postgis', 'PostGIS', '', 'prod', '', 1, 'GPLv2', '', '');
 INSERT INTO versions VALUES ('postgis-pg13', '3.2.1-1', 'amd', 0, '20220212', 'pg13', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.1/NEWS');
-INSERT INTO versions VALUES ('postgis-pg14', '3.2.1-1', 'amd', 1, '20220212', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.1/NEWS');
+INSERT INTO versions VALUES ('postgis-pg14', '3.2.1-1', 'amd, el8', 1, '20220212', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.1/NEWS');
 
 INSERT INTO projects VALUES ('omnidb', 6, 8000, '', 1, 'https://github.com/pgsql-io/omnidb-ng/tags',
   'omnidb', 0, 'omnidb.png', 'UI for Database Mgmt', 'https://github.com/pgsql-io/omnidb-ng#omnidb-ng-306');
