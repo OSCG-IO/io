@@ -18,13 +18,16 @@ function runPgBin {
   if [ "$IVORY" = "True" ]; then
     cmd="./build-pgbin.sh -a $pOutDir -t $pPgSrc -n $pBldV"
   else
-    #bncrSrc=$SRC/bouncer-$bouncerFullV.tar.gz
+    bncrSrc=$SRC/bouncer-$bouncerFullV.tar.gz
     #odbcSrc=$SRC/psqlodbc-$odbcV.tar.gz
     #bkrstSrc=$SRC/backrest-$backrestFullV.tar.gz
-    #pool2Src=$SRC/pool2-$pool2FullV.tar.gz
+    pool2Src=$SRC/pool2-$pool2FullV.tar.gz
     #agentSrc=$SRC/agent-$agentV.tar.gz
-    #cmd="./build-pgbin.sh -a $pOutDir -t $pPgSrc -n $pBldV -b $bncrSrc -k $bkrstSrc -p $pool2Src"
-    cmd="./build-pgbin.sh -a $pOutDir -t $pPgSrc -n $pBldV"
+    if [ "$majorV" == "14" ]; then
+      cmd="./build-pgbin.sh -a $pOutDir -t $pPgSrc -n $pBldV -b $bncrSrc -p $pool2Src"
+    else
+      cmd="./build-pgbin.sh -a $pOutDir -t $pPgSrc -n $pBldV"
+    fi
   fi
 
   cmd="$cmd $optional"
@@ -71,8 +74,8 @@ if [ "$majorV" == "all" ]; then
   runPgBin "$binBld" "$pgSrc-$pg11V.tar.gz" "$pg11BuildV"
   runPgBin "$binBld" "$pgSrc-$pg12V.tar.gz" "$pg12BuildV"
   runPgBin "$binBld" "$pgSrc-$pg13V.tar.gz" "$pg13BuildV"
-  runPgBin "$binBld" "$pgSrc-$pg14V.tar.gz" "$pg14BuildV"
-  ## runPgBin "$binBld" "$pgSrc-$pg15V.tar.gz" "$pg15BuildV"
+  ##runPgBin "$binBld" "$pgSrc-$pg14V.tar.gz" "$pg14BuildV"
+  runPgBin "$binBld" "$pgSrc-$pg15V.tar.gz" "$pg15BuildV"
 else
   runPgBin "$binBld" "$pgSrc-$pgV.tar.gz" "$pgBuildV"
 fi
