@@ -443,6 +443,11 @@ INSERT INTO projects VALUES ('timescaledb', 4, 0, 'hub', 1, 'https://github.com/
 INSERT INTO releases VALUES ('timescaledb-pg14',  2, 'timescaledb', 'TimescaleDB', '', 'prod', '', 1, 'Apache', '', '');
 INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.0-1',  'amd, el8', 1, '20220524', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.0');
 
+INSERT INTO projects VALUES ('spock', 10, 0, 'hub', 1, 'https://github.com/oscg-io/spock/releases',
+  'spock', 1, 'spock.png', 'Logical Replication', 'https://github.com/oscg-io/spcok');
+INSERT INTO releases VALUES ('spock-pg14', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('spock-pg14', '2.4.1-1',  'el8', 1, '20220630', 'pg14', '', '');
+
 INSERT INTO projects VALUES ('pglogical', 10, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');
 INSERT INTO releases VALUES ('pglogical-pg14', 4, 'pglogical', 'pgLogical', '', 'prod', '', 1, 'POSTGRES', '', '');

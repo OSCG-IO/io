@@ -1,6 +1,6 @@
  
 ####################################################################
-######          Copyright (c)  2015-2020 BigSQL           ##########
+######          Copyright (c)  2020-2022 OSCG             ##########
 ####################################################################
 
 import util, datetime, os
@@ -53,5 +53,19 @@ sql = \
 OPTIONS ( filename '" + csvlogfile + "', format 'csv' )"
 util.run_sql_cmd("pgXX", sql, True)
 
+passwd = util.get_random_password(10)
+ip = util.get_1st_ip()
+port = util.get_comp_port("pgXX")
+util.remember_pgpassword(passwd, port, ip, "*", "replication")
+sql="CREATE ROLE replication WITH SUPERUSER REPLICATION LOGIN ENCRYPTED PASSWORD '" + passwd + "'"
+util.run_sql_cmd("pgXX", sql, False)
+
+datadir = util.get_column("datadir", "pgXX")
+os.system("cp " + datadir + "/pg_hba.conf " + datadir + "/pg_hba.conf.orig")
+
+thisdir = os.path.dirname(os.path.realpath(__file__))
+os.system("cp " + thisdir + "/pg_hba.conf.replication " + datadir + "/pg_hba.conf")
+
 util.create_extension("pgXX", "spock", True)
+
 

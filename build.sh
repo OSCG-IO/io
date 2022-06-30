@@ -199,6 +199,7 @@ initDir () {
 
   copy-pgXX "orafce"
   copy-pgXX "fixeddecimal"
+  copy-pgXX "spock"
   copy-pgXX "pglogical"
   copy-pgXX "timescaledb"
   copy-pgXX "anon"
@@ -469,6 +470,7 @@ initPG () {
     initC "plprofiler-pg$pgM" "plprofiler" "$profV" "$outPlat" "postgres/profiler" "" "" "nil"
     initC "pldebugger-pg$pgM" "pldebugger" "$debuggerV" "$outPlat" "postgres/pldebugger" "" "" "nil"
     initC "pglogical-pg$pgM" "pglogical" "$logicalV" "$outPlat" "postgres/logical" "" "" "nil"
+    initC "spock-pg$pgM" "spock" "$spockV" "$outPlat" "postgres/spock" "" "" "nil"
     initC "timescaledb-pg$pgM" "timescaledb" "$timescaleV"  "$outPlat" "postgres/timescale" "" "" "nil"
     initC "postgis-pg$pgM" "postgis" "$postgisV" "$outPlat" "postgres/postgis" "" "" "nil"
 
