@@ -54,14 +54,8 @@ if [ $uname == 'Linux' ]; then
       sudo $yum krb5-devel openjpeg2-devel
       sudo $yum libyaml libyaml-devel
       sudo $yum libcxx libcxx-devel
+      sudo $yum ncurses-compat-libs
       sudo alternatives --config java
-
-      ## below provides libtinfo.so.5 needed for plv8
-      ##url=http://mirror.centos.org/centos/8/BaseOS/x86_64/os/Packages
-      ##rpm=ncurses-compat-libs-6.1-9.20180224.el8.x86_64.rpm
-      ##wget $url/$rpm
-      ##sudo rpm -ivh $rpm
-      ##del $rpm
     else
       echo "## EL 7 (used for pg11 - pg15)"
       sudo yum -y install -y epel-release python-pip
