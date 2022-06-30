@@ -40,6 +40,7 @@ cp -Pv $lib64/libxslt.so*     $shared_lib/.
 cp -Pv $lib64/liblber*        $shared_lib/.
 cp -Pv $lib64/libsasl2*       $shared_lib/.
 cp -Pv $lib64/libevent*       $shared_lib/.
+cp -Pv $lib64/libreadline*    $shared_lib/.
 cp -Pv $lib64/libk5crypto.so.*     $shared_lib/.
 cp -Pv $lib64/libpam.so.*          $shared_lib/.
 cp -Pv $lib64/libpython3*          $shared_lib/.

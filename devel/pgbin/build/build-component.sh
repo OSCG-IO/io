@@ -794,6 +794,9 @@ fi
 if [[ $buildRepack == "true" ]]; then
 	buildComp repack  "$repackShortV" "$repackFullV" "$repackBuildV" "$Source"
 fi
+if [[ $buildSpock == "true" ]]; then
+	buildComp spock  "$spockShortV" "$spockFullV" "$spockBuildV" "$Source"
+fi
 if [[ $buildPgLogical == "true" ]]; then
 	buildComp pglogical  "$pgLogicalShortV" "$pgLogicalFullV" "$pgLogicalBuildV" "$Source"
 fi
