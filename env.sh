@@ -37,6 +37,7 @@ ddlxV=0.17-1
 hypoV=1.3.1-1
 timescaleV=2.7.0-1
 logicalV=2.4.1-1
+spockV=2.4.1-1
 profV=4.1-1
 bulkloadV=3.1.19-1
 partmanV=4.6.1-1

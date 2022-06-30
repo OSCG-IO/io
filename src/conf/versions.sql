@@ -446,10 +446,8 @@ INSERT INTO versions VALUES ('citus-pg14', '11.0.2-1', 'amd', 1, '20220616', 'pg
 
 INSERT INTO projects VALUES ('cron', 4, 0, 'hub',0, 'https://github.com/citusdata/pg_cron/releases',
   'cron', 1, 'cron.png', 'Background Job Scheduler', 'https://github.com/citusdata/pg_cron');
-INSERT INTO releases VALUES ('cron-pg13', 10, 'cron', 'pgCron', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('cron-pg14', 10, 'cron', 'pgCron', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('cron-pg13', '1.4.1-1', 'amd', 0, '20210925', 'pg13', '', '');
-INSERT INTO versions VALUES ('cron-pg14', '1.4.1-1', 'amd', 1, '20210925', 'pg14', '', '');
+INSERT INTO versions VALUES ('cron-pg14', '1.4.1-1', 'amd, el8', 1, '20210925', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('timescaledb', 4, 0, 'hub', 1, 'https://github.com/timescale/timescaledb/releases',
    'timescaledb', 1, 'timescaledb.png', 'Time Series Data', 'https://github.com/timescale/timescaledb/#timescaledb');
@@ -494,25 +492,18 @@ INSERT INTO versions VALUES ('pgadmin', '6.9', '', 1, '20220512', '', '', '');
 
 INSERT INTO projects VALUES ('bulkload', 4, 0, 'hub', 5, 'https://github.com/ossc-db/pg_bulkload/releases',
   'bulkload', 1, 'bulkload.png', 'High Speed Data Loading', 'https://github.com/ossc-db/pg_bulkload');
-INSERT INTO releases VALUES ('bulkload-pg13', 6, 'bulkload', 'pgBulkLoad',  '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('bulkload-pg14', 6, 'bulkload', 'pgBulkLoad',  '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('bulkload-pg13', '3.1.19-1', 'amd', 0, '20211012', 'pg13', '', '');
-INSERT INTO versions VALUES ('bulkload-pg14', '3.1.19-1', 'amd', 1, '20211012', 'pg14', '', '');
+INSERT INTO versions VALUES ('bulkload-pg14', '3.1.19-1', 'amd, el8', 1, '20211012', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('repack', 4, 0, 'hub', 5, 'https://github.com/reorg/pg_repack/tags',
   'repack', 1, 'repack.png', 'Remove Table/Index Bloat' , 'https://github.com/reorg/pg_repack');
-INSERT INTO releases VALUES ('repack-pg13', 6, 'repack', 'pgRepack',  '', 'prod','',  1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('repack-pg14', 6, 'repack', 'pgRepack',  '', 'prod','',  1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('repack-pg13', '1.4.7-1', 'amd', 0, '20211003', 'pg13', '', '');
-INSERT INTO versions VALUES ('repack-pg14', '1.4.7-1', 'amd', 1, '20211003', 'pg14', '', '');
+INSERT INTO versions VALUES ('repack-pg14', '1.4.7-1', 'amd, el8', 1, '20211003', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('partman', 4, 0, 'hub', 4, 'https://github.com/pgpartman/pg_partman/tags',
-  'partman', 1, 'partman.png', 'Partition Managemnt', 'https://github.com/pgpartman/pg_partman#pg-partition-manager');
-INSERT INTO releases VALUES ('partman-pg13', 6, 'partman', 'pgPartman',   '', 'prod', '', 1, 'POSTGRES', '', '');
+  'partman', 1, 'partman.png', 'Partition Management', 'https://github.com/pgpartman/pg_partman#pg-partition-manager');
 INSERT INTO releases VALUES ('partman-pg14', 6, 'partman', 'pgPartman',   '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('partman-pg13', '4.6.0-1',  'amd', 0, '20211007', 'pg13', '', '');
-INSERT INTO versions VALUES ('partman-pg14', '4.6.1-1',  'amd', 1, '20220415', 'pg14', '', '');
-INSERT INTO versions VALUES ('partman-pg14', '4.6.0-1',  'amd', 0, '20211007', 'pg14', '', '');
+INSERT INTO versions VALUES ('partman-pg14', '4.6.1-1',  'amd, el8', 1, '20220415', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('hypopg', 4, 0, 'hub', 8, 'https://github.com/HypoPG/hypopg/releases',
   'hypopg', 1, 'whatif.png', 'Hypothetical Indexes', 'https://hypopg.readthedocs.io/en/latest/');
