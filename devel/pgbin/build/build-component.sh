@@ -156,10 +156,10 @@ function updateSharedLibs {
           lib64=/usr/local/lib
           cp -Pv $lib64/libproto*.so* $shared_lib/.
 	elif [ "$comp" == "postgis" ]; then
+          cp -Pv $lib64/libprotobuf*.so* $shared_lib/.
           lib64=/usr/local/lib
           cp -Pv $lib64/libgeos*.so*  $shared_lib/.
           cp -Pv $lib64/libgdal*.so*  $shared_lib/.
-          cp -Pv $lib64/libproto*.so* $shared_lib/.
           cp -Pv $lib64/libproj*.so*  $shared_lib/.
         fi
 }

@@ -228,7 +228,6 @@ rc=$?
 if [ "$rc" == "0" ]; then
   isEL8=yes
 fi
-echo isEL8=$isEL8
 
 OS=`uname -s`
 OS=${OS:0:7}
