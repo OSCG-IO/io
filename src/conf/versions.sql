@@ -443,13 +443,8 @@ INSERT INTO versions VALUES ('cron-pg14', '1.4.1-1', 'amd, el8', 1, '20210925', 
 
 INSERT INTO projects VALUES ('timescaledb', 4, 0, 'hub', 1, 'https://github.com/timescale/timescaledb/releases',
    'timescaledb', 1, 'timescaledb.png', 'Time Series Data', 'https://github.com/timescale/timescaledb/#timescaledb');
-INSERT INTO releases VALUES ('timescaledb-pg12',  2, 'timescaledb', 'TimescaleDB', '', 'prod', '', 1, 'Apache', '', '');
-INSERT INTO releases VALUES ('timescaledb-pg13',  2, 'timescaledb', 'TimescaleDB', '', 'prod', '', 1, 'Apache', '', '');
 INSERT INTO releases VALUES ('timescaledb-pg14',  2, 'timescaledb', 'TimescaleDB', '', 'prod', '', 1, 'Apache', '', '');
-INSERT INTO versions VALUES ('timescaledb-pg13', '2.5.2-1',  'amd', 0, '20220209', 'pg13', '', 'https://github.com/timescale/timescaledb/releases/tag/2.5.2');
-INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.0-1',  'amd', 1, '20220524', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.0');
-INSERT INTO versions VALUES ('timescaledb-pg14', '2.6.1-1',  'amd', 0, '20220412', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.6.1');
-INSERT INTO versions VALUES ('timescaledb-pg14', '2.5.2-1',  'amd', 0, '20220209', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.5.2');
+INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.0-1',  'amd, el8', 1, '20220524', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.0');
 
 INSERT INTO projects VALUES ('pglogical', 10, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');
