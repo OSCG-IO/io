@@ -8,8 +8,8 @@ function buildGDAL {
   wget https://github.com/OSGeo/gdal/releases/download/v$VER/gdal-$VER.tar.gz
   tar -xf gdal-$VER.tar.gz
   cd gdal-$VER
-  ./configure
-  sudo make -j8
+  ./configure --with-openjpeg --without-jasper
+  sudo make -j4
   sudo make install
   return
 }
@@ -76,7 +76,7 @@ function buildProtoC {
 ##buildProto
 ##buildProtoC
 
-buildGeos
-buildProj
+#buildGeos
+#buildProj
 buildGDAL
 

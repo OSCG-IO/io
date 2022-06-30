@@ -49,10 +49,9 @@ if [ $uname == 'Linux' ]; then
       sudo $yum python2 python2-devel
       cd /usr/bin
       sudo ln -fs python2 python
-      sudo $yum mongo-c-driver-devel freetds-devel proj-devel mysql-devel
+      sudo $yum mongo-c-driver-devel freetds-devel mysql-devel
       sudo $yum lz4-devel libzstd-devel
-      sudo $yum geos-devel gdal-devel hiredis-devel
-      sudo $yum krb5-devel
+      sudo $yum krb5-devel openjpeg2-devel
       sudo $yum libyaml libyaml-devel
       sudo $yum libcxx libcxx-devel
       sudo alternatives --config java
