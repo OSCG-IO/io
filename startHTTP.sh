@@ -9,6 +9,7 @@ if [ "$rc" == "0" ]; then
   cmd="python3 -m http.server"
 fi
 
+rm ' '
 echo $cmd
 cd $OUT
 $cmd &
