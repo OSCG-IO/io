@@ -1031,7 +1031,7 @@ def update_if_needed():
   if delta_secs < util.ONE_WEEK:
     return
 
-  print("DEBUG: an update is recommended")
+  ## print("DEBUG: an update is recommended")
   return
 
 
