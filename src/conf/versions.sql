@@ -333,11 +333,8 @@ INSERT INTO versions VALUES ('plusql', '0.2',  'amd', 0, '20210908', '', '', '')
 
 INSERT INTO projects VALUES ('orafce', 6, 0, 'hub', 0, 'https://github.com/orafce/orafce/releases',
   'orafce', 1, 'larry.png', 'Ora Built-in Packages', 'https://github.com/orafce/orafce#orafce---oracles-compatibility-functions-and-packages');
-INSERT INTO releases VALUES ('orafce-pg13', 2, 'orafce', 'OraFCE', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('orafce-pg14', 2, 'orafce', 'OraFCE', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('orafce-pg13', '3.18.1-1',  'amd', 0, '20220114', 'pg13', '', '');
-INSERT INTO versions VALUES ('orafce-pg14', '3.21.0-1',  'amd', 1, '20220416', 'pg14', '', '');
-INSERT INTO versions VALUES ('orafce-pg14', '3.18.1-1',  'amd', 0, '20220114', 'pg14', '', '');
+INSERT INTO versions VALUES ('orafce-pg14', '3.21.0-1',  'amd, el8', 1, '20220416', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('fixeddecimal', 6, 0, 'hub', 0, 'https://github.com/pgsql-io/fixeddecimal/tags',
   'fixeddecimal', 1, 'fixeddecimal.png', 'Much faster than NUMERIC', 'https://github.com/pgsql-io/fixeddecimal');
@@ -382,7 +379,7 @@ INSERT INTO releases VALUES ('pldebugger-pg13', 2, 'pldebugger', 'PL/Debugger', 
 INSERT INTO releases VALUES ('pldebugger-pg14', 2, 'pldebugger', 'PL/Debugger', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('pldebugger-pg12', '1.4-1',  'amd',  0, '20210923', 'pg12', '', '');
 INSERT INTO versions VALUES ('pldebugger-pg13', '1.4-1',  'amd',  0, '20210923', 'pg13', '', '');
-INSERT INTO versions VALUES ('pldebugger-pg14', '1.4-1',  'amd',  1, '20210923', 'pg14', '', '');
+INSERT INTO versions VALUES ('pldebugger-pg14', '1.4-1',  'amd, el8',  1, '20210923', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('plpgsql', 3, 0, 'hub', 0, 'https://www.postgresql.org/docs/13/plpgsql-overview.html',
   'plpgsql', 0, 'jan.png', 'Postgres Procedural Language', 'https://www.postgresql.org/docs/13/plpgsql-overview.html');
@@ -401,7 +398,7 @@ INSERT INTO releases VALUES ('plprofiler-pg13', 0, 'plprofiler',    'PL/Profiler
 INSERT INTO releases VALUES ('plprofiler-pg14', 0, 'plprofiler',    'PL/Profiler',  '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('plprofiler-pg12', '4.1-1', 'amd', 0, '20211019', 'pg12', '', '');
 INSERT INTO versions VALUES ('plprofiler-pg13', '4.1-1', 'amd', 0, '20211019', 'pg13', '', '');
-INSERT INTO versions VALUES ('plprofiler-pg14', '4.1-1', 'amd', 1, '20211019', 'pg14', '', '');
+INSERT INTO versions VALUES ('plprofiler-pg14', '4.1-1', 'amd, el8', 1, '20211019', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('golang', 4, 0, 'hub', 0, 'https://go.dev/dl',
   'golang', 0, 'go.png', 'Fast & Scaleable Programming', 'https://go.dev');
@@ -421,28 +418,23 @@ INSERT INTO versions VALUES ('backrest', '2.38', 'amd', 0, '20220307', '', '', '
 INSERT INTO projects VALUES ('audit', 4, 0, 'hub', 0, 'https://github.com/pgaudit/pgaudit/releases',
   'audit', 1, 'audit.png', 'Audit Logging', 'https://github.com/pgaudit/pgaudit');
 INSERT INTO releases VALUES ('audit-pg14', 10, 'audit', 'pgAudit', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('audit-pg14', '1.6.2-1', 'amd', 1, '20220225', 'pg14', '', 'https://github.com/pgaudit/pgaudit/releases/tag/1.6.2');
-INSERT INTO versions VALUES ('audit-pg14', '1.6.1-1', 'amd', 0, '20211104', 'pg14', '', 'https://github.com/pgaudit/pgaudit/releases/tag/1.6.1');
+INSERT INTO versions VALUES ('audit-pg14', '1.6.2-1', 'amd, el8', 1, '20220225', 'pg14', '', 'https://github.com/pgaudit/pgaudit/releases/tag/1.6.2');
 
 INSERT INTO projects VALUES ('hintplan', 6, 0, 'hub', 0, 'https://github.com/ossc-db/pg_hint_plan/tags',
   'hintplan', 1, 'hintplan.png', 'Execution Plan Hints', 'https://github.com/ossc-db/pg_hint_plan');
 INSERT INTO releases VALUES ('hintplan-pg14', 10, 'hintplan', 'pgHintPlan', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('hintplan-pg14', '1.4.0-1', 'amd', 1, '20220118', 'pg14', '', 'https://github.com/pghintplan/pghintplan/releases/tag/1.6.0');
+INSERT INTO versions VALUES ('hintplan-pg14', '1.4.0-1', 'amd, el8', 1, '20220118', 'pg14', '', 'https://github.com/pghintplan/pghintplan/releases/tag/1.6.0');
 
 INSERT INTO projects VALUES ('anon', 4, 0, 'ddlx', 1, 'https://gitlab.com/dalibo/postgresql_anonymizer/-/tags',
   'anon', 1, 'anon.png', 'Anonymization & Masking', 'https://gitlab.com/dalibo/postgresql_anonymizer/blob/master/README.md');
-INSERT INTO releases VALUES ('anon-pg13', 11, 'anon', 'Anonymizer', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('anon-pg14', 11, 'anon', 'Anonymizer', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('anon-pg13', '0.9.0-1', 'amd', 0, '20210703', 'pg13', '', '');
 
 INSERT INTO versions VALUES ('anon-pg14', '0.12.0-1', 'amd', 1, '20220413', 'pg14', '', '');
-INSERT INTO versions VALUES ('anon-pg14', '0.10.0-1', 'amd', 0, '20220315', 'pg14', '', '');
-INSERT INTO versions VALUES ('anon-pg14', '0.9.0-1', 'amd', 0, '20210703', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('citus', 4, 0, 'hub',0, 'https://github.com/citusdata/citus/releases',
   'citus', 1, 'citus.png', 'Distributed PostgreSQL', 'https://github.com/citusdata/citus');
 INSERT INTO releases VALUES ('citus-pg14',  0, 'citus', 'Citus', '', 'prod', '', 1, 'AGPLv3', '', '');
-INSERT INTO versions VALUES ('citus-pg14', '11.0.2-1', 'amd', 1, '20220616', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.2');
+INSERT INTO versions VALUES ('citus-pg14', '11.0.2-1', 'amd, el8', 1, '20220616', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.2');
 
 INSERT INTO projects VALUES ('cron', 4, 0, 'hub',0, 'https://github.com/citusdata/pg_cron/releases',
   'cron', 1, 'cron.png', 'Background Job Scheduler', 'https://github.com/citusdata/pg_cron');
@@ -461,10 +453,8 @@ INSERT INTO versions VALUES ('timescaledb-pg14', '2.5.2-1',  'amd', 0, '20220209
 
 INSERT INTO projects VALUES ('pglogical', 10, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');
-INSERT INTO releases VALUES ('pglogical-pg13', 4, 'pglogical', 'pgLogical', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('pglogical-pg14', 4, 'pglogical', 'pgLogical', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pglogical-pg13', '2.4.1-1',  'amd', 0, '20211213', 'pg13', '', 'https://github.com/2ndQuadrant/pglogical/releases/tag/REL2_4_1');
-INSERT INTO versions VALUES ('pglogical-pg14', '2.4.1-1',  'amd', 1, '20211213', 'pg14', '', 'https://github.com/2ndQuadrant/pglogical/releases/tag/REL2_4_1');
+INSERT INTO versions VALUES ('pglogical-pg14', '2.4.1-1',  'amd, el8', 1, '20211213', 'pg14', '', 'https://github.com/2ndQuadrant/pglogical/releases/tag/REL2_4_1');
 
 INSERT INTO projects VALUES ('postgis', 4, 1, 'hub', 3, 'http://postgis.net/source',
   'postgis', 1, 'postgis.png', 'Spatial Extensions', 'http://postgis.net');
@@ -507,32 +497,25 @@ INSERT INTO versions VALUES ('partman-pg14', '4.6.1-1',  'amd, el8', 1, '2022041
 
 INSERT INTO projects VALUES ('hypopg', 4, 0, 'hub', 8, 'https://github.com/HypoPG/hypopg/releases',
   'hypopg', 1, 'whatif.png', 'Hypothetical Indexes', 'https://hypopg.readthedocs.io/en/latest/');
-INSERT INTO releases VALUES ('hypopg-pg13', 99, 'hypopg', 'HypoPG', '', 'prod','',  1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('hypopg-pg14', 99, 'hypopg', 'HypoPG', '', 'prod','',  1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('hypopg-pg13', '1.3.1-1',  'amd', 0, '20210622', 'pg13', '', '');
-INSERT INTO versions VALUES ('hypopg-pg14', '1.3.1-1',  'amd', 1, '20210622', 'pg14', '', '');
+INSERT INTO versions VALUES ('hypopg-pg14', '1.3.1-1',  'amd, el8', 1, '20210622', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('badger', 4, 0, 'hub', 6, 'https://github.com/darold/pgbadger/releases',
   'badger', 0, 'badger.png', 'Performance Reporting', 'https://pgbadger.darold.net');
 INSERT INTO releases VALUES ('badger', 101, 'badger','pgBadger','', 'test', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('badger', '11.8', '', 1, '20220408', '', '', '');
-INSERT INTO versions VALUES ('badger', '11.7', '', 0, '20220123', '', '', '');
-INSERT INTO versions VALUES ('badger', '11.6', '', 0, '20210904', '', '', '');
 
 INSERT INTO projects VALUES ('pool2', 4, 0, 'hub', 3, 'http://github.com/pgpool/pgpool2/tags',
   'pool2',  0, 'pgpool2.png', 'LoadBalancer & QueryCache', 'http://pgpool.net');
 INSERT INTO releases VALUES ('pool2', 1, 'pool2',  'pgPool2', '', 'included', '', 1, 'BSD', '', '');
 INSERT INTO versions VALUES ('pool2', '4.3.1', 'amd', 1, '20220216', '', '', '');
 INSERT INTO versions VALUES ('pool2', '4.2.8', 'amd', 0, '20220216', '', '', '');
-INSERT INTO versions VALUES ('pool2', '4.2.7', 'amd', 0, '20211222', '', '', '');
-INSERT INTO versions VALUES ('pool2', '4.2.6', 'amd', 0, '20211114', '', '', '');
 
 INSERT INTO projects VALUES ('bouncer', 4, 0, 'hub', 3, 'http://pgbouncer.org',
   'bouncer',  0, 'pg-bouncer.png', 'Connection Pooler', 'http://pgbouncer.org');
 INSERT INTO releases VALUES ('bouncer', 2, 'bouncer',  'pgBouncer', '', 'included', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('bouncer', '1.17.0', 'amd', 1, '20220323', '', '', '');
 INSERT INTO versions VALUES ('bouncer', '1.16.1', 'amd', 0, '20211111', '', '', '');
-INSERT INTO versions VALUES ('bouncer', '1.16.0', 'amd', 0, '20210809', '', '', '');
 
 INSERT INTO projects VALUES ('patroni', 11, 0, 'haproxy', 4, 'https://github.com/zalando/patroni/releases',
   'patroni', 0, 'patroni.png', 'HA Template', 'https://github.com/zalando/patroni');
