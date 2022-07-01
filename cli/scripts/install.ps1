@@ -1,4 +1,4 @@
-$VER = "6.70"
+$VER = "6.71"
 $REPO = "https://oscg-io-download.s3.amazonaws.com/REPO"
 
 
