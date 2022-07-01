@@ -53,7 +53,6 @@ if [ $uname == 'Linux' ]; then
       sudo $yum lz4-devel libzstd-devel
       sudo $yum krb5-devel openjpeg2-devel
       sudo $yum libyaml libyaml-devel
-      sudo $yum libcxx libcxx-devel
       sudo $yum ncurses-compat-libs
       sudo alternatives --config java
     else
@@ -97,11 +96,11 @@ else
   exit 1
 fi
 
-$sudo mkdir -p /opt/pgbin-build
-$sudo chown $owner_group /opt/pgbin-build
-$sudo mkdir -p /opt/pgbin-build/pgbin/bin
-$sudo mkdir -p /opt/pgcomponent
-$sudo chown $owner_group /opt/pgcomponent
+sudo mkdir -p /opt/pgbin-build
+sudo chown $owner_group /opt/pgbin-build
+sudo mkdir -p /opt/pgbin-build/pgbin/bin
+sudo mkdir -p /opt/pgcomponent
+sudo chown $owner_group /opt/pgcomponent
 mkdir -p ~/dev
 cd ~/dev
 mkdir -p in
@@ -129,7 +128,7 @@ if [ ! "$rc" == "0" ]; then
   chmod 600 config
 fi
 
-cd ~/dev/pgsql-io
+cd ~/dev/io
 if [ -f ~/.bashrc ]; then
   bf=~/.bashrc
 else
