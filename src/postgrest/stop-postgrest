@@ -1,0 +1,7 @@
+
+echo "stopping PostgREST"
+pid=`ps aux | grep [p]ostgrest | awk '{print $2}'`
+if [ "$pid" > " " ]; then
+  echo "killing ($pid)"
+  kill -9 $pid > /dev/null 2>&1
+fi
