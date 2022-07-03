@@ -15,29 +15,29 @@ function test14 {
 
 
 function testCommon {
-  ##./io install multicorn2-$pgV    -d demo
+  ./io install multicorn2-$pgV    -d demo
   ./io install plprofiler-$pgV    -d demo
   ./io install pldebugger-$pgV    -d demo
 
-  ##./io install decoderbufs-$pgV   -d demo
-  ##./io install wal2json-$pgV      -d demo
+  ./io install decoderbufs-$pgV   -d demo
   ./io install postgis-$pgV       -d demo
   ./io install hypopg-$pgV        -d demo
   ./io install cron-$pgV
   ./io install repack-$pgV        -d demo
   ./io install orafce-$pgV        -d demo
   ./io install spock-$pgV        -d demo
+  ##./io install wal2json-$pgV      -d demo
   ##./io install pglogical-$pgV     -d demo
   ##./io install anon-$pgV          -d demo
 
   ./io install bulkload-$pgV      -d demo
   ./io install partman-$pgV       -d demo
 
-  ##./io install plv8-$pgV          -d demo
+  #./io install plv8-$pgV          -d demo
 
-  #./io install mysqlfdw-$pgV      -d demo
-  #./io install mongofdw-$pgV      -d demo
-  #./io install oraclefdw-$pgV     -d demo
+  ./io install mysqlfdw-$pgV      -d demo
+  ./io install mongofdw-$pgV      -d demo
+  ./io install oraclefdw-$pgV     -d demo
 
   #./io install archivist-pg13     -d demo
   #./io install qualstats-pg13     -d demo
