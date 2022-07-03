@@ -484,6 +484,8 @@ initPG () {
 
   fi
 
+  initC "postgrest"   "postgrest"   "$postgrestV" "" "postgres/rest"  "" "" "Y"
+
   if [ "$isEL8" == "True" ]; then
     return
   fi

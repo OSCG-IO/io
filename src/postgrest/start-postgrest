@@ -1,2 +1,2 @@
 echo "starting PostgREST"
-./postgrest ./rest.conf &
+postgrest/postgrest postgrest/rest.conf &
