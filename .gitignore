@@ -8,5 +8,7 @@ web/static/*.db
 cli/scripts/*.out
 cli/scripts/conf
 src/instantclient/*.zip
+src/postgrest/postgrest
+src/postgrest/rest.conf
 .DS_STORE
 __pycache__
