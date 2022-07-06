@@ -9,7 +9,23 @@ git config --global push.default simple
 git config --global credential.helper store
 git config --global pull.rebase false
 
-##set -x
+compilePy27 () {
+  if [ -f /usr/local/bin/python2.7 ]; then
+    echo "Python 2.7 is already built locally on this machine"
+    return
+  fi
+  ver=2.7.18
+  dir=Python-$ver
+  file=$dir.tgz
+  rm -rf $dir*
+  wget https://www.python.org/ftp/python/$ver/$file
+  tar -xf $file
+  cd $dir
+  ./configure --prefix=/usr/local
+  make -j4
+  sudo make install
+  rm -rf $dir*
+}
 
 uname=`uname`
 uname=${uname:0:7}
@@ -30,7 +46,7 @@ if [ $uname == 'Linux' ]; then
 
   if [ "$YUM" == "y" ]; then
     PLATFORM=`cat /etc/os-release | grep PLATFORM_ID | cut -d: -f2 | tr -d '\"'`
-    if [ "$PLATFORM" == "el8" ] || [  "$PLATFORM" == "f34" ]; then
+    if [ "$PLATFORM" == "el8" ] || [  "$PLATFORM" == "el9" ]; then
       echo "## $PLATFORM ##"
       yum="dnf -y install"
       sudo $yum epel-release
@@ -41,19 +57,23 @@ if [ $uname == 'Linux' ]; then
       sudo $yum zlib-devel bzip2-devel \
         openssl-devel libxslt-devel libevent-devel c-ares-devel \
         perl-ExtUtils-Embed sqlite-devel \
-        pam-devel openldap-devel boost-devel unixODBC-devel
+        pam-devel openldap-devel boost-devel 
       sudo $yum curl-devel chrpath clang-devel llvm-devel \
-        cmake libxml2-devel protobuf-c-devel libyaml-devel
+        cmake libxml2-devel 
       sudo $yum libedit-devel 
       sudo $yum *ossp-uuid*
-      sudo $yum python2 python2-devel
-      cd /usr/bin
-      sudo ln -fs python2 python
-      sudo $yum mongo-c-driver-devel freetds-devel mysql-devel
-      sudo $yum lz4-devel libzstd-devel
-      sudo $yum krb5-devel openjpeg2-devel
-      sudo $yum libyaml libyaml-devel
-      sudo $yum ncurses-compat-libs
+      if [ "$PLATFORM" == "el8" ]; then
+        sudo $yum python2 python2-devel
+        cd /usr/bin
+        sudo ln -fs python2 python
+        sudo $yum openjpeg2-devel libyaml libyaml-devel
+        sudo $yum ncurses-compat-libs mysql-devel 
+	sudo $yum unixODBC-devel protobuf-c-devel libyaml-devel
+      else
+	compilePy27
+      fi
+      sudo $yum mongo-c-driver-devel freetds-devel
+      sudo $yum lz4-devel libzstd-devel krb5-devel
       sudo alternatives --config java
     else
       echo "## EL 7 (used for pg11 - pg15)"
