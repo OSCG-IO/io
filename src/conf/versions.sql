@@ -136,14 +136,14 @@ INSERT INTO versions VALUES ('pg13', '13.5-4',  'amd', 0, '20211203','', 'LIBC-2
 INSERT INTO releases VALUES ('pg14', 1, 'pg', '', '', 'prod', 
   '<font size=-1>New in <a href=https://www.postgresql.org/docs/14/release-14.html>2021</a></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg14', '14.4-1', 'amd, el8, osx', 1, '20220616','', '', '');
+INSERT INTO versions VALUES ('pg14', '14.4-1', 'amd, el8, arm', 1, '20220616','', '', '');
 INSERT INTO versions VALUES ('pg14', '14.3-1', 'amd, osx', 0, '20220512','', 'LIBC-2.17', '');
 INSERT INTO versions VALUES ('pg14', '14.2-1', 'amd',      0, '20220210','', 'LIBC-2.17', '');
 
 INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'prod', 
   '<font size=-1 color=red><b>New in <a href=https://sql-info.de/postgresql/postgresql-15/articles-about-new-features-in-postgresql-15.html>2022!</a></b></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg15', '15beta2-1',  'el8', 1, '20220630','', 'LIBC-2.28', '');
+INSERT INTO versions VALUES ('pg15', '15beta2-1',  'el8, arm', 1, '20220630','', 'LIBC-2.28', '');
 
 INSERT INTO projects VALUES ('ivory14', 6, 5432, 'hub', 1, 'https://github.com/ivorysql/ivorysql/tags',
   'IvorySQL', 0, 'highgo.png', 'Postgres w/ mode=oracle', 'https://ivorysql.org');
@@ -419,7 +419,8 @@ INSERT INTO versions VALUES ('anon-pg14', '0.12.0-1', 'amd', 1, '20220413', 'pg1
 INSERT INTO projects VALUES ('citus', 4, 0, 'hub',0, 'https://github.com/citusdata/citus/releases',
   'citus', 1, 'citus.png', 'Distributed PostgreSQL', 'https://github.com/citusdata/citus');
 INSERT INTO releases VALUES ('citus-pg14',  0, 'citus', 'Citus', '', 'prod', '', 1, 'AGPLv3', '', '');
-INSERT INTO versions VALUES ('citus-pg14', '11.0.2-1', 'amd, el8', 1, '20220616', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.2');
+INSERT INTO versions VALUES ('citus-pg14', '11.0.3-1', 'amd, el8, arm', 1, '20220704', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.3');
+INSERT INTO versions VALUES ('citus-pg14', '11.0.2-1', 'amd, el8', 0, '20220616', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.2');
 
 INSERT INTO projects VALUES ('cron', 4, 0, 'hub',0, 'https://github.com/citusdata/pg_cron/releases',
   'cron', 1, 'cron.png', 'Background Job Scheduler', 'https://github.com/citusdata/pg_cron');
@@ -429,12 +430,12 @@ INSERT INTO versions VALUES ('cron-pg14', '1.4.1-1', 'amd, el8', 1, '20210925', 
 INSERT INTO projects VALUES ('timescaledb', 4, 0, 'hub', 1, 'https://github.com/timescale/timescaledb/releases',
    'timescaledb', 1, 'timescaledb.png', 'Time Series Data', 'https://github.com/timescale/timescaledb/#timescaledb');
 INSERT INTO releases VALUES ('timescaledb-pg14',  2, 'timescaledb', 'TimescaleDB', '', 'prod', '', 1, 'Apache', '', '');
-INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.0-1',  'amd, el8', 1, '20220524', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.0');
+INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.0-1',  'amd, el8, arm', 1, '20220524', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.0');
 
 INSERT INTO projects VALUES ('spock', 10, 0, 'hub', 1, 'https://github.com/oscg-io/spock/releases',
   'spock', 1, 'spock.png', 'Logical Replication', 'https://github.com/oscg-io/spcok');
 INSERT INTO releases VALUES ('spock-pg14', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('spock-pg14', '2.4.1-1',  'el8', 1, '20220630', 'pg14', '', '');
+INSERT INTO versions VALUES ('spock-pg14', '2.4.1-1',  'el8, arm', 1, '20220630', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('pglogical', 10, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');

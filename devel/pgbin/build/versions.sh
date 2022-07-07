@@ -50,7 +50,7 @@ agentFullV=4.0.0
 agentShortV=
 agentBuildV=1
 
-citusFullV=11.0.2
+citusFullV=11.0.3
 citusShortV=
 citusBuildV=1
 
@@ -229,15 +229,18 @@ if [ "$rc" == "0" ]; then
   isEL8=yes
 fi
 
+ARCH=`arch`
 OS=`uname -s`
 OS=${OS:0:7}
-if [[ $OS == "Linux" ]]; then
-  grep "CPU architecture: 8" /proc/cpuinfo 1>/dev/null
-  rc=$?
-  if [ "$rc" == "0" ]; then
+if [[ "$OS" == "Linux" ]]; then
+  if [[ "$ARCH" == "aarch64" ]]; then
     OS=arm
   else
-    OS=amd
+    if [[ "$isEL8" == "yes" ]]; then
+      OS=el8
+    else
+      OS=amd
+    fi
   fi
 elif [[ $OS == "Darwin" ]]; then
     OS=osx
@@ -246,10 +249,6 @@ elif [[ $OS == "MINGW64" ]]; then
 else
   echo "Think again. :-)"
   exit 1
-fi
-
-if [[ "$isEL8" == "yes" ]]; then
-  OS=el8
 fi
 
 cpuCores=`egrep -c 'processor([[:space:]]+):.*' /proc/cpuinfo`
