@@ -431,14 +431,15 @@ INSERT INTO releases VALUES ('timescaledb-pg14',  2, 'timescaledb', 'TimescaleDB
 INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.0-1',  'amd, el8, arm', 1, '20220524', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.0');
 
 INSERT INTO projects VALUES ('spock', 10, 0, 'hub', 1, 'https://github.com/oscg-io/spock/releases',
-  'spock', 1, 'spock.png', 'Logical Replication', 'https://github.com/oscg-io/spcok');
+  'spock', 1, 'spock.png', 'Logical Mulit-Master Replication', 'https://github.com/oscg-io/spcok');
 INSERT INTO releases VALUES ('spock-pg14', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('spock-pg14', '2.4.1-1',  'el8, arm', 1, '20220630', 'pg14', '', '');
+INSERT INTO versions VALUES ('spock-pg14', '3.0beta1-1',  'el8, arm', 1, '20220709', 'pg14', '', '');
+INSERT INTO versions VALUES ('spock-pg14', '2.4.1-1',  'el8, arm', 0, '20220630', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('pglogical', 10, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');
 INSERT INTO releases VALUES ('pglogical-pg14', 4, 'pglogical', 'pgLogical', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pglogical-pg14', '2.4.1-1',  'amd, el8', 1, '20211213', 'pg14', '', 'https://github.com/2ndQuadrant/pglogical/releases/tag/REL2_4_1');
+INSERT INTO versions VALUES ('pglogical-pg14', '2.4.1-1',  'amd, el8', 0, '20211213', 'pg14', '', 'https://github.com/2ndQuadrant/pglogical/releases/tag/REL2_4_1');
 
 INSERT INTO projects VALUES ('postgis', 4, 1, 'hub', 3, 'http://postgis.net/source',
   'postgis', 1, 'postgis.png', 'Spatial Extensions', 'http://postgis.net');
