@@ -75,6 +75,7 @@ mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
              "remove", "reload", "activity", "help", "get", "set", "unset",
              "repolist", "repo-pkgs", "discover", "backrest", "install-recipe",
              "register", "top", "--autostart", "--relnotes", "--start",
+             "--no-restart", "--no-preload",
              "--help", "--json", "--jsonp", "--test", "--extensions", "--svcs",
              "--list", "--old", "--showduplicates", "-y", "-t", "-d"  ,
              "--verbose", "--debug", "--debug2"]
@@ -1080,6 +1081,16 @@ if ((args[1] == "help") or (args[1] == "--help")):
 
 
 ## process global parameters #################
+os.environ['isPreload'] = "True"  
+if "--no-preload" in args:
+  args.remove("--no-preload")
+  os.environ['isPreload'] = "False"
+
+os.environ['isRestart'] = "True"
+if "--no-restart" in args:
+  args.remove("--no-restart")
+  os.environ['isRestart'] = "False"  
+
 isJSON = False
 if "--json" in args:
   isJSON = True

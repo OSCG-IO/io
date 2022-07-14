@@ -4,7 +4,7 @@
 
 from __future__ import print_function, division
 
-MY_VERSION = "6.71"
+MY_VERSION = "6.72"
 
 from subprocess import Popen, PIPE, STDOUT
 from datetime import datetime, timedelta
@@ -366,14 +366,18 @@ def restart_postgres(p_pg):
 
 
 def create_extension(p_pg, p_ext, p_reboot=False, p_extension="", p_cascade=False):
-  if p_ext > " ":
+  isPreload = os.getenv('isPreload')
+  if p_ext > " " and isPreload == "True":
     rc = change_pgconf_keyval(p_pg, "shared_preload_libraries", p_ext)
     if rc == False:
       remove_comp(p_ext + "-" + p_pg)
       sys.exit(1)
 
-  if p_reboot:
+  isRestart = os.getenv('isRestart')
+  if p_reboot and isRestart == "True":
     restart_postgres(p_pg)
+  else:
+    return True
 
   print("")
   if p_extension == "":
