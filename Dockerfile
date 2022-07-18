@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM rockylinux:8
 
 LABEL maintainer="OSCG-IO team"
 
@@ -6,15 +6,10 @@ SHELL ["/bin/bash", "-c"]
 
 USER root
 
-RUN addgroup --system oscg \
-    && adduser --system oscg --ingroup oscg \
-    && apt-get update \
-    && apt-get install -y wget curl python3
+RUN yum update -y \
+    && yum install -y wget curl 
+RUN yum install -y python3 python3-devel
 
-RUN chown oscg:oscg /opt
-RUN touch /root/.pgpass && chown oscg:oscg /root/.pgpass
-
-USER oscg:oscg
 WORKDIR /opt
 RUN python3 -c "$(curl -fsSL https://oscg-io-download.s3.amazonaws.com/REPO/install.py)"
 WORKDIR /opt/oscg
