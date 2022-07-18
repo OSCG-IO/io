@@ -171,6 +171,15 @@ def get_jvm_location(p_display=False):
   return ""
 
 
+def is_systemctl():
+  rc = os.system('sudo systemctl status > /dev/null 2>&1')
+  if rc == 0:
+    return (True)
+
+  print('systemctl not present')
+  return (False)
+
+
 def set_jvm_link(p_pg_ver, p_display=True):
   jvm_location = get_jvm_location()
   if jvm_location == "":

@@ -1,7 +1,7 @@
 from __future__ import print_function, division
  
 ####################################################################
-######          Copyright (c)  2020-2021 PGSQL.IO         ##########
+######          Copyright (c)  2021-2022 OSCG             ##########
 ####################################################################
 
 import util, startup 
@@ -177,7 +177,7 @@ util.message("Initialization Completed")
 if update_install_date:
   util.update_installed_date(pgver)
 
-if util.is_admin():
+if util.is_admin() and util.is_systemctl():
   systemsvc = 'postgresql' + pgver[2:4]
   pg_ctl = os.path.join(MY_HOME, pgver, 'bin', 'pg_ctl')
   cmd_start  = pg_ctl + ' start  -D ' + pg_data + ' -s -w -t 300'
