@@ -33,14 +33,6 @@ elif [ "$os" == "Linux" ]; then
   fi
 fi
 
-##echo "### Installing pre-req's ###"
-##if [ "$flavor" == "el" ]; then
-##  sudo yum install -y libaio zip wget
-##else
-##  sudo apt install -y libaio1 zip wget
-##  test_sudo="sudo -v"
-##fi
-
 full_file=$file-$flavor.tar.xz
 
 rm -f $full_file*
@@ -64,7 +56,10 @@ fi
 
 cat << EOF > rest.conf
 db-uri = "postgres://postgres@localhost:$port/postgres"
-db-schemas = "api"
+db-schemas = "spock"
 db-anon-role = "web_anon"
 EOF
+
+mkdir -p ../data/logs/postgrest
+
 

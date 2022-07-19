@@ -1,5 +1,7 @@
-
-echo "stopping PostgREST"
+now=`date`
+msg="stopping postgrest"
+echo $msg
+echo "$msg - $now" >> data/logs/postgrest/postgrest.log
 pid=`ps aux | grep [p]ostgrest | awk '{print $2}'`
 if [ "$pid" > " " ]; then
   #echo "killing ($pid)"
