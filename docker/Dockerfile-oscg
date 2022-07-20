@@ -6,29 +6,21 @@ SHELL ["/bin/bash", "-c"]
 
 USER root
 
-RUN yum update -y \
-    && yum install -y wget curl git
-RUN yum install -y python3 python3-devel 
-RUN yum install -y sudo
+RUN dnf update -y \
+    && dnf install -y wget curl git sudo python3 python3-devel \
+    && dnf clean all \
+    && rm -rf /var/cache/yum
 
 RUN useradd oscg -U -m -d /opt/oscg
-
 RUN echo "%oscg ALL=(ALL)       NOPASSWD: ALL" >> /etc/sudoers
 
 USER oscg
-
 WORKDIR /opt/oscg
 
 RUN git clone https://github.com/oscg-io/io
 WORKDIR io
-RUN ./setupInitial.sh
-
-
-
-
-#WORKDIR /opt
-#RUN python3 -c "$(curl -fsSL https://oscg-io-download.s3.amazonaws.com/REPO/install.py)"
-#WORKDIR /opt/oscg
-#RUN ./io install pg14
+RUN ./setupInitial.sh \
+    && dnf clean all \
+    && rm -rf /var/cache/yum
 
 CMD /bin/bash
