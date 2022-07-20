@@ -15,7 +15,7 @@ k8sV=1.22
 
 walgV=2.0.0
 goV=1.17.4
-postgrestV=9.0.1
+pgrestV=9.0.1
 
 multicorn2V=2.3-1
 esfdwV=0.11.1
