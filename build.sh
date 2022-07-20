@@ -487,7 +487,7 @@ initPG () {
 
   fi
 
-  initC "pgrest"   "pgrest"   "$pgrestV" "" "postgres/rest"  "" "" "Y"
+  initC "pgrest"   "pgrest"   "$pgrestV" "" "postgres/pgrest"  "" "" "Y"
 
   if [ "$isEL8" == "True" ]; then
     return
@@ -536,10 +536,7 @@ initPG () {
     #fi
 
     #initC "cassandra" "cassandra" "$cstarV" "" "cassandra" "" "" "nil"
-  fi
 
-
-  if [ "$pgM" == "14" ]; then 
     initC "timescaledb-pg$pgM" "timescaledb" "$timescaleV"  "$outPlat" "postgres/timescale" "" "" "nil"
     initC "partman-pg$pgM" "partman" "$partmanV" "$outPlat" "postgres/partman" "" "" "nil"
     initC "orafce-pg$pgM" "orafce" "$orafceV" "$outPlat" "postgres/orafce" "" "" "nil"

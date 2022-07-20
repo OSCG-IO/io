@@ -1,3 +1,3 @@
-echo "starting PostgREST"
+echo "starting pgREST"
 
-postgrest/postgrest postgrest/rest.conf >> data/logs/postgrest/postgrest.log 2>&1 &
+pgrest/postgrest pgrest/pgrest.conf >> data/logs/pgrest/postgrest.log 2>&1 &

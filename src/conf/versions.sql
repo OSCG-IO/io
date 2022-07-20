@@ -394,10 +394,10 @@ INSERT INTO projects VALUES ('walg', 4, 0, 'hub', 0, 'https://github.com/wal-g/w
 INSERT INTO releases VALUES ('walg', 9, 'walg', 'WAL-G', '', 'test', '', 1, 'Apache', '', '');
 INSERT INTO versions VALUES ('walg', '2.0.0', 'amd', 1, '20220519', '', '', '');
 
-INSERT INTO projects VALUES ('postgrest', 4, 3000, 'hub', 0, 'https://github.com/postgrest/postgrest/tags',
-  'postgrest', 0, 'postgrest.png', 'a RESTful API', 'https://postgrest.org');
-INSERT INTO releases VALUES ('postgrest', 9, 'postgrest', 'PostgREST', '', 'test', '', 1, 'MIT', '', '');
-INSERT INTO versions VALUES ('postgrest', '9.0.1', '', 1, '20220705', '', '', 'https://postgrest.org');
+INSERT INTO projects VALUES ('pgrest', 4, 3000, 'hub', 0, 'https://github.com/postgrest/postgrest/tags',
+  'pgrest', 0, 'postgrest.png', 'a RESTful API', 'https://postgrest.org');
+INSERT INTO releases VALUES ('pgrest', 9, 'pgrest', 'PostgREST', '', 'test', '', 1, 'MIT', '', '');
+INSERT INTO versions VALUES ('pgrest', '9.0.1', '', 1, '20220720', '', '', 'https://postgrest.org');
 
 INSERT INTO projects VALUES ('audit', 4, 0, 'hub', 0, 'https://github.com/pgaudit/pgaudit/releases',
   'audit', 1, 'audit.png', 'Audit Logging', 'https://github.com/pgaudit/pgaudit');
