@@ -105,7 +105,7 @@ elif [ $uname == 'Darwin' ]; then
   if [ ! "$rc" == "0" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
-  brew install pkg-config krb5 wget curl readline lz4 openssl@1.1 python@3.10 openldap ossp-uuid
+  brew install pkg-config krb5 wget curl readline lz4 openssl@1.1 openldap ossp-uuid
 
 elif [ $uname == "MINGW64" ]; then
   pacman -S --needed base-devel mingw-w64-x86_64-gcc gcc git curl vim wget python-devel sqlite3 perl perl-ExtUtils-MakeMaker
@@ -140,7 +140,7 @@ fi
 aws --version > /dev/null 2>&1 
 rc=$?
 if [ ! "$rc" == "0" ]; then
-  pip3 install --user awscli
+  sudo pip3 install awscli
   mkdir -p ~/.aws
   cd ~/.aws
   touch config
