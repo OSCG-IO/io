@@ -117,8 +117,8 @@ else
 fi
 
 sudo mkdir -p /opt/pgbin-build
-sudo chown $owner_group /opt/pgbin-build
 sudo mkdir -p /opt/pgbin-build/pgbin/bin
+sudo chown -R $owner_group /opt/pgbin-build
 sudo mkdir -p /opt/pgcomponent
 sudo chown $owner_group /opt/pgcomponent
 mkdir -p ~/dev
