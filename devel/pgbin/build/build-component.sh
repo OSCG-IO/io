@@ -232,6 +232,17 @@ function buildSetUserComponent {
 function configureComp {
     rc=0
 
+    make="make"
+
+    if [ "$comp" == "plv8" ]; then
+        echo "# configure plv8..."
+        echo "# enabling gcc-toolset-11 "
+        source /opt/rh/gcc-toolset-11/enable
+        echo "# overlaying debian specific make file with el8 adjustments"
+        cp $DEVEL/pgbin/build/el8-only/plv8/Makefile.linux_el8  Makefiles/Makefile.linux
+        make="make static"
+    fi
+
     if [ "$comp" == "mongofdw" ]; then
         echo "# configure mongofdw..."
         export MONGOC_INSTALL_DIR=$buildLocation
@@ -359,8 +370,8 @@ function buildComp {
             export PYTHON_OVERRIDE=python3.6
         fi
 
-        echo "# make..."
-        USE_PGXS=1 make >> $make_log 2>&1
+        echo "# $make ..."
+        USE_PGXS=1 $make >> $make_log 2>&1
         if [[ $? -eq 0 ]]; then
                 echo "# make install..."
                 USE_PGXS=1 $make_install > $install_log 2>&1

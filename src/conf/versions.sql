@@ -334,12 +334,8 @@ INSERT INTO versions VALUES ('plr-pg12', '8.4-1', 'amd', 0, '20200912', 'pg12', 
 
 INSERT INTO projects VALUES ('plv8', 3, 0, 'hub', 0, 'https://github.com/plv8/plv8/tags',
   'plv8',   1, 'v8.png', 'Javascript Stored Procedures', 'https://github.com/plv8/plv8');
-INSERT INTO releases VALUES ('plv8-pg12', 4, 'plv8', 'PL/V8', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO releases VALUES ('plv8-pg13', 4, 'plv8', 'PL/V8', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('plv8-pg14', 4, 'plv8', 'PL/V8', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('plv8-pg12', '2.3.15-1', 'amd', 0, '20200711', 'pg12', '', '');
-INSERT INTO versions VALUES ('plv8-pg13', '2.3.15-1', 'amd', 0, '20200711', 'pg13', '', '');
-INSERT INTO versions VALUES ('plv8-pg14', '2.3.15-1', 'amd', 1, '20200711', 'pg14', '', '');
+INSERT INTO versions VALUES ('plv8-pg14', '3.1.2-1', 'amd, el8', 1, '20200721', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('plpython', 3, 0, 'hub', 0, 'https://www.postgresql.org/docs/13/plpython.html',
   'plpython', 1, 'python.png', 'Python3 Stored Procedures', 'https://www.postgresql.org/docs/13/plpython.html');

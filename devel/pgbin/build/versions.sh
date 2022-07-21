@@ -134,7 +134,7 @@ plProfilerFullVersion=4.1
 plProfilerShortVersion=
 plprofilerBuildV=1
 
-plv8FullV=2.3.15
+plv8FullV=3.1.2
 plv8ShortV=
 plv8BuildV=1
 
