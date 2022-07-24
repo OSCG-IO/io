@@ -489,6 +489,7 @@ initPG () {
   fi
 
   initC "pgrest"   "pgrest"   "$pgrestV" "" "postgres/pgrest"  "" "" "Y"
+  initC "nodejs"   "nodejs"   "$nodejsV" "" "nodejs"           "" "" "Y"
 
   if [ "$isEL8" == "True" ]; then
     return

@@ -1,0 +1,3 @@
+echo "starting nodejs"
+
+nodejs/bin/nodejs hello.js >> data/logs/nodejs/nodejs.log 2>&1 &

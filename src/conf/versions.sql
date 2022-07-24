@@ -395,6 +395,11 @@ INSERT INTO projects VALUES ('pgrest', 4, 3000, 'hub', 0, 'https://github.com/po
 INSERT INTO releases VALUES ('pgrest', 9, 'pgrest', 'PostgREST', '', 'test', '', 1, 'MIT', '', '');
 INSERT INTO versions VALUES ('pgrest', '9.0.1', '', 1, '20220720', '', '', 'https://postgrest.org');
 
+INSERT INTO projects VALUES ('nodejs', 4, 3000, 'hub', 0, 'https://github.com/postgrest/postgrest/tags',
+  'nodejs', 0, 'prest.png', 'a RESTful API', 'https://nodejs.org');
+INSERT INTO releases VALUES ('nodejs', 9, 'nodejs', 'Node.js', '', 'test', '', 1, 'MIT', '', '');
+INSERT INTO versions VALUES ('nodejs', '18.6.0', '', 1, '20220720', '', '', 'https://nodejs.org');
+
 INSERT INTO projects VALUES ('audit', 4, 0, 'hub', 0, 'https://github.com/pgaudit/pgaudit/releases',
   'audit', 1, 'audit.png', 'Audit Logging', 'https://github.com/pgaudit/pgaudit');
 INSERT INTO releases VALUES ('audit-pg14', 10, 'audit', 'pgAudit', '', 'prod', '', 1, 'POSTGRES', '', '');
