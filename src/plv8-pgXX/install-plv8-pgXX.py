@@ -5,5 +5,5 @@
 
 import util
 
-util.create_extension("pgXX", "plv8-2.3.15", True, "plv8")
+util.create_extension("pgXX", "plv8-3.1.1", True, "plv8")
 

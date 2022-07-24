@@ -5,5 +5,5 @@
 
 import util
 
-util.remove_pgconf_keyval("pgXX", "shared_preload_libraries", "plv8-2.3.15")
+util.remove_pgconf_keyval("pgXX", "shared_preload_libraries", "plv8-3.1.1")
 
