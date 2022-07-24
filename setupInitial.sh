@@ -51,7 +51,7 @@ if [ $uname == 'Linux' ]; then
       yum="dnf -y install"
       sudo $yum epel-release
       sudo dnf config-manager --set-enabled powertools
-      sudo $yum wget python3 python3-devel
+      sudo $yum wget python39 python39-devel
       sudo $yum java-11-openjdk-devel maven
       sudo dnf -y groupinstall 'development tools'
       sudo $yum zlib-devel bzip2-devel \
@@ -86,7 +86,7 @@ if [ $uname == 'Linux' ]; then
         uuid-devel curl-devel chrpath 
       sudo yum -y install llvm5.0 llvm5.0-devel centos-release-scl-rh
       sudo yum -y install llvm-toolset-7-llvm llvm-toolset-7-llvm-devel devtoolset-7 llvm-toolset-7-clang llvm-toolset-7-clang-devel
-      sudo yum -y install python3 python3-devel
+      sudo yum -y install python39 python39-devel
       sudo yum -y install lz4-devel libzstd-devel json-c*
       sudo yum -y install hiredis-devel mysql-devel cmake3 mongo-c-driver* libicu libicu-devel
       sudo yum -y install libyaml libyaml-devel
