@@ -3,9 +3,6 @@ out/
 devel/pg/src
 devel/pg/1*
 devel/pg/9*
-devel/el8/pcre*
-devel/el8/zlib*
-devel/el8/openssl*
 web/static/html/*.html
 cli/scripts/*.out
 cli/scripts/conf

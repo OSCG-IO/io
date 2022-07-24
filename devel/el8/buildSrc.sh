@@ -7,11 +7,6 @@ buildSrc () {
   config=$5
   basedir=/opt/$6/$2
 
-  rm -rf $basedir
-  mkdir -p $basedir
-  cd $basedir
-  rm -rf $dir*
-
   echo " "
   echo "#################################################################"
   echo "# $BANNER"
@@ -24,11 +19,23 @@ buildSrc () {
   echo "# basedir=$basedir"
   echo "#################################################################"
 
+  if [ "$#" -ne 6 ]; then
+    echo "ERROR: must be six parms"
+    exit 1
+  fi
+
+  echo "#"
+  echo "# cleaning up cruft ..."
+  rm -rf $basedir
+  mkdir -p $basedir
+  cd $basedir
+  rm -rf $dir*
 
   echo "#"
   echo "# downloading $url/$file ..."
   wget -q $url/$file
 
+  echo "#"
   echo "# expanding $file ..."
   touch $file
   tar -xf $file
