@@ -1,6 +1,8 @@
 sudo mkdir -p /opt/gis-tools
 sudo chown $USER:$USER /opt/gis-tools
 
+source buildSrc.sh
+
 function buildGDAL {
   cd /opt/gis-tools
   rm -rf gdal*
