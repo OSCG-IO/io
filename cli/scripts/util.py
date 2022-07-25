@@ -4,7 +4,7 @@
 
 from __future__ import print_function, division
 
-MY_VERSION = "6.72"
+MY_VERSION = "6.73"
 
 from subprocess import Popen, PIPE, STDOUT
 from datetime import datetime, timedelta
@@ -216,6 +216,19 @@ def create_symlinks(p_link_dir, p_target_dir):
   os.system(cmd)
 
   return
+
+
+def sys1(p_sys_cmd, p_display=True):
+  if p_sys_cmd.strip() == "":
+    return 0
+
+  cmd = MY_HOME + os.sep + "io " + str(p_sys_cmd)
+
+  if p_display == True:
+    print("# " + str(cmd))
+
+  rc = os.system(cmd)
+  return rc
 
 
 def run_cmd (p_cmd, p_display=False):

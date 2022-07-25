@@ -1048,8 +1048,29 @@ os.chdir(MY_HOME)
 db_local = "conf" + os.sep + "db_local.db"
 connL = sqlite3.connect(db_local)
 
-## eliminate empty parameters #################
 args = sys.argv
+
+## process multiple commands seperated by ' : ' ###############
+cmd = ""
+is_colon = False
+x = 1
+while x < len(args): 
+  if args[x] == ":":
+    is_colon = True
+    util.sys1(cmd)
+    cmd = ""
+  elif args[x] == "":
+    pass
+  else:
+    cmd = str(cmd) + " " + str(args[x])
+
+  x = x + 1
+
+if is_colon:
+  util.sys1(cmd)
+  exit_cleanly(0)
+
+## eliminate empty parameters ################################
 while True:
   try:
      args.remove("")
