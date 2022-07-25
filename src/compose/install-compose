@@ -6,8 +6,8 @@ if [ "$ver" == "" ]; then
   exit 1
 fi
 
-url=https://github.com/docker/compose/releases/download/$ver
-dc=docker-compose-$(uname -s)-$(uname -m)
+url=https://github.com/docker/compose/releases/download/v$ver
+dc=docker-compose-$(uname -s)-$(arch)
 rm -rf $dc
 wget -q $url/$dc
 rc=$?
