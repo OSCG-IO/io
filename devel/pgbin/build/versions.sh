@@ -70,7 +70,7 @@ hypopgFullV=1.3.1
 hypopgShortV=
 hypopgBuildV=1
 
-postgisFullV=3.2.1
+postgisFullV=3.2.2
 postgisShortV=
 postgisBuildV=1
 
@@ -86,7 +86,7 @@ cassFullV=3.1.5
 cassShortV=
 cassBuildV=1
 
-orafceFullV=3.21.0
+orafceFullV=3.22.1
 orafceShortV=
 orafceBuildV=1
 
@@ -102,7 +102,7 @@ tdsfdwFullV=2.0.2
 tdsfdwShortV=
 tdsfdwBuildV=1
 
-mysqlfdwFullV=2.7.0
+mysqlfdwFullV=2.8.0
 mysqlfdwShortV=
 mysqlfdwBuildV=1
 
@@ -218,7 +218,7 @@ timescaledbFullV=2.7.0
 timescaledbShortV=
 timescaledbBuildV=1
 
-cronFullV=1.4.1
+cronFullV=1.4.2
 cronShortV=
 cronBuildV=1
 

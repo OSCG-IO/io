@@ -10,8 +10,8 @@ function buildGDAL {
   wget https://github.com/OSGeo/gdal/releases/download/v$VER/gdal-$VER.tar.gz
   tar -xf gdal-$VER.tar.gz
   cd gdal-$VER
-  ./configure --with-openjpeg --without-jasper
-  sudo make -j4
+  ./configure --with-openjpeg --without-jasper --with-proj=/opt/gis-tools/proj-6.0.0
+  make -j4
   sudo make install
   return
 }
@@ -24,7 +24,7 @@ function buildGeos {
   tar -xf geos-$VER.tar.bz2
   cd geos-$VER
   ./configure
-  sudo make -j8
+  make -j4
   sudo make install
   return
 }
@@ -37,7 +37,7 @@ function buildProj {
   tar -xf proj-$VER.tar.gz
   cd proj-$VER
   ./configure
-  sudo make -j8
+  make -j4
   sudo make install
   return
 }
@@ -50,7 +50,7 @@ function buildProto {
   tar -xf protobuf-$VER.tar.gz
   cd protobuf-$VER
   ./configure
-  sudo make -j8
+  sudo make -j4
   sudo make install
   return
 }
@@ -66,7 +66,7 @@ function buildProtoC {
   export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
   ./autogen.sh
   ./configure
-  sudo make -j8
+  sudo make -j4
   sudo make install
   return
 }
