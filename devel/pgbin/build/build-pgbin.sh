@@ -209,12 +209,10 @@ function buildPostgres {
 	arch=`arch`
 
 	conf="--disable-rpath $pgOPT --with-libxslt --with-libxml --with-llvm"
-	if [[ $OS == "osx" ]]; then
-		#export LDFLAGS="$LDFLAGS -L/usr/local/opt/openssl/lib"
-		#export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/openssl/include -I/usr/local/opt/readline/include -I/usr/local/opt/libxml2/include/libxml2"
-		#conf="$conf --with-python PYTHON=/usr/local/bin/python3 --with-perl"
-		conf="--disable-rpath"
-		export LLVM_CONFIG=/usr/local/Cellar/llvm/13.0.1_1/bin/llvm-config
+	if [[ $OS == "osx" ]] || [[ $OS == "osx-arm" ]]; then
+		conf="$conf --without-python --without-perl"
+		export LLVM_CONFIG=/opt/homebrew/opt/llvm/bin/llvm-config
+                echo "# LLVM_CONFIG=$LLVM_CONFIG"
 	elif [[ $OS == "win" ]]; then
 		conf="--disable-rpath $pgOPT --host=x86_64-w64-mingw32 --without-zlib --with-llvm"
 		##conf="$conf --with-python PYTHON=/usr/bin/python3"

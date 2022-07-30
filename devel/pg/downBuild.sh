@@ -52,6 +52,11 @@ downBuild () {
 
 
 makeInstall () {
+  brew --version
+  rc=$?
+  if [ "$rc" == "0" ]; then
+    export LLVM_CONFIG=/opt/homebrew/opt/llvm/bin/llvm-config
+  fi
   options="$options --with-llvm --with-gssapi --with-libxml --with-libxslt"
   ##options="--host=x86_64-w64-mingw32 --without-zlib"
   cmd="./configure --prefix=$PWD $options"

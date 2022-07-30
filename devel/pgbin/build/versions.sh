@@ -242,8 +242,12 @@ if [[ "$OS" == "Linux" ]]; then
       OS=amd
     fi
   fi
-elif [[ $OS == "Darwin" ]]; then
-    OS=osx
+elif [[ "$OS" == "Darwin" ]]; then
+    if [[ "$ARCH" == "arm64" ]]; then
+      OS="osx-arm"
+    else
+      OS="osx"
+    fi 
 elif [[ $OS == "MINGW64" ]]; then
     OS=win
 else
