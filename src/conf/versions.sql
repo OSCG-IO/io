@@ -259,7 +259,8 @@ INSERT INTO versions VALUES ('pgredis-pg14', '2.0-1', 'amd', 0, '20210620', 'pg1
 INSERT INTO projects VALUES ('mysqlfdw', 5, 0, 'hub', 0, 'https://github.com/EnterpriseDB/mysql_fdw/tags', 
   'mysqlfdw', 1, 'mysql.png', 'MySQL & MariaDB from PG', 'https://github.com/EnterpriseDb/mysql_fdw');
 INSERT INTO releases VALUES ('mysqlfdw-pg14',  4, 'mysqlfdw', 'MySQL FDW',  '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('mysqlfdw-pg14', '2.7.0-1', 'amd, el8', 1, '20211117', 'pg14', '', '');
+INSERT INTO versions VALUES ('mysqlfdw-pg14', '2.8.0-1', 'el8, arm', 1, '20220516', 'pg14', '', '');
+INSERT INTO versions VALUES ('mysqlfdw-pg14', '2.7.0-1', 'amd, el8', 0, '20211117', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('tdsfdw', 5, 0, 'hub', 0, 'https://github.com/tds-fdw/tds_fdw/tags',
   'tdsfdw', 1, 'tds.png', 'SQL Svr & Sybase from PG', 'https://github.com/tds-fdw/tds_fdw/#tds-foreign-data-wrapper');
@@ -319,7 +320,8 @@ INSERT INTO versions VALUES ('plusql', '0.2',  'amd', 0, '20210908', '', '', '')
 INSERT INTO projects VALUES ('orafce', 6, 0, 'hub', 0, 'https://github.com/orafce/orafce/releases',
   'orafce', 1, 'larry.png', 'Ora Built-in Packages', 'https://github.com/orafce/orafce#orafce---oracles-compatibility-functions-and-packages');
 INSERT INTO releases VALUES ('orafce-pg14', 2, 'orafce', 'OraFCE', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('orafce-pg14', '3.21.0-1',  'amd, el8', 1, '20220416', 'pg14', '', '');
+INSERT INTO versions VALUES ('orafce-pg14', '3.22.1-1',  'el8, arm', 1, '20220723', 'pg14', '', '');
+INSERT INTO versions VALUES ('orafce-pg14', '3.21.0-1',  'amd, el8', 0, '20220416', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('fixeddecimal', 6, 0, 'hub', 0, 'https://github.com/pgsql-io/fixeddecimal/tags',
   'fixeddecimal', 1, 'fixeddecimal.png', 'Much faster than NUMERIC', 'https://github.com/pgsql-io/fixeddecimal');
@@ -426,7 +428,8 @@ INSERT INTO versions VALUES ('citus-pg14', '11.0.2-1', 'amd, el8', 0, '20220616'
 INSERT INTO projects VALUES ('cron', 4, 0, 'hub',0, 'https://github.com/citusdata/pg_cron/releases',
   'cron', 1, 'cron.png', 'Background Job Scheduler', 'https://github.com/citusdata/pg_cron');
 INSERT INTO releases VALUES ('cron-pg14', 10, 'cron', 'pgCron', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('cron-pg14', '1.4.1-1', 'amd, el8', 1, '20210925', 'pg14', '', '');
+INSERT INTO versions VALUES ('cron-pg14', '1.4.2-1', 'el8, arm', 1, '20220714', 'pg14', '', '');
+INSERT INTO versions VALUES ('cron-pg14', '1.4.1-1', 'amd, el8', 0, '20210925', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('timescaledb', 4, 0, 'hub', 1, 'https://github.com/timescale/timescaledb/releases',
    'timescaledb', 1, 'timescaledb.png', 'Time Series Data', 'https://github.com/timescale/timescaledb/#timescaledb');
@@ -446,10 +449,9 @@ INSERT INTO versions VALUES ('pglogical-pg14', '2.4.1-1',  'amd, el8', 0, '20211
 
 INSERT INTO projects VALUES ('postgis', 4, 1, 'hub', 3, 'http://postgis.net/source',
   'postgis', 1, 'postgis.png', 'Spatial Extensions', 'http://postgis.net');
-INSERT INTO releases VALUES ('postgis-pg13', 3, 'postgis', 'PostGIS', '', 'prod', '', 1, 'GPLv2', '', '');
 INSERT INTO releases VALUES ('postgis-pg14', 3, 'postgis', 'PostGIS', '', 'prod', '', 1, 'GPLv2', '', '');
-INSERT INTO versions VALUES ('postgis-pg13', '3.2.1-1', 'amd', 0, '20220212', 'pg13', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.1/NEWS');
-INSERT INTO versions VALUES ('postgis-pg14', '3.2.1-1', 'amd, el8', 1, '20220212', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.1/NEWS');
+INSERT INTO versions VALUES ('postgis-pg14', '3.2.2-1', 'el8, arm', 1, '20220722', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.2/NEWS');
+INSERT INTO versions VALUES ('postgis-pg14', '3.2.1-1', 'amd, el8', 0, '20220212', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.1/NEWS');
 
 INSERT INTO projects VALUES ('omnidb', 6, 8000, '', 1, 'https://github.com/pgsql-io/omnidb-ng/tags',
   'omnidb', 0, 'omnidb.png', 'UI for Database Mgmt', 'https://github.com/pgsql-io/omnidb-ng#omnidb-ng-306');

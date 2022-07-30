@@ -218,14 +218,14 @@ def create_symlinks(p_link_dir, p_target_dir):
   return
 
 
-def sys1(p_sys_cmd, p_display=True):
+def io_system(p_sys_cmd, p_display=True):
   if p_sys_cmd.strip() == "":
     return 0
 
   cmd = MY_HOME + os.sep + "io " + str(p_sys_cmd)
 
   if p_display == True:
-    print("# " + str(cmd))
+    print("\n## " + str(cmd))
 
   rc = os.system(cmd)
   return rc

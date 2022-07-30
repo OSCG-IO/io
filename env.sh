@@ -29,7 +29,7 @@ hivefdwV=4.0-1
 
 oraclefdwV=2.4.0-1
 inclV=21.6
-orafceV=3.21.0-1
+orafceV=3.22.1-1
 ora2pgV=23.1
 v8V=3.1.2-1
 
@@ -68,16 +68,16 @@ adminV=5.5
 omniV=2.17.0
 
 audit16V=1.6.2-1
-postgisV=3.2.1-1
+postgisV=3.2.2-1
 
 ##tsqlV=3.0-1
 pljavaV=1.6.2-1
 debuggerV=1.4-1
 ##agentV=4.0-1
-cronV=1.4.1-1
+cronV=1.4.2-1
 
 pgredisV=2.0-1
-mysqlfdwV=2.7.0-1
+mysqlfdwV=2.8.0-1
 mongofdwV=5.4.0-1
 tdsfdwV=2.0.2-1
 ##cstarfdwV=3.1.5-1

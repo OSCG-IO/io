@@ -1057,17 +1057,15 @@ x = 1
 while x < len(args): 
   if args[x] == ":":
     is_colon = True
-    util.sys1(cmd)
+    util.io_system(cmd)
     cmd = ""
-  elif args[x] == "":
-    pass
   else:
     cmd = str(cmd) + " " + str(args[x])
 
   x = x + 1
 
 if is_colon:
-  util.sys1(cmd)
+  util.io_system(cmd)
   exit_cleanly(0)
 
 ## eliminate empty parameters ################################
