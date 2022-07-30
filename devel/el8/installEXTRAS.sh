@@ -9,6 +9,9 @@ $install ninja-build
 ## for NGINX
 $install perl-Pod-Html
 
+## for MOSQUITTO
+$install cjson-devel
+
 ## for POSTGIS
 $install proj proj-devel
 $install geos geos-devel
