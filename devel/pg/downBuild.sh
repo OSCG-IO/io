@@ -55,9 +55,12 @@ makeInstall () {
   brew --version
   rc=$?
   if [ "$rc" == "0" ]; then
-    export LLVM_CONFIG=/opt/homebrew/opt/llvm/bin/llvm-config
+    export LLVM_CONFIG="/opt/homebrew/opt/llvm/bin/llvm-config"
+    export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+    export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+    export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
   fi
-  options="$options --with-llvm --with-gssapi --with-libxml --with-libxslt"
+  options="$options --with-openssl --with-llvm --with-gssapi --with-libxml --with-libxslt"
   ##options="--host=x86_64-w64-mingw32 --without-zlib"
   cmd="./configure --prefix=$PWD $options"
   echo "# $cmd"

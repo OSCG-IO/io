@@ -208,11 +208,16 @@ function buildPostgres {
 	echo "# buildLocation = $buildLocation"
 	arch=`arch`
 
-	conf="--disable-rpath $pgOPT --with-libxslt --with-libxml --with-llvm"
+	conf="--disable-rpath $pgOPT --with-libxslt --with-libxml --with-llvm  --with-openssl"
 	if [[ $OS == "osx" ]] || [[ $OS == "osx-arm" ]]; then
 		conf="$conf --without-python --without-perl"
-		export LLVM_CONFIG=/opt/homebrew/opt/llvm/bin/llvm-config
+		hb=/opt/homebrew/opt
+		export LLVM_CONFIG=$hb/llvm/bin/llvm-config
                 echo "# LLVM_CONFIG=$LLVM_CONFIG"
+		export LDFLAGS="-L$hb/openssl@3/lib"
+		export CPPFLAGS="-I$hb/openssl@3/include"
+		export PKG_CONFIG_PATH="$hb/openssl@3/lib/pkgconfig"
+ 
 	elif [[ $OS == "win" ]]; then
 		conf="--disable-rpath $pgOPT --host=x86_64-w64-mingw32 --without-zlib --with-llvm"
 		##conf="$conf --with-python PYTHON=/usr/bin/python3"
@@ -220,7 +225,7 @@ function buildPostgres {
         else
 		conf="$conf "
 		conf="$conf --with-python PYTHON=/usr/bin/python3"
-		conf="$conf --with-uuid=ossp --with-gssapi --with-ldap --with-pam --with-openssl"
+		conf="$conf --with-uuid=ossp --with-gssapi --with-ldap --with-pam"
 		if [ ! "$arch" == "aarch64" ]; then
 			conf="$conf --with-perl"
 		fi
