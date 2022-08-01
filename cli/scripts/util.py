@@ -2099,7 +2099,11 @@ def is_el8():
 ####################################################################################
 def get_os():
   if platform.system() == "Darwin":
-    return ("osx")
+    arch = getoutput('arch')
+    if arch == "arm64":
+      return("osx-arm")
+    else:
+      return ("osx")
 
   if platform.system() == "Windows":
     return ("win")

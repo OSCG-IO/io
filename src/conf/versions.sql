@@ -136,7 +136,7 @@ INSERT INTO versions VALUES ('pg13', '13.5-4',  'amd', 0, '20211203','', 'LIBC-2
 INSERT INTO releases VALUES ('pg14', 1, 'pg', '', '', 'prod', 
   '<font size=-1>New in <a href=https://www.postgresql.org/docs/14/release-14.html>2021</a></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg14', '14.4-1', 'amd, el8, arm', 1, '20220616','', '', '');
+INSERT INTO versions VALUES ('pg14', '14.4-1', 'amd, el8, arm, osx-arm', 1, '20220616','', '', '');
 INSERT INTO versions VALUES ('pg14', '14.3-1', 'amd, osx', 0, '20220512','', 'LIBC-2.17', '');
 INSERT INTO versions VALUES ('pg14', '14.2-1', 'amd',      0, '20220210','', 'LIBC-2.17', '');
 

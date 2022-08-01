@@ -105,15 +105,16 @@ if [[ $OS == "Linux" ]]; then
   sudo="sudo"
 elif [[ $OS == "Darwin" ]]; then
   outDir=m64
-  if [ `arch` == "aarch64" ]; then
-    OS=arm
+  if [ `arch` == "arm64" ]; then
+    OS="osx-arm"
   else
-    OS=amd;
+    OS=osx;
   fi
+  echo OS=$OS
   sudo="sudo"
 elif [[ $OS = "MINGW64" ]]; then
   outDir=w64
-  OS=osx
+  OS=win
   sudo=""
 else
   echo "ERROR: '$OS' is not supported"
