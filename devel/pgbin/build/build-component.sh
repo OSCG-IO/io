@@ -544,37 +544,6 @@ function buildPlProfilerComponent {
 }
 
 
-function buildBackgroundComponent {
-
-        componentName="background$backgroundShortVersion-pg$pgShortVersion-$backgroundFullVersion-$backgroundBuildV-$buildOS"
-        mkdir -p "$baseDir/$workDir/logs"
-        cd "$baseDir/$workDir"
-        mkdir background && tar -xf $backgroundSource --strip-components=1 -C background
-        cd background
-
-        buildLocation="$baseDir/$workDir/build/$componentName"
-
-        prepComponentBuildDir $buildLocation
-
-
-        PATH=$buildLocation/bin:$PATH
-        USE_PGXS=1 make > $baseDir/$workDir/logs/background_make.log 2>&1
-        if [[ $? -eq 0 ]]; then
-                 USE_PGXS=1 make install > $baseDir/$workDir/logs/background_install.log 2>&1
-                if [[ $? -ne 0 ]]; then
-                        echo "Background install failed, check logs for details."
-                fi
-        else
-                echo "Background Make failed, check logs for details."
-                return 1
-        fi
-
-        componentBundle=$componentName
-        cleanUpComponentDir $buildLocation
-        updateSharedLibs
-        packageComponent $componentBundle
-}
-
 
 function buildCstoreFDWComponent {
 
@@ -693,7 +662,6 @@ while true; do
     --build-plv8 ) buildPlV8=true; Source=$2; shift; shift ;;
     --build-pljava ) buildPlJava=true; Source=$2; shift; shift ;;
     --build-plprofiler ) buildPlProfiler=true; plProfilerSource=$2; shift; shift ;;
-    --build-background ) buildBackground=true; backgroundSource=$2; shift; shift ;;
     --build-bulkload ) buildBulkLoad=true; Source=$2; shift; shift ;;
     --build-psqlodbc ) buildODBC=true; Source=$2; shift; shift ;;
     --build-backrest ) buildBackrest=true; Source=$2; shift; shift ;;
@@ -718,6 +686,7 @@ while true; do
     --build-proctab ) buildProctab=true; Source=$2; shift; shift ;;
     --build-agent ) buildAgent=true; Source=$2; shift; shift ;;
     --build-citus ) buildCitus=true; Source=$2; shift; shift ;;
+    --build-background ) buildBackground=true; Source=$2; shift; shift ;;
     --copy-bin ) copyBin=true; shift; shift; ;;
     --no-copy-bin ) copyBin=false; shift; shift; ;;
     --no-tar ) copyBin=false; noTar=true; shift; shift; ;;
@@ -833,9 +802,6 @@ fi
 if [[ $buildPlProfiler == "true" ]]; then
 	buildPlProfilerComponent
 fi
-if [[ $buildBackground == "true" ]]; then
-	buildBackgroundComponent
-fi
 if [[ $buildBulkLoad == "true" ]]; then
 	buildComp bulkload "$bulkloadShortV" "$bulkloadFullV" "$bulkloadBuildV" "$Source"
 fi
@@ -898,6 +864,9 @@ if [ "$buildAgent" == "true" ]; then
 fi
 if [ "$buildCitus" == "true" ]; then
 	buildComp citus "$citusShortV" "$citusFullV" "$citusBuildV" "$Source"
+fi
+if [ "$buildBackground" == "true" ]; then
+	buildComp background "$bckgrndShortV" "$bckgrndFullV" "$bckgrndBuildV" "$Source"
 fi
 
 destDir=`date +%Y-%m-%d`

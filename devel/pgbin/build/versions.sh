@@ -34,6 +34,10 @@ backrestFullV=2.38
 backrestShortV=
 backrestBuildV=1
 
+bckgrndFullV=1.1
+bckgrndShortV=
+bckgrndBuildV=1
+
 pool2FullV=4.3.2
 pool2ShortV=
 pool2BuildV=1
@@ -73,10 +77,6 @@ hypopgBuildV=1
 postgisFullV=3.2.2
 postgisShortV=
 postgisBuildV=1
-
-backgroundFullVersion=1.0
-backgroundShortVersion=1
-backgroundBuildV=1
 
 prestoFullV=0.229
 prestoShortV=

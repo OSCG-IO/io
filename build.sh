@@ -226,6 +226,7 @@ initDir () {
   copy-pgXX "tdsfdw"  
   copy-pgXX "cron"
   copy-pgXX "citus"
+  copy-pgXX "background"
   copy-pgXX "multicorn2"
   copy-pgXX "esfdw"
   copy-pgXX "bqfdw"
@@ -457,6 +458,7 @@ initPG () {
   fi
 
   if [ "$pgM" == "14" ] && [  "$isEL8" == "True" ]; then
+    initC "background-pg$pgM" "background" "$bckgrndV" "$outPlat" "postgres/background" "" "" "nil"
     initC "citus-pg$pgM" "citus" "$citusV" "$outPlat" "postgres/citus" "" "" "nil"
     initC "timescaledb-pg$pgM" "timescaledb" "$timescaleV"  "$outPlat" "postgres/timescale" "" "" "nil"
     initC "spock-pg$pgM" "spock" "$spockV" "$outPlat" "postgres/spock" "" "" "nil"

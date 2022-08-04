@@ -423,13 +423,16 @@ INSERT INTO projects VALUES ('citus', 4, 0, 'hub',0, 'https://github.com/citusda
   'citus', 1, 'citus.png', 'Distributed PostgreSQL', 'https://github.com/citusdata/citus');
 INSERT INTO releases VALUES ('citus-pg14',  0, 'citus', 'Citus', '', 'prod', '', 1, 'AGPLv3', '', '');
 INSERT INTO versions VALUES ('citus-pg14', '11.0.3-1', 'amd, el8, arm', 1, '20220704', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.3');
-INSERT INTO versions VALUES ('citus-pg14', '11.0.2-1', 'amd, el8', 0, '20220616', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.2');
 
 INSERT INTO projects VALUES ('cron', 4, 0, 'hub',0, 'https://github.com/citusdata/pg_cron/releases',
   'cron', 1, 'cron.png', 'Background Job Scheduler', 'https://github.com/citusdata/pg_cron');
 INSERT INTO releases VALUES ('cron-pg14', 10, 'cron', 'pgCron', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('cron-pg14', '1.4.2-1', 'el8, arm', 1, '20220714', 'pg14', '', '');
-INSERT INTO versions VALUES ('cron-pg14', '1.4.1-1', 'amd, el8', 0, '20210925', 'pg14', '', '');
+
+INSERT INTO projects VALUES ('background', 4, 0, 'hub',0, 'https://github.com/oscg-io/background/tags',
+  'background', 1, 'background.png', 'Background Worker', 'https://github.com/oscg-io/background');
+INSERT INTO releases VALUES ('background-pg14', 10, 'background', 'Background', '', 'prod', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('background-pg14', '1.1-1', 'el8, arm', 1, '20220804', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('timescaledb', 4, 0, 'hub', 1, 'https://github.com/timescale/timescaledb/releases',
    'timescaledb', 1, 'timescaledb.png', 'Time Series Data', 'https://github.com/timescale/timescaledb/#timescaledb');

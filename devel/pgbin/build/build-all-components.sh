@@ -9,7 +9,7 @@ function build {
   echo ""
   echo "###################################"
   cmd="./build-component.sh --build-$1 $src $pgbin $pgver $copyBin $4"
-  ## echo "cmd=$cmd"
+  ##echo "cmd=$cmd"
   $cmd
   rc=$?
 }
@@ -99,6 +99,10 @@ fi
 
 if [ "$1" == "backrest" ]; then
   build backrest $backrestFullV $2 backrest
+fi
+
+if [ "$1" == "background" ]; then
+  build background $bckgrndFullV $2 background
 fi
 
 if [ "$1" == "citus" ]; then

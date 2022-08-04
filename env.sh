@@ -17,7 +17,7 @@ walgV=2.0.0
 goV=1.17.4
 pgrestV=9.0.1
 nodejsV=18.6.0
-bakgrndV=1.1
+bckgrndV=1.1-1
 
 multicorn2V=2.3-1
 esfdwV=0.11.1
