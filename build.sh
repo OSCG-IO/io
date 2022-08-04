@@ -260,9 +260,6 @@ initDir () {
 
 
 copy-pgXX () {
-  ##if [ "$outPlat" != "amd" ] && [ "$outPlat" != "el8" ]; then
-  ##  return
-  ##fi
   if [ "$pComponent" == "$1-pg$pgM" ]; then
     checkCmd "cp -r $SRC/$1-pgXX/* $myNewDir/."
 
