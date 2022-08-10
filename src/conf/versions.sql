@@ -104,11 +104,9 @@ INSERT INTO categories VALUES (9,  87, 'Management & Monitoring', 'Manage/Monito
 -- ## HUB ################################
 INSERT INTO projects VALUES ('hub',0, 0, 'hub', 0, 'https://github.com/pgsql-io/pgsql-io','',0,'','','');
 INSERT INTO releases VALUES ('hub', 1, 'hub', '', '', 'hidden', '', 1, '', '', '');
-INSERT INTO versions VALUES ('hub', '6.73', '',  1, '20220731', '', '', '');
+INSERT INTO versions VALUES ('hub', '6.73', '',  1, '20220811', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.72', '',  0, '20220715', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.71', '',  0, '20220707', '', '', '');
-INSERT INTO versions VALUES ('hub', '6.70', '',  0, '20220630', '', '', '');
-INSERT INTO versions VALUES ('hub', '6.65', '',  0, '20220615', '', '', '');
 
 -- ##
 INSERT INTO projects VALUES ('pg', 1, 5432, 'hub', 1, 'https://github.com/postgres/postgres/tags',
@@ -116,32 +114,30 @@ INSERT INTO projects VALUES ('pg', 1, 5432, 'hub', 1, 'https://github.com/postgr
 
 INSERT INTO releases VALUES ('pg11', 4, 'pg', 'PostgreSQL', '', 'prod', 
   '<font size=-1>New in <a href=https://www.postgresql.org/docs/11/release-11.html>2018</a></font>', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg11', '11.16-1', 'amd, el8', 1, '20220512', '', '', '');
-INSERT INTO versions VALUES ('pg11', '11.15-1', 'amd', 0, '20220210', '', 'LIBC-2.17', '');
-INSERT INTO versions VALUES ('pg11', '11.14-1', 'amd', 0, '20211111', '', 'LIBC-2.17', '');
+INSERT INTO versions VALUES ('pg11', '11.17-1', 'arm, amd, el8', 1, '20220811', '', '', '');
+INSERT INTO versions VALUES ('pg11', '11.16-1', 'amd, el8', 0, '20220512', '', '', '');
 
 INSERT INTO releases VALUES ('pg12', 3, 'pg', 'PostgreSQL', '', 'prod', 
   '<font size=-1>New in <a href=https://www.postgresql.org/docs/12/release-12.html>2019</a></font>', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg12', '12.11-1', 'amd, el8', 1, '20220512', '', '', '');
-INSERT INTO versions VALUES ('pg12', '12.10-1', 'amd', 0, '20220210', '', 'LIBC-2.17', '');
-INSERT INTO versions VALUES ('pg12', '12.9-1',  'amd', 0, '20211111', '', 'LIBC-2.17', '');
+INSERT INTO versions VALUES ('pg12', '12.12-1', 'arm, amd, el8', 1, '20220811', '', '', '');
+INSERT INTO versions VALUES ('pg12', '12.11-1', 'amd, el8', 0, '20220512', '', '', '');
 
 INSERT INTO releases VALUES ('pg13', 2, 'pg', '', '', 'prod', 
   '<font size=-1>New in <a href=https://www.postgresql.org/docs/13/release-13.html>2020</a></font>', 
   1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('pg13', '13.8-1',  'arm, amd, el8', 1, '20220811','', '', '');
 INSERT INTO versions VALUES ('pg13', '13.7-1',  'amd, el8', 1, '20220512','', '', '');
-INSERT INTO versions VALUES ('pg13', '13.6-1',  'amd', 0, '20220210','', 'LIBC-2.17', '');
-INSERT INTO versions VALUES ('pg13', '13.5-4',  'amd', 0, '20211203','', 'LIBC-2.17', '');
 
 INSERT INTO releases VALUES ('pg14', 1, 'pg', '', '', 'prod', 
   '<font size=-1>New in <a href=https://www.postgresql.org/docs/14/release-14.html>2021</a></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg14', '14.4-1', 'el8, arm, osx-arm', 1, '20220616','', '', '');
+INSERT INTO versions VALUES ('pg14', '14.5-1', 'el8, arm, osx-arm', 1, '20220811','', '', '');
+INSERT INTO versions VALUES ('pg14', '14.4-1', 'el8, arm, osx-arm', 0, '20220616','', '', '');
 
 INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'prod', 
   '<font size=-1 color=red><b>New in <a href=https://sql-info.de/postgresql/postgresql-15/articles-about-new-features-in-postgresql-15.html>2022!</a></b></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg15', '15beta2-1',  'el8, arm', 1, '20220630','', 'LIBC-2.28', '');
+INSERT INTO versions VALUES ('pg15', '15beta3-1',  'el8, arm', 1, '20220811','', 'LIBC-2.28', '');
 
 INSERT INTO projects VALUES ('ivory14', 6, 5432, 'hub', 1, 'https://github.com/ivorysql/ivorysql/tags',
   'IvorySQL', 0, 'highgo.png', 'Postgres w/ mode=oracle', 'https://ivorysql.org');

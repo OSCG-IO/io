@@ -224,7 +224,7 @@ function buildPostgres {
 		##conf="$conf --with-uuid=ossp --with-gssapi --with-ldap --with-pam"
         else
 		conf="$conf "
-		conf="$conf --with-python PYTHON=/usr/bin/python3"
+		conf="$conf --with-python PYTHON=/usr/bin/python3.9"
 		conf="$conf --with-uuid=ossp --with-gssapi --with-ldap --with-pam"
 		if [ ! "$arch" == "aarch64" ]; then
 			conf="$conf --with-perl"

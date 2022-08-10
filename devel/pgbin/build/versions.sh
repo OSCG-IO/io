@@ -3,19 +3,19 @@
 ivory14V=14.3.1.3
 ivory14BuildV=1
 
-pg15V=15beta2
+pg15V=15beta3
 pg15BuildV=1
 
-pg14V=14.4
+pg14V=14.5
 pg14BuildV=1
 
-pg13V=13.7
+pg13V=13.8
 pg13BuildV=1
 
-pg12V=12.11
+pg12V=12.12
 pg12BuildV=1
 
-pg11V=11.16
+pg11V=11.17
 pg11BuildV=1
 
 decoderbufsFullV=1.7.0
