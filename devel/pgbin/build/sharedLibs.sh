@@ -62,15 +62,11 @@ cp -Pv $lib64/libcom_err.so.*      $shared_lib/.
 cp -Pv $lib64/libkeyutils.so.*     $shared_lib/.
 cp -Pv $lib64/libjson-c*           $shared_lib/.
 
-cp -Pv $lib64/llvm5.0/lib/*.so*    $shared_lib/.
+##cp -Pv $lib64/llvm5.0/lib/*.so*    $shared_lib/.
 cp -Pv $lib64/libffi*.so*          $shared_lib/.
 
 # plv8
-cp -Pv $lib64/libc++.so.*          $shared_lib/.
-
-
-# redisfdw (small enough lib to include by default)
-#cp -Pv $lib64/libhiredis*          $shared_lib/.
+##cp -Pv $lib64/libc++.so.*          $shared_lib/.
 
 # bouncer (small enough lib to include by default)
 cp -Pv /lib64/libcares*            $shared_lib/.

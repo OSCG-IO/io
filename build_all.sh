@@ -48,6 +48,7 @@ buildALL () {
     buildONE $outDir "12" $P12
     buildONE $outDir "13" $P13
     buildONE $outDir "14" $P14
+    buildONE $outDir "15" $P14
   else
     buildONE $outDir $bigV $fullV 
   fi
