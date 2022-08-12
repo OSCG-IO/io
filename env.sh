@@ -18,6 +18,7 @@ goV=1.17.4
 pgrestV=9.0.1
 nodejsV=18.6.0
 bckgrndV=1.1-1
+pgeV=14.5-1
 
 multicorn2V=2.3-1
 esfdwV=0.11.1

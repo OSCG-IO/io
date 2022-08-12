@@ -1,0 +1,19 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+ver="$1"
+
+if [ "$ver" == "" ]; then
+  echo "ERROR: version num parm required"
+  exit 1
+fi
+
+echo " "
+echo "## INSTALL PGE v$1 ############################################"
+source getPKMG.sh
+
+cd ..
+
+./io install pg14 --start : install citus : install spock : 
+./io install audit : install cron : install anon : install background
+

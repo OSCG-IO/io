@@ -134,18 +134,19 @@ INSERT INTO releases VALUES ('pg14', 1, 'pg', '', '', 'prod',
 INSERT INTO versions VALUES ('pg14', '14.5-1', 'el8, arm, osx-arm', 1, '20220811','', '', '');
 INSERT INTO versions VALUES ('pg14', '14.4-1', 'el8, arm, osx-arm', 0, '20220616','', '', '');
 
-INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'prod', 
+INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'test', 
   '<font size=-1 color=red><b>New in <a href=https://sql-info.de/postgresql/postgresql-15/articles-about-new-features-in-postgresql-15.html>2022!</a></b></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg15', '15beta3-1',  'el8, arm', 1, '20220811','', 'LIBC-2.28', '');
+INSERT INTO versions VALUES ('pg15', '15beta3-1',  'el8, arm', 1, '20220811','', '', '');
+
+INSERT INTO projects VALUES ('pge14', 1, 5432, 'hub', 1, ' ', 'PGE', 0, 'postgresql.png', 'Postgres', ' ');
+INSERT INTO releases VALUES ('pge14', 10, 'pge14', 'PGE', '', 'test', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('pge14', '14.5-1',  '', 1, '20220815', '', '', '');
 
 INSERT INTO projects VALUES ('ivory14', 6, 5432, 'hub', 1, 'https://github.com/ivorysql/ivorysql/tags',
   'IvorySQL', 0, 'highgo.png', 'Postgres w/ mode=oracle', 'https://ivorysql.org');
 INSERT INTO releases VALUES ('ivory14', 10, 'ivory14', 'IvorySQL', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('ivory14', '14.3-1',  'amd', 0, '20220523', '', 'LIBC-2.17', '');
-INSERT INTO versions VALUES ('ivory14', '14.2-1',  'amd', 0, '20220228', '', 'LIBC-2.17', '');
-INSERT INTO versions VALUES ('ivory14', '14.1-1',  'amd', 0, '20220126', '', 'LIBC-2.17', '');
-INSERT INTO versions VALUES ('ivory14', '14.0-1',  'amd', 0, '20211213', '', 'LIBC-2.17', '');
 
 INSERT INTO projects VALUES ('debezium', 10, 8083, '', 3, 'https://debezium.io/releases/1.9/',
   'Debezium', 0, 'debezium.png', 'Heterogeneous CDC', 'https://debezium.io');
@@ -176,14 +177,14 @@ INSERT INTO versions VALUES ('memcached', '1.6', '', 0, '20210928', '', '', '');
 INSERT INTO projects VALUES ('mariadb',  2, 3306, 'hub', 2, 'https://github.com/mariadb/server/tags',
   'MariaDB', 0, 'mariadb.png', 'Replacement for MySQL', 'https://mariadb.com');
 INSERT INTO releases VALUES ('mariadb', 3, 'mariadb', 'MariaDB 10.9.1', '', 'test', '', 1, 'GPL', '', '');
-INSERT INTO versions VALUES ('mariadb', '10.9', '',   1, '20220520', '', '', '');
+INSERT INTO versions VALUES ('mariadb', '10.9', '',   0, '20220520', '', '', '');
 
 INSERT INTO projects VALUES ('sqlsvr',  2, 1433, 'hub', 2, 
   'https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-release-notes-2019?view=sql-server-ver15#release-history',
   'MS SQL Server', 0, 'sqlsvr.png', 'SQL Server 2019 for Linux',
   'https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-overview?view=sql-server-ver15');
 INSERT INTO releases VALUES ('sqlsvr', 2, 'sqlsvr', 'SQL Svr 15', '', 'test', '', 1, '', '', '');
-INSERT INTO versions VALUES ('sqlsvr', '15.0.4223', '',   1, '20220516', '', 'UBU20', '');
+INSERT INTO versions VALUES ('sqlsvr', '15.0.4223', '',   0, '20220516', '', 'UBU20', '');
 
 INSERT INTO projects VALUES ('mongodb',  2, 27017, 'hub', 2, 
   'https://docs.mongodb.com/v5.0/release-notes/5.0/',
@@ -286,7 +287,7 @@ INSERT INTO versions VALUES ('oraclefdw-pg14','2.4.0-1', 'el8', 1, '20210923', '
 INSERT INTO projects VALUES ('oracle',  2, 1521, 'hub', 0, 'https://www.oracle.com/database/technologies/oracle-database-software-downloads.html#19c', 
   'oracle', 0, 'oracle.png', 'Oracle Express for Linux', 'https://www.oracle.com/database/technologies');
 INSERT INTO releases VALUES ('oracle', 1, 'oracle', 'Oracle', '', 'test','', 0, 'ORACLE', '', '');
-INSERT INTO versions VALUES ('oracle', '11', 'amd', 1, '20180501', '', '', '');
+INSERT INTO versions VALUES ('oracle', '11', 'amd', 0, '20180501', '', '', '');
 
 INSERT INTO projects VALUES ('instantclient', 6, 0, 'hub', 0, 'https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html', 
   'instantclient', 0, 'instantclient.png', 'Oracle Instant Client', 'https://www.oracle.com/database/technologies/instant-client.html');
