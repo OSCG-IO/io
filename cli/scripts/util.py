@@ -1352,26 +1352,39 @@ def assemble_line_val(p_old_line, p_new_tokens, p_val=""):
   for token in p_new_tokens:
     if token == p_val:
       if not token_in_list:
-        new_val = append_val(new_val, token)
+        new_val = append_val(new_val, token, key)
         token_in_list = True
     else:
-        new_val = append_val(new_val, token)
+        new_val = append_val(new_val, token, key)
 
   if not token_in_list:
-    new_val = append_val(new_val, p_val)
+    new_val = append_val(new_val, p_val, key)
 
   new_line = key + " = '" + new_val + "'"
   return(new_line)
 
 
-def append_val(p_base, p_val):
+def prepend_val(p_base, p_val):
   if p_base == "":
     return(p_val)
 
   if p_val == "":
     return(p_base)
 
-  return(p_base + "," + p_val)
+  return(p_val + ", " + p_base)
+
+
+def append_val(p_base, p_val, p_key=""):
+  if ((p_key == "shared_preload_libraries") and (p_val == "citus")):
+    return(prepend_val(p_base, p_val))
+  
+  if p_base == "":
+    return(p_val)
+
+  if p_val == "":
+    return(p_base)
+
+  return(p_base + ", " + p_val)
 
 
 def change_pgconf_keyval(p_pgver, p_key, p_val, p_replace=False):
