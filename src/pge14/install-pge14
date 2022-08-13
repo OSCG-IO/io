@@ -10,10 +10,10 @@ fi
 
 echo " "
 echo "## INSTALL PGE v$1 ############################################"
-source getPKMG.sh
 
 cd ..
 
-./io install pg14 --start : install citus : install spock : 
-./io install audit : install cron : install anon : install background
+./io install pg14 --start 
+./io install citus spock audit cron background timescale postgis
+./io install anon
 
