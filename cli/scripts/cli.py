@@ -1105,8 +1105,9 @@ if "--no-preload" in args:
   args.remove("--no-preload")
   os.environ['isPreload'] = "False"
   os.environ['isRestart'] = "False"
+else:
+  os.environ['isRestart'] = "True"
 
-os.environ['isRestart'] = "True"
 if "--no-restart" in args:
   args.remove("--no-restart")
   os.environ['isRestart'] = "False"  

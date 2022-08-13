@@ -14,6 +14,6 @@ echo "## INSTALL PGE v$1 ############################################"
 cd ..
 
 ./io install pg14 --start 
-./io install citus spock audit cron background timescale postgis
-./io install anon
+./io install --no-preload citus spock audit cron background timescale postgis
+#./io install anon pgrest nodejs
 
