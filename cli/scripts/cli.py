@@ -73,7 +73,7 @@ dep9 = util.get_depend()
 mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
              "upgrade", "downgrade", "enable", "disable", "install", "tune",
              "remove", "reload", "activity", "help", "get", "set", "unset",
-             "repolist", "repo-pkgs", "discover", "backrest", "install-recipe",
+             "repolist", "repo-pkgs", "discover", "backrest",
              "register", "top", "--autostart", "--relnotes", "--start",
              "--no-restart", "--no-preload",
              "--help", "--json", "--jsonp", "--test", "--extensions", "--svcs",
@@ -83,12 +83,12 @@ mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
 mode_list_advanced = ['kill', 'config', 'deplist', 'download', 'init', 'clean', 'useradd']
 
 ignore_comp_list = [ "get", "set", "unset", "register", "repolist", 
-                     "repo-pkgs", "discover", "useradd", "backrest", "install-recipe"]
+                     "repo-pkgs", "discover", "useradd", "backrest"]
 
 no_log_commands = ['status', 'info', 'list', 'activity', 'top', 'register',
                    'cancel', 'get']
 
-lock_commands = ["install", "remove", "update", "upgrade", "downgrade", "install-recipe"]
+lock_commands = ["install", "remove", "update", "upgrade", "downgrade"]
 
 my_depend = []
 installed_comp_list = []
@@ -1726,15 +1726,6 @@ try:
         print(msg)
 
     exit_cleanly(0)
-
-
-  ## INSTALL-RECIPE #########################################
-  if (p_mode == 'install-recipe'):
-    cmd = "hub/scripts/install-recipe/"
-    for n in range(2, len(args)):
-      cmd = cmd + args[n] + " "
-    rc = os.system(cmd)
-    exit_cleanly(rc)
 
 
   ## INSTALL ################################################

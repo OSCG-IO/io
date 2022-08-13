@@ -391,9 +391,9 @@ def create_extension(p_pg, p_ext, p_reboot=False, p_extension="", p_cascade=Fals
   isPreload = os.getenv('isPreload')
   if p_ext > " " and isPreload == "True":
     rc = change_pgconf_keyval(p_pg, "shared_preload_libraries", p_ext)
-    if rc == False:
-      remove_comp(p_ext + "-" + p_pg)
-      sys.exit(1)
+    ##if rc == False:
+    ##  remove_comp(p_ext + "-" + p_pg)
+    ##  sys.exit(1)
 
   isRestart = os.getenv('isRestart')
   if p_reboot and isRestart == "True":
@@ -1526,7 +1526,7 @@ def get_mem_mb():
 
 
 def tune_postgresql_conf(p_pgver):
-  message("Tuning 'postgresl.conf' parms for '" + p_pgver + "':")
+  message("Tuning 'postgresql.conf' parms for '" + p_pgver + "':")
   mem_mb = get_mem_mb()
 
   s = get_pgconf(p_pgver)
