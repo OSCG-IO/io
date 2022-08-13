@@ -1263,11 +1263,11 @@ def get_pgconf(p_pgver):
   config_file = get_pgconf_filename(p_pgver)
 
   if not os.path.isfile(config_file):
-    print ("ERROR: Cannot locate 'postgresql.conf' for changing configuration settings.")
+    print ("ERROR: Cannot locate file '" + str(config_file) + "'")
     return("")
 
   if not os.access(config_file, os.W_OK):
-    print ("ERROR: Write permission denied on 'postgresql.conf'.")
+    print ("ERROR: Write permission denied on '" + str(config_file) + "'")
     return("")
 
   return(read_file_string(config_file))

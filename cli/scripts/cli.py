@@ -73,7 +73,7 @@ dep9 = util.get_depend()
 mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
              "upgrade", "downgrade", "enable", "disable", "install", "tune",
              "remove", "reload", "activity", "help", "get", "set", "unset",
-             "repolist", "repo-pkgs", "discover", "backrest",
+             "repolist", "repo-pkgs", "discover", "backrest", "change-pgconf",
              "register", "top", "--autostart", "--relnotes", "--start",
              "--no-restart", "--no-preload",
              "--help", "--json", "--jsonp", "--test", "--extensions", "--svcs",
@@ -83,7 +83,7 @@ mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
 mode_list_advanced = ['kill', 'config', 'deplist', 'download', 'init', 'clean', 'useradd']
 
 ignore_comp_list = [ "get", "set", "unset", "register", "repolist", 
-                     "repo-pkgs", "discover", "useradd", "backrest"]
+                     "repo-pkgs", "discover", "useradd", "backrest", "change-pgconf"]
 
 no_log_commands = ['status', 'info', 'list', 'activity', 'top', 'register',
                    'cancel', 'get']
@@ -2057,6 +2057,26 @@ try:
         cmd = cmd + " " + args[n]
     util.run_backrest(cmd)
     exit_cleanly(0)
+
+  ## CHANGE-PGCONF #####################################
+  if p_mode == 'change-pgconf':
+    if((len(args)) < 5 or (len(args) > 6)):
+      print("ERROR: The CHANGE-PGCONF command must have 3 or 4 parameters: pgver key value [isReplace=True].")
+      exit_cleanly(1)
+
+    isReplace = True
+    if len(args) == 6:
+      if ((args[5] == "False") or (args[5] == "false")):
+        isReplace = False
+
+    pgV = args[2]
+    if meta.is_present("components", "component", pgV, "one"):
+      pass
+    else:
+      print("ERROR: " + pgV + " is not installed")
+      exit_cleanly(1)
+
+    exit_cleanly(util.change_pgconf_keyval(pgV, args[3], args[4], isReplace))
 
 
   ## USERADD ############################################
