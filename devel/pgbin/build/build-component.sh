@@ -399,47 +399,6 @@ function buildComp {
 }
 
 
-function buildPgMpComponent {
-
-        componentName="pgmp$pgmpShortVersion-pg$pgShortVersion-$pgmpFullVersion-$pgmpBuildV-$buildOS"
-        mkdir -p "$baseDir/$workDir/logs"
-        cd "$baseDir/$workDir"
-        mkdir pgmp  && tar -xf $pgmpSource --strip-components=1 -C pgmp
-        cd pgmp
-
-        buildLocation="$baseDir/$workDir/build/$componentName"
-
-        prepComponentBuildDir $buildLocation
-
-
-        PATH=$buildLocation/bin:$PATH
-        make > $baseDir/$workDir/logs/pgmp_make.log 2>&1
-        if [[ $? -eq 0 ]]; then
-                make docs    > $baseDir/$workDir/logs/pgmp_docs.log 2>&1
-                if [[ $? -ne 0 ]]; then
-                        echo "pgmp docs failed, check logs for details."
-                fi
-        else
-                echo "pgmp Make failed, check logs for details."
-                return 1
-        fi
-        if [[ $? -eq 0 ]]; then
-                make install > $baseDir/$workDir/logs/pgmp_install.log 2>&1
-                if [[ $? -ne 0 ]]; then
-                        echo "pgmp install failed, check logs for details."
-                fi
-        else
-                echo "pgmp Make failed, check logs for details."
-                return 1
-        fi
-
-        componentBundle=$componentName
-        cleanUpComponentDir $buildLocation
-        updateSharedLibs
-        packageComponent $componentBundle
-}
-
-
 function buildPlRComponent {
 
 	componentName="plr$plRShortVersion-pg$pgShortVersion-$plRFullVersion-$plRBuildV-$buildOS"
@@ -545,40 +504,6 @@ function buildPlProfilerComponent {
 
 
 
-function buildCstoreFDWComponent {
-
-        componentName="cstore_fdw$cstoreFDWShortVersion-pg$pgShortVersion-$cstoreFDWFullVersion-$cstoreFDWBuildV-$buildOS"
-        mkdir -p "$baseDir/$workDir/logs"
-        cd "$baseDir/$workDir"
-        mkdir cstore_fdw && tar -xf $cstoreFDWSource --strip-components=1 -C cstore_fdw
-        cd cstore_fdw
-
-        buildLocation="$baseDir/$workDir/build/$componentName"
-
-        prepComponentBuildDir $buildLocation
-
-
-        PATH=$buildLocation/bin:$PATH:/opt/pgbin-build/pgbin/shared/linux_64/bin
-        make_log=$baseDir/$workDir/logs/cstore_make.log
-        USE_PGXS=1 make > $make_log 2>&1
-        if [[ $? -eq 0 ]]; then
-                 USE_PGXS=1 make install > $baseDir/$workDir/logs/cstore_install.log 2>&1
-                if [[ $? -ne 0 ]]; then
-                        echo "CSTORE FDW install failed, check logs for details."
-                fi
-        else
-                echo "CSTORE FDW Make failed, check logs for details."
-                cat $make_log
-                return 1
-        fi
-
-        componentBundle=$componentName
-        cleanUpComponentDir $buildLocation
-        updateSharedLibs
-        packageComponent $componentBundle
-}
-
-
 
 function buildTimeScaleDBComponent {
 
@@ -624,7 +549,7 @@ function buildTimeScaleDBComponent {
         packageComponent $componentBundle
 }
 
-TEMP=`getopt -l no-tar, copy-bin,no-copy-bin,with-pgver:,with-pgbin:,build-hypopg:,build-postgis:,build-bouncer:,build-hvefdw:,build-cassandrafdw:,build-pgtsql:,build-tdsfdw:,build-mongofdw:,build-mysqlfdw:,build-pgredis:,build-oraclefdw:,build-orafce:,build-audit:,build-set-user:,build-partman:,build-pldebugger:,build-plr:,build-pljava:,build-plv8:,build-plprofiler:,build-background:,build-bulkload:,build-backrest:,build-psqlodbc:,build-cstore-fdw:,build-parquets3fdw:,build-repack:,build-spock:,build-pglogical:,build-hintplan:,build-statkcache:,build-qualstats:,build-archivist:,build-waitsampling:,build-timescaledb:,build-cron:,build-multicorn2:,build-pgmp:,build-fixeddecimal:,build-anon,build-ddlx:,build-http:,build-pgtop:,build-proctab:,build-agent:,build-citus:,build-number: -- "$@"`
+TEMP=`getopt -l no-tar, copy-bin,no-copy-bin,with-pgver:,with-pgbin:,build-hypopg:,build-postgis:,build-bouncer:,build-hvefdw:,build-cassandrafdw:,build-pgtsql:,build-tdsfdw:,build-mongofdw:,build-mysqlfdw:,build-pgredis:,build-oraclefdw:,build-orafce:,build-audit:,build-set-user:,build-partman:,build-pldebugger:,build-plr:,build-pljava:,build-plv8:,build-plprofiler:,build-background:,build-bulkload:,build-backrest:,build-psqlodbc:,build-repack:,build-spock:,build-pglogical:,build-hintplan:,build-statkcache:,build-qualstats:,build-archivist:,build-waitsampling:,build-timescaledb:,build-cron:,build-multicorn2:,build-fixeddecimal:,build-anon,build-ddlx:,build-http:,build-pgtop:,build-proctab:,build-agent:,build-citus:,build-number: -- "$@"`
 
 if [ $? != 0 ] ; then
 	echo "Required parameters missing, Terminating..."
@@ -665,8 +590,6 @@ while true; do
     --build-bulkload ) buildBulkLoad=true; Source=$2; shift; shift ;;
     --build-psqlodbc ) buildODBC=true; Source=$2; shift; shift ;;
     --build-backrest ) buildBackrest=true; Source=$2; shift; shift ;;
-    --build-cstore-fdw ) buildCstoreFDW=true; cstoreFDWSource=$2; shift; shift ;;
-    --build-parquets3fdw ) buildParquetS3FDW=true; Source=$2; shift; shift ;;
     --build-repack ) buildRepack=true; Source=$2; shift; shift ;;
     --build-pglogical ) buildPgLogical=true; Source=$2; shift; shift ;;
     --build-spock ) buildSpock=true; Source=$2; shift; shift ;;
@@ -678,7 +601,6 @@ while true; do
     --build-timescaledb ) buildTimeScaleDB=true; timescaleDBSource=$2; shift; shift ;;
     --build-cron ) buildCron=true; Source=$2; shift; shift ;;
     --build-multicorn2 ) buildMulticorn2=true; Source=$2; shift; shift ;;
-    --build-pgmp ) buildPgMp=true; pgmpSource=$2; shift; shift ;;
     --build-anon ) buildAnon=true; Source=$2; shift; shift ;;
     --build-ddlx ) buildDdlx=true; Source=$2; shift; shift ;;
     --build-http ) buildHttp=true; Source=$2; shift; shift ;;
@@ -811,12 +733,6 @@ fi
 if [[ $buildBackrest == "true" ]]; then
 	buildComp backrest "$backrestShortV" "$backrestFullV" "$backrestBuildV" "$Source"
 fi
-if [[ $buildCstoreFDW == "true" ]]; then
-	buildCstoreFDWComponent
-fi
-if [[ $buildParquetS3FDW == "true" ]]; then
-	buildComp parquets3fdw "$parquetShortV" "$parquetFullV" "$parquetBuildV" "$Source"
-fi
 if [[ $buildHintPlan == "true" ]]; then
 	buildComp hintplan "$hintplanShortV" "$hintplanFullV" "$hintplanBuildV" "$Source"
 fi
@@ -834,9 +750,6 @@ if [[ $buildStatKcache == "true" ]]; then
 fi
 if [[ $buildTimeScaleDB == "true" ]]; then
 	buildTimeScaleDBComponent
-fi
-if [[ $buildPgMp == "true" ]]; then
-	buildPgMpComponent
 fi
 if [[ $buildBouncer == "true" ]]; then
 	buildComp bouncer "$bouncerShortV" "$bouncerFullV" "$bouncerBuildV" "$Source"

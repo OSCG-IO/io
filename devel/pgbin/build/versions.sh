@@ -54,7 +54,7 @@ agentFullV=4.0.0
 agentShortV=
 agentBuildV=1
 
-citusFullV=11.0.3
+citusFullV=11.0.5
 citusShortV=
 citusBuildV=1
 
@@ -118,18 +118,6 @@ mongofdwFullV=5.4.0
 mongofdwShortV=
 mongofdwBuildV=1
 
-pgmpFullVersion=1.2.2
-pgmpShortVersion=
-pgmpBuildV=1
-
-parquetFullV=0.1
-parquetShortV=
-parquetBuildV=1
-
-cstoreFDWFullVersion=1.6.2
-cstoreFDWShortVersion=
-cstoreFDWBuildV=1
-
 plProfilerFullVersion=4.1
 plProfilerShortVersion=
 plprofilerBuildV=1
@@ -190,7 +178,7 @@ repackFullV=1.4.7
 repackShortV=
 repackBuildV=1
 
-partmanFullV=4.6.1
+partmanFullV=4.7.0
 partmanShortV=
 partmanBuildV=1
 
@@ -214,7 +202,7 @@ hintplanFullV=1.4.0
 hintplanShortV=
 hintplanBuildV=1
 
-timescaledbFullV=2.7.0
+timescaledbFullV=2.7.2
 timescaledbShortV=
 timescaledbBuildV=1
 

@@ -30,10 +30,6 @@ fi
 
 ## WIP ############################################
 
-if [ "$1" == "parquets3fdw" ]; then
-  build parquets3fdw $parquetFullV $2 parquets3fdw
-fi
-
 if [ "$1" == "agent" ]; then
   build agent $agentFullV $2 agent
 fi
@@ -57,11 +53,6 @@ fi
 if [ "$1" == "pldebugger" ]; then
   build pldebugger $debugFullV $2 pldebugger
 fi
-
-if [ "$1" == "pgredis" ]; then
-  build pgredis $pgredisFullV $2 pgredis
-fi
-
 
 if [ "$1" == "archivist" ]; then
   build archivist $archivFullV $2 archivist
