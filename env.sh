@@ -11,8 +11,6 @@ P13=13.8-1
 P12=12.12-1
 P11=11.17-1
 
-k8sV=1.22
-
 walgV=2.0.0
 goV=1.17.4
 pgrestV=9.0.1
@@ -26,7 +24,7 @@ bqfdwV=1.9
 
 w2jV=2.4-1
 odbcV=13.01-1
-citusV=11.0.3-1
+citusV=11.0.5-1
 hivefdwV=4.0-1
 
 oraclefdwV=2.4.0-1
@@ -39,12 +37,12 @@ fdV=1.1.0-1
 anonV=0.12.0-1
 ddlxV=0.17-1
 hypoV=1.3.1-1
-timescaleV=2.7.0-1
+timescaleV=2.7.2-1
 logicalV=2.4.1-1
 spockV=3.0beta1-1
 profV=4.1-1
 bulkloadV=3.1.19-1
-partmanV=4.6.1-1
+partmanV=4.7.0-1
 repackV=1.4.7-1
 hintV=1.4.0-1
 
@@ -72,17 +70,13 @@ omniV=2.17.0
 audit16V=1.6.2-1
 postgisV=3.2.2-1
 
-##tsqlV=3.0-1
 pljavaV=1.6.2-1
 debuggerV=1.4-1
-##agentV=4.0-1
 cronV=1.4.2-1
 
-pgredisV=2.0-1
 mysqlfdwV=2.8.0-1
 mongofdwV=5.4.0-1
 tdsfdwV=2.0.2-1
-##cstarfdwV=3.1.5-1
 badgerV=11.6
 patroniV=2.1.1
 
