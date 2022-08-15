@@ -29,7 +29,7 @@ hivefdwV=4.0-1
 
 oraclefdwV=2.4.0-1
 inclV=21.6
-orafceV=3.22.1-1
+orafceV=3.24.0-1
 ora2pgV=23.1
 v8V=3.1.2-1
 

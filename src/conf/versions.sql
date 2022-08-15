@@ -308,7 +308,8 @@ INSERT INTO versions VALUES ('plusql', '0.2',  'amd', 0, '20210908', '', '', '')
 INSERT INTO projects VALUES ('orafce', 6, 0, 'hub', 0, 'https://github.com/orafce/orafce/releases',
   'orafce', 1, 'larry.png', 'Ora Built-in Packages', 'https://github.com/orafce/orafce#orafce---oracles-compatibility-functions-and-packages');
 INSERT INTO releases VALUES ('orafce-pg14', 2, 'orafce', 'OraFCE', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('orafce-pg14', '3.22.1-1',  'arm, el8', 1, '20220723', 'pg14', '', '');
+INSERT INTO versions VALUES ('orafce-pg14', '3.24.0-1',  'arm, el8', 1, '20220730', 'pg14', '', '');
+INSERT INTO versions VALUES ('orafce-pg14', '3.22.1-1',  'arm, el8', 0, '20220723', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('fixeddecimal', 6, 0, 'hub', 0, 'https://github.com/pgsql-io/fixeddecimal/tags',
   'fixeddecimal', 1, 'fixeddecimal.png', 'Much faster than NUMERIC', 'https://github.com/pgsql-io/fixeddecimal');
