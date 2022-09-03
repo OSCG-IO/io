@@ -1,9 +1,9 @@
 
-v11=11.16
-v12=12.11
-v13=13.7
-v14=14.4
-v15=15beta2
+v11=11.17
+v12=12.12
+v13=13.8
+v14=14.5
+v15=15beta3
 
 fatalError () {
   echo "FATAL ERROR!  $1"
@@ -52,7 +52,7 @@ downBuild () {
 
 
 makeInstall () {
-  brew --version
+  brew --version > /dev/null 2>&1
   rc=$?
   if [ "$rc" == "0" ]; then
     export LLVM_CONFIG="/opt/homebrew/opt/llvm/bin/llvm-config"
