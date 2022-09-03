@@ -363,9 +363,9 @@ function buildComp {
 
         make_install="make install"
         if [ "$comp" == "multicorn2" ]; then
-            sudo mkdir -p /usr/local/lib64/python3.6/site-packages
+            sudo mkdir -p /usr/local/lib64/python3.9/site-packages
             make_install="sudo env "PATH=$PATH" make install"
-            export PYTHON_OVERRIDE=python3.6
+            export PYTHON_OVERRIDE=python3.9
         fi
 
         echo "# $make ..."
