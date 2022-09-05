@@ -38,7 +38,7 @@ bckgrndFullV=1.1
 bckgrndShortV=
 bckgrndBuildV=1
 
-pool2FullV=4.3.2
+pool2FullV=4.3.3
 pool2ShortV=
 pool2BuildV=1
 
@@ -54,7 +54,7 @@ agentFullV=4.0.0
 agentShortV=
 agentBuildV=1
 
-citusFullV=11.0.5
+citusFullV=11.0.6
 citusShortV=
 citusBuildV=1
 
@@ -74,7 +74,7 @@ hypopgFullV=1.3.1
 hypopgShortV=
 hypopgBuildV=1
 
-postgisFullV=3.2.2
+postgisFullV=3.3.0
 postgisShortV=
 postgisBuildV=1
 
@@ -86,7 +86,7 @@ cassFullV=3.1.5
 cassShortV=
 cassBuildV=1
 
-orafceFullV=3.24.0
+orafceFullV=3.24.4
 orafceShortV=
 orafceBuildV=1
 
@@ -202,7 +202,7 @@ hintplanFullV=1.4.0
 hintplanShortV=
 hintplanBuildV=1
 
-timescaledbFullV=2.7.2
+timescaledbFullV=2.8.0
 timescaledbShortV=
 timescaledbBuildV=1
 

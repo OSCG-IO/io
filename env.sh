@@ -24,12 +24,12 @@ bqfdwV=1.9
 
 w2jV=2.4-1
 odbcV=13.01-1
-citusV=11.0.5-1
+citusV=11.0.6-1
 hivefdwV=4.0-1
 
 oraclefdwV=2.4.0-1
 inclV=21.6
-orafceV=3.24.0-1
+orafceV=3.24.4-1
 ora2pgV=23.1
 v8V=3.1.2-1
 
@@ -37,7 +37,7 @@ fdV=1.1.0-1
 anonV=0.12.0-1
 ddlxV=0.17-1
 hypoV=1.3.1-1
-timescaleV=2.7.2-1
+timescaleV=2.8.0-1
 logicalV=2.4.1-1
 spockV=3.0beta1-1
 profV=4.1-1
@@ -68,7 +68,7 @@ adminV=5.5
 omniV=2.17.0
 
 audit16V=1.6.2-1
-postgisV=3.2.2-1
+postgisV=3.3.0-1
 
 pljavaV=1.6.2-1
 debuggerV=1.4-1

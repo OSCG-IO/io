@@ -308,8 +308,8 @@ INSERT INTO versions VALUES ('plusql', '0.2',  'amd', 0, '20210908', '', '', '')
 INSERT INTO projects VALUES ('orafce', 6, 0, 'hub', 0, 'https://github.com/orafce/orafce/releases',
   'orafce', 1, 'larry.png', 'Ora Built-in Packages', 'https://github.com/orafce/orafce#orafce---oracles-compatibility-functions-and-packages');
 INSERT INTO releases VALUES ('orafce-pg14', 2, 'orafce', 'OraFCE', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('orafce-pg14', '3.24.0-1',  'arm, el8', 1, '20220730', 'pg14', '', '');
-INSERT INTO versions VALUES ('orafce-pg14', '3.22.1-1',  'arm, el8', 0, '20220723', 'pg14', '', '');
+INSERT INTO versions VALUES ('orafce-pg14', '3.24.4-1',  'arm, el8', 1, '20220821', 'pg14', '', '');
+INSERT INTO versions VALUES ('orafce-pg14', '3.24.0-1',  'arm, el8', 0, '20220730', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('fixeddecimal', 6, 0, 'hub', 0, 'https://github.com/pgsql-io/fixeddecimal/tags',
   'fixeddecimal', 1, 'fixeddecimal.png', 'Much faster than NUMERIC', 'https://github.com/pgsql-io/fixeddecimal');
@@ -400,8 +400,8 @@ INSERT INTO versions VALUES ('anon-pg14', '0.12.0-1', 'amd', 0, '20220413', 'pg1
 INSERT INTO projects VALUES ('citus', 4, 0, 'hub',0, 'https://github.com/citusdata/citus/releases',
   'citus', 1, 'citus.png', 'Distributed PostgreSQL', 'https://github.com/citusdata/citus');
 INSERT INTO releases VALUES ('citus-pg14',  0, 'citus', 'Citus', '', 'prod', '', 1, 'AGPLv3', '', '');
-INSERT INTO versions VALUES ('citus-pg14', '11.0.5-1', 'el8, arm', 1, '20220801', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.5');
-INSERT INTO versions VALUES ('citus-pg14', '11.0.3-1', 'el8, arm', 0, '20220704', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.3');
+INSERT INTO versions VALUES ('citus-pg14', '11.0.6-1', 'el8, arm', 1, '20220824', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.6');
+INSERT INTO versions VALUES ('citus-pg14', '11.0.5-1', 'el8, arm', 0, '20220801', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.5');
 
 INSERT INTO projects VALUES ('cron', 4, 0, 'hub',0, 'https://github.com/citusdata/pg_cron/releases',
   'cron', 1, 'cron.png', 'Background Job Scheduler', 'https://github.com/citusdata/pg_cron');
@@ -416,8 +416,8 @@ INSERT INTO versions VALUES ('background-pg14', '1.1-1', 'el8, arm', 1, '2022080
 INSERT INTO projects VALUES ('timescaledb', 4, 0, 'hub', 1, 'https://github.com/timescale/timescaledb/releases',
    'timescaledb', 1, 'timescaledb.png', 'Time Series Data', 'https://github.com/timescale/timescaledb/#timescaledb');
 INSERT INTO releases VALUES ('timescaledb-pg14',  2, 'timescaledb', 'TimescaleDB', '', 'prod', '', 1, 'Apache', '', '');
-INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.2-1',  'el8, arm', 1, '20220725', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.2');
-INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.0-1',  'el8, arm', 0, '20220524', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.0');
+INSERT INTO versions VALUES ('timescaledb-pg14', '2.8.0-1',  'el8, arm', 1, '20220831', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.8.0');
+INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.2-1',  'el8, arm', 0, '20220725', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.2');
 
 INSERT INTO projects VALUES ('spock', 10, 0, 'hub', 1, 'https://github.com/oscg-io/spock/tags',
   'spock', 1, 'spock.png', 'Logical Mulit-Master Replication', 'https://github.com/oscg-io/spock/#spock');
@@ -432,7 +432,8 @@ INSERT INTO versions VALUES ('pglogical-pg14', '2.4.1-1',  'arm, el8', 0, '20211
 INSERT INTO projects VALUES ('postgis', 4, 1, 'hub', 3, 'http://postgis.net/source',
   'postgis', 1, 'postgis.png', 'Spatial Extensions', 'http://postgis.net');
 INSERT INTO releases VALUES ('postgis-pg14', 3, 'postgis', 'PostGIS', '', 'prod', '', 1, 'GPLv2', '', '');
-INSERT INTO versions VALUES ('postgis-pg14', '3.2.2-1', 'el8, arm', 1, '20220722', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.2/NEWS');
+INSERT INTO versions VALUES ('postgis-pg14', '3.3.0-1', 'el8, arm', 1, '20220826', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.3.0/NEWS');
+INSERT INTO versions VALUES ('postgis-pg14', '3.2.2-1', 'el8, arm', 0, '20220722', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.2/NEWS');
 
 INSERT INTO projects VALUES ('omnidb', 6, 8000, '', 1, 'https://github.com/pgsql-io/omnidb-ng/tags',
   'omnidb', 0, 'omnidb.png', 'UI for Database Mgmt', 'https://github.com/pgsql-io/omnidb-ng#omnidb-ng-306');
