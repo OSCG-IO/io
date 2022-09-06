@@ -23,7 +23,8 @@ function runPgBin {
     #bkrstSrc=$SRC/backrest-$backrestFullV.tar.gz
     pool2Src=$SRC/pool2-$pool2FullV.tar.gz
     #agentSrc=$SRC/agent-$agentV.tar.gz
-    if [ "$majorV" == "14" ] && [ "$OS" == "Linux" ]; then
+    echo "majorV = $majorV"
+    if [[ "$majorV" > "13" ]] && [ "$OS" == "Linux" ]; then
       cmd="./build-pgbin.sh -a $pOutDir -t $pPgSrc -n $pBldV -b $bncrSrc -p $pool2Src"
     else
       cmd="./build-pgbin.sh -a $pOutDir -t $pPgSrc -n $pBldV"
