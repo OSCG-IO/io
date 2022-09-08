@@ -104,10 +104,10 @@ INSERT INTO categories VALUES (9,  87, 'Management & Monitoring', 'Manage/Monito
 -- ## HUB ################################
 INSERT INTO projects VALUES ('hub',0, 0, 'hub', 0, 'https://github.com/pgsql-io/pgsql-io','',0,'','','');
 INSERT INTO releases VALUES ('hub', 1, 'hub', '', '', 'hidden', '', 1, '', '', '');
-INSERT INTO versions VALUES ('hub', '6.74', '',  1, '20220901', '', '', '');
+INSERT INTO versions VALUES ('hub', '6.75', '',  1, '20220908', '', '', '');
+INSERT INTO versions VALUES ('hub', '6.74', '',  0, '20220901', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.73', '',  0, '20220811', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.72', '',  0, '20220715', '', '', '');
-INSERT INTO versions VALUES ('hub', '6.71', '',  0, '20220707', '', '', '');
 
 -- ##
 INSERT INTO projects VALUES ('pg', 1, 5432, 'hub', 1, 'https://github.com/postgres/postgres/tags',
