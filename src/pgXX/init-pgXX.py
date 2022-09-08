@@ -22,7 +22,7 @@ def fatal_error(p_msg):
 #######################################################
 ##                     MAINLINE                      ##
 #######################################################
-pgver = "pg9X"
+pgver = "pgXX"
 
 app_datadir = util.get_comp_datadir(pgver)
 update_install_date=False

@@ -13,7 +13,7 @@ sys.path.append(os.path.join(MY_HOME, 'hub', 'scripts', 'lib'))
 from PgInstance import PgInstance
 import json
 
-pgver = "pg9X"
+pgver = "pgXX"
 
 port = int(util.get_comp_port(pgver))
 

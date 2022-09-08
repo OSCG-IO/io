@@ -7,7 +7,7 @@ from __future__ import print_function, division
 import os, sys
 import util, startup
 
-pgver = "pg9X"
+pgver = "pgXX"
 
 util.message(pgver + " reloading")
 

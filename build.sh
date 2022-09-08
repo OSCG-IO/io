@@ -364,14 +364,14 @@ finalizeOutput () {
 copyReplaceScript() {
   script=$1
   comp=$2
-  checkCmd "cp $pg9X/$script-pg9X.py  $newDir/$script-$comp.py"
-  myReplace "pg9X" "$comp" "$comp/$script-$comp.py"
+  checkCmd "cp $pgXX/$script-pgXX.py  $newDir/$script-$comp.py"
+  myReplace "pgXX" "$comp" "$comp/$script-$comp.py"
 }
 
 
 supplementalPG () {
   newDir=$1
-  pg9X=$SRC/pg9X
+  pgXX=$SRC/pgXX
 
   checkCmd "mkdir $newDir/init"
 
@@ -384,10 +384,10 @@ supplementalPG () {
   copyReplaceScript "activity" "$newDir"
   copyReplaceScript "remove"   "$newDir"
 
-  checkCmd "cp $pg9X/run-pgctl.py $newDir/"
-  myReplace "pg9X" "$comp" "$newDir/run-pgctl.py"
+  checkCmd "cp $pgXX/run-pgctl.py $newDir/"
+  myReplace "pgXX" "$comp" "$newDir/run-pgctl.py"
 
-  checkCmd "cp $pg9X/pg_hba.conf.nix      $newDir/init/pg_hba.conf"
+  checkCmd "cp $pgXX/pg_hba.conf.nix      $newDir/init/pg_hba.conf"
 
   checkCmd "chmod 755 $newDir/bin/*"
   chmod 755 $newDir/lib/* 2>/dev/null

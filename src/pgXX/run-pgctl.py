@@ -16,9 +16,7 @@ import util
 
 util.set_lang_path()
  
-pgver = "pg9X"
-
-dotver = pgver[2] + "." + pgver[3]
+pgver = "pgXX"
 
 datadir = util.get_column('datadir', pgver)
 

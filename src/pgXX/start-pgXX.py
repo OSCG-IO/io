@@ -7,8 +7,7 @@ from __future__ import print_function, division
 import os, sys, subprocess, json
 import util, startup, time
 
-pgver = "pg9X"
-dotver = pgver[2] + "." + pgver[3]
+pgver = "pgXX"
 
 MY_HOME = os.getenv('MY_HOME', '')
 homedir = os.path.join(MY_HOME, pgver)
@@ -27,7 +26,6 @@ if not os.path.isdir(datadir):
 
 autostart = util.get_column('autostart', pgver)
 logfile   = util.get_column('logdir', pgver) + os.sep + "postgres.log"
-svcname   = util.get_column('svcname', pgver, 'PostgreSQL ' + dotver + ' Server')
 port      = util.get_column('port', pgver)
 
 msg = pgver + " starting on port " + str(port)

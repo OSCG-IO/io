@@ -18,7 +18,7 @@ if scripts_lib_path not in sys.path:
 
 import util, startup
 
-pgver = "pg9X"
+pgver = "pgXX"
 
 homedir = os.path.join(MY_HOME, pgver)
 

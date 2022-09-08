@@ -7,8 +7,7 @@ from __future__ import print_function, division
 import argparse, sys, os, tempfile, json, subprocess, getpass
 import util, startup
 
-pgver = "pg9X"
-dotver  = pgver[2] + "." + pgver[3]
+pgver = "pgXX"
 
 MY_HOME = os.getenv('MY_HOME', '')
 MY_LOGS = os.getenv('MY_LOGS', '')

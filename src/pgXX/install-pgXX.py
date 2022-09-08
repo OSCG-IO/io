@@ -2,7 +2,7 @@
 import util
 import os, sys
 
-pgver="pg9X"
+pgver="pgXX"
 thisDir = os.path.dirname(os.path.realpath(__file__))
 
 isAutoStart = str(os.getenv("isAutoStart", "False"))
