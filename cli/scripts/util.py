@@ -1498,9 +1498,9 @@ def update_postgresql_conf(p_pgver, p_port, is_new=True,update_listen_addr=True)
     elif is_new and line.startswith("#wal_level"):
       ns = ns + "\n" + "wal_level = hot_standby"
 
-    elif is_new and line.startswith("#update_process_title") and get_platform() == "Windows":
-      ns = ns + "\n" + "update_process_title = off"
-
+    elif is_new and line.startswith("password_encryption"):
+      ns = ns + "\n" + "password_encryption = scram-sha-256"
+      
     else:
       if ns == "":
         ns = line
