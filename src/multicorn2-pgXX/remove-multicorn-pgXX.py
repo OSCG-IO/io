@@ -5,5 +5,8 @@
 
 import util
 
-util.create_extension("pgXX", "", True, "multicorn")
+ver = "pgXX"
+ext = "multicorn"
+
+util.remove_pgconf_keyval(ver, "shared_preload_libraries", ext)
 

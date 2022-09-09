@@ -551,5 +551,8 @@ INSERT INTO versions VALUES ('statmonitor-pg13', '0.9.1-1', 'amd', 0, '20210414'
 
 INSERT INTO projects VALUES ('multicorn2', 5, 0, 'hub', 0, 'https://github.com/pgsql-io/multicorn2/tags',
   'multicorn2', 1, 'multicorn.png', 'Python FDW Library', 'http://multicorn2.org');
-INSERT INTO releases VALUES ('multicorn2-pg14', 01, 'multicorn2', 'Multicorn2', '', 'prod','',  1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('multicorn2-pg14', '2.3-1', 'el8', 1, '20220509', 'pg14', '', '');
+INSERT INTO releases VALUES ('multicorn2-pg14', 1, 'multicorn2', 'Multicorn2', '', 'prod','',  1, 'POSTGRES', '', '');
+INSERT INTO releases VALUES ('multicorn2-pg15', 1, 'multicorn2', 'Multicorn2', '', 'prod','',  1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('multicorn2-pg15', '2.4-1', 'arm, el8', 1, '20220909', 'pg15', '', '');
+INSERT INTO versions VALUES ('multicorn2-pg14', '2.4-1', 'arm, el8', 1, '20220909', 'pg14', '', '');
+INSERT INTO versions VALUES ('multicorn2-pg14', '2.3-1', 'el8', 0, '20220509', 'pg14', '', '');

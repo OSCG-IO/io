@@ -18,7 +18,7 @@ nodejsV=18.6.0
 bckgrndV=1.1-1
 pgeV=14.5-1
 
-multicorn2V=2.3-1
+multicorn2V=2.4-1
 esfdwV=0.11.1
 bqfdwV=1.9
 

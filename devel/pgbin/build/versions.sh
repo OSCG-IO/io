@@ -46,7 +46,7 @@ bouncerFullV=1.17.0
 bouncerShortV=
 bouncerBuildV=3
 
-multicorn2FullV=2.3
+multicorn2FullV=2.4
 multicorn2ShortV=
 multicorn2BuildV=1
 
