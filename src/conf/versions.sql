@@ -142,7 +142,7 @@ INSERT INTO versions VALUES ('pg15', '15beta4-1',  'el8, arm', 1, '20220908','',
 
 INSERT INTO projects VALUES ('pge14', 1, 5432, 'hub', 1, ' ', 'PGE', 0, 'postgresql.png', 'Postgres', ' ');
 INSERT INTO releases VALUES ('pge14', 10, 'pge14', 'PGE', '', 'test', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pge14', '14.5-1',  '', 1, '20220815', '', '', '');
+INSERT INTO versions VALUES ('pge14', '14.5-1',  '', 0, '20220815', '', '', '');
 
 INSERT INTO projects VALUES ('ivory14', 6, 5432, 'hub', 1, 'https://github.com/ivorysql/ivorysql/tags',
   'IvorySQL', 0, 'highgo.png', 'Postgres w/ mode=oracle', 'https://ivorysql.org');
@@ -152,18 +152,18 @@ INSERT INTO versions VALUES ('ivory14', '14.3-1',  'amd', 0, '20220523', '', 'LI
 INSERT INTO projects VALUES ('debezium', 10, 8083, '', 3, 'https://debezium.io/releases/1.9/',
   'Debezium', 0, 'debezium.png', 'Heterogeneous CDC', 'https://debezium.io');
 INSERT INTO releases VALUES ('debezium', 1, 'debezium', 'Debezium', '', 'test', '', 1, 'Apache', '', '');
-INSERT INTO versions VALUES ('debezium', '1.9.2.Final',   '', 1, '20220520', '', '', '');
+INSERT INTO versions VALUES ('debezium', '1.9.2.Final',   '', 0, '20220520', '', '', '');
 
 INSERT INTO projects VALUES ('olr', 10, 8083, '', 3, 'https://github.com/bersler/OpenLogReplicator/releases',
   'OLR', 0, 'olr.png', 'Oracle Binary Log Replicator', 'https://www.bersler.com/openlogreplicator');
 INSERT INTO releases VALUES ('olr', 3, 'olr', 'OLR', '', 'test', '', 1, 'GPL', '', '');
-INSERT INTO versions VALUES ('olr', '0.9.41-beta',   '', 1, '20220328', '', '', '');
+INSERT INTO versions VALUES ('olr', '0.9.41-beta',   '', 0, '20220328', '', '', '');
 INSERT INTO versions VALUES ('olr', '0.9.40-beta',   '', 0, '20220204', '', '', '');
 
 INSERT INTO projects VALUES ('kafka', 10, 9092, '', 2, 'https://kafka.apache.org/downloads',
   'Kafka', 0, 'kafka.png', 'Streaming Platform', 'https://kafka.apache.org');
 INSERT INTO releases VALUES ('kafka', 0, 'kafka', 'Apache Kafka', '', 'test', '', 1, 'Apache', '', '');
-INSERT INTO versions VALUES ('kafka', '3.2.0', '', 1, '20220517', '', '', 'https://downloads.apache.org/kafka/3.2.0/RELEASE_NOTES.html');
+INSERT INTO versions VALUES ('kafka', '3.2.0', '', 0, '20220517', '', '', 'https://downloads.apache.org/kafka/3.2.0/RELEASE_NOTES.html');
 
 INSERT INTO projects VALUES ('redis',  2, 6379, 'hub', 2, 'https://github.com/redis/redis/tags',
   'Redis', 0, 'redis.png', 'In-Memory DataStore', 'https://redis.io');
@@ -204,10 +204,8 @@ INSERT INTO versions VALUES ('elasticsearch', '7.x', '',   0, '20210803', '', 'U
 INSERT INTO projects VALUES ('apicurio', 10, 8080, 'hub', 1, 'https://github.com/apicurio/apicurio-registry/releases',
   'apicurio', 0, 'apicurio.png', 'Schema Registry', 'https://www.apicur.io/registry/');
 INSERT INTO releases VALUES ('apicurio', 3, 'apicurio', 'Apicurio', '', 'test', '', 1, 'Apache', '', '');
-INSERT INTO versions VALUES ('apicurio', '2.2.3', '',  1, '20220414', '', '', '');
+INSERT INTO versions VALUES ('apicurio', '2.2.3', '',  0, '20220414', '', '', '');
 INSERT INTO versions VALUES ('apicurio', '2.2.2', '',  0, '20220328', '', '', '');
-INSERT INTO versions VALUES ('apicurio', '2.2.0', '',  0, '20220201', '', '', '');
-INSERT INTO versions VALUES ('apicurio', '2.1.5', '',  0, '20211221', '', '', '');
 
 INSERT INTO projects VALUES ('zookeeper', 10, 2181, 'hub', 1, 'https://zookeeper.apache.org/releases.html#releasenotes',
   'zookeeper', 0, 'zookeeper.png', 'Distributed Key-Store for HA', 'https://zookeeper.apache.org');
@@ -278,7 +276,7 @@ INSERT INTO versions VALUES ('esfdw-pg14', '0.11.1', 'amd',  0, '20210409', 'pg1
 INSERT INTO projects VALUES ('ora2pg', 6, 0, 'hub', 0, 'https://github.com/darold/ora2pg/tags',
   'ora2pg', 0, 'ora2pg.png', 'Migrate from Oracle to PG', 'https://ora2pg.darold.net');
 INSERT INTO releases VALUES ('ora2pg', 2, 'ora2pg', 'Oracle to PG', '', 'test', '', 1, 'GPLv2', '', '');
-INSERT INTO versions VALUES ('ora2pg', '23.1', '', 1, '20220512', '', '', 'https://github.com/darold/ora2pg/releases/tag/v23.1');
+INSERT INTO versions VALUES ('ora2pg', '23.1', '', 0, '20220512', '', '', 'https://github.com/darold/ora2pg/releases/tag/v23.1');
 
 INSERT INTO projects VALUES ('oraclefdw', 6, 0, 'hub', 0, 'https://github.com/laurenz/oracle_fdw/tags',
   'oraclefdw', 1, 'oracle_fdw.png', 'Oracle from PG', 'https://github.com/laurenz/oracle_fdw');
@@ -438,7 +436,7 @@ INSERT INTO versions VALUES ('postgis-pg14', '3.2.2-1', 'el8, arm', 0, '20220722
 INSERT INTO projects VALUES ('omnidb', 6, 8000, '', 1, 'https://github.com/pgsql-io/omnidb-ng/tags',
   'omnidb', 0, 'omnidb.png', 'UI for Database Mgmt', 'https://github.com/pgsql-io/omnidb-ng#omnidb-ng-306');
 INSERT INTO releases VALUES ('omnidb', 1, 'omnidb', 'OmniDB-NG', '', 'test', '', 1, '', '', '');
-INSERT INTO versions VALUES ('omnidb', '3.0.6', '', 1, '20220509', '', '', '');
+INSERT INTO versions VALUES ('omnidb', '3.0.6', '', 0, '20220509', '', '', '');
 
 INSERT INTO projects VALUES ('kubernetes', 11, 80, '', 1, 'https://github.com/ubuntu/microk8s/releases',
   'kubernetes', 0, 'kubernetes.png', 
@@ -450,7 +448,7 @@ INSERT INTO versions VALUES ('kubernetes', '1.22', '', 0, '20210809', '', 'UBU20
 INSERT INTO projects VALUES ('pgadmin', 3, 80, '', 1, 'https://www.pgadmin.org/news/',
   'pgadmin', 0, 'pgadmin.png', 'PostgreSQL Tools', 'https://pgadmin.org');
 INSERT INTO releases VALUES ('pgadmin', 2, 'pgadmin', 'pgAdmin 4', '', 'test', '', 1, '', '', '');
-INSERT INTO versions VALUES ('pgadmin', '6.9', '', 1, '20220512', '', '', '');
+INSERT INTO versions VALUES ('pgadmin', '6.9', '', 0, '20220512', '', '', '');
 
 INSERT INTO projects VALUES ('bulkload', 4, 0, 'hub', 5, 'https://github.com/ossc-db/pg_bulkload/releases',
   'bulkload', 1, 'bulkload.png', 'High Speed Data Loading', 'https://github.com/ossc-db/pg_bulkload');
@@ -476,7 +474,7 @@ INSERT INTO versions VALUES ('hypopg-pg14', '1.3.1-1',  'arm, el8', 1, '20210622
 INSERT INTO projects VALUES ('badger', 4, 0, 'hub', 6, 'https://github.com/darold/pgbadger/releases',
   'badger', 0, 'badger.png', 'Performance Reporting', 'https://pgbadger.darold.net');
 INSERT INTO releases VALUES ('badger', 101, 'badger','pgBadger','', 'test', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('badger', '11.8', '', 1, '20220408', '', '', '');
+INSERT INTO versions VALUES ('badger', '11.8', '', 0, '20220408', '', '', '');
 
 INSERT INTO projects VALUES ('pool2', 4, 0, 'hub', 3, 'http://github.com/pgpool/pgpool2/tags',
   'pool2',  0, 'pgpool2.png', 'LoadBalancer & QueryCache', 'http://pgpool.net');
