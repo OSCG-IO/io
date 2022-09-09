@@ -3,7 +3,7 @@ v11=11.17
 v12=12.12
 v13=13.8
 v14=14.5
-v15=15beta3
+v15=15beta4
 
 fatalError () {
   echo "FATAL ERROR!  $1"
@@ -101,8 +101,8 @@ elif [ "$1" == "14" ]; then
   options=""
   downBuild $v14
 elif [ "$1" == "15" ]; then
-  ##options="--with-zstd --with-lz4"
-  options=""
+  options="--with-zstd --with-lz4"
+  ##options=""
   downBuild $v15
 else
   echo "ERROR: Incorrect PG version.  Must be between 11  and 15"
