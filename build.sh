@@ -496,6 +496,7 @@ initPG () {
   initC "pge14"    "pge14"    "$pgeV"     ""  "pge"              "" "" "Y"
   #initC "nodejs"   "nodejs"   "$nodejsV" "" "nodejs"           "" "" "Y"
   #initC "pgrest"   "pgrest"   "$pgrestV"  ""  "postgres/pgrest"  "" "" "Y"
+  initC  "prompgexp"  "prompgexp"  "$prompgexpV"  ""  "prometheus/pg_exporter"  "" "" "Y"
 
   ##if [ "$isEL8" == "True" ]; then
   return

@@ -374,6 +374,11 @@ INSERT INTO projects VALUES ('pgrest', 4, 3000, 'hub', 0, 'https://github.com/po
 INSERT INTO releases VALUES ('pgrest', 9, 'pgrest', 'PostgREST', '', 'test', '', 1, 'MIT', '', '');
 INSERT INTO versions VALUES ('pgrest', '9.0.1', '', 1, '20220720', '', '', 'https://postgrest.org');
 
+INSERT INTO projects VALUES ('prompgexp', 4, 9009, 'hub', 0, 'https://github.com/prometheus-community/postgres_exporter/tags',
+  'prompgexp', 0, 'prometheus.png', 'Prometheus PG Exporter', 'https://github.com/prometheus-community/postgres_exporter');
+INSERT INTO releases VALUES ('prompgexp', 9, 'prompgexp', 'Prometheus PG Exporter', '', 'test', '', 1, 'Apache', '', '');
+INSERT INTO versions VALUES ('prompgexp', '0.11.1', '', 1, '20220720', '', '', 'https://github.com/prometheus-community/postgres_exporter');
+
 INSERT INTO projects VALUES ('nodejs', 4, 3000, 'hub', 0, 'https://github.com/postgrest/postgrest/tags',
   'nodejs', 0, 'prest.png', 'a RESTful API', 'https://nodejs.org');
 INSERT INTO releases VALUES ('nodejs', 9, 'nodejs', 'Node.js', '', 'test', '', 1, 'MIT', '', '');

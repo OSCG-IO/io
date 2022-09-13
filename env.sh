@@ -14,6 +14,7 @@ P11=11.17-1
 walgV=2.0.0
 goV=1.17.4
 pgrestV=9.0.1
+prompgexpV=0.11.1
 nodejsV=18.6.0
 bckgrndV=1.1-1
 pgeV=14.5-1
