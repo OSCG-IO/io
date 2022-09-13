@@ -1,0 +1,3 @@
+echo "starting prompgexp"
+
+prompgexp/prompgexp  >> data/logs/prompgexp/prompgexp.log 2>&1 &

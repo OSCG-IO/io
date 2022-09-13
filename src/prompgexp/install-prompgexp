@@ -51,8 +51,16 @@ else
   rm $full_file*
 fi
 
+echo " rename $file.$flavor/postgres_exporter to 'prompgexp'"
 mv $file.$flavor/postgres_exporter prompgexp
 rm -rf $file.$flavor
 
+logdir="data/logs/prompgexp"
+echo " log directory: $logdir"
+mkdir -p ../$logdir
 
+if [[ "$isSTART" == "True" ]]; then
+  cd ..
+  ./io start promppgexp
+fi
 
