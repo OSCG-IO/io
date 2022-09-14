@@ -1,3 +1,10 @@
-echo "starting prompgexp"
+now=`date`
+msg="starting prompgexp"
+echo $msg
+echo "$msg - $now" >> data/logs/prompgexp/prompgexp.log
 
-prompgexp/prompgexp  >> data/logs/prompgexp/prompgexp.log 2>&1 &
+logfile=data/logs/prompgexp/prompgexp.log
+
+export DATA_SOURCE_NAME="postgresql://postgres:password@localhost:5432/postgres?sslmode=disable"
+
+prompgexp/prompgexp  >> $logfile 2>&1 &
