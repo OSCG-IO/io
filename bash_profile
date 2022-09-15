@@ -15,8 +15,6 @@ export SRC=$IN/sources
 export BLD=/opt/pgbin-build/pgbin/bin
 
 export IO_NO_AUTO_UPDATE=1
-export HTML=$IO/web/static
-export IMG=$HTML/html/img
 export DEVEL=$IO/devel
 export PG=$DEVEL/pg
 export CLI=$IO/cli/scripts
@@ -27,4 +25,4 @@ export JAVA_HOME=/etc/alternatives/jre_11_openjdk
 export PATH=/usr/local/bin:$JAVA_HOME/bin:$PATH
 
 # for Centos 7 only
-export PATH=/opt/rh/devtoolset-7/root/usr/bin:/opt/rh/llvm-toolset-7/root/usr/bin:$PATH
+#export PATH=/opt/rh/devtoolset-7/root/usr/bin:/opt/rh/llvm-toolset-7/root/usr/bin:$PATH
