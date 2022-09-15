@@ -1,11 +1,7 @@
 # OSCG IO Project
 
-## Punch list items for development
 
-1.) Whenever and INSTALL or UPGRADE command is run...  Automagically run UPDATE if it hasn't been run in last 24 hours.
-
-
-## Create build environment on el7, el8 or OSX
+## Create build environment on el7 or el8
 
 ### 1.) run ./setupInitial.sh to configure OS environment
 
@@ -22,5 +18,4 @@
          + buildProtobufc.sh
 
        + installOracleInstantClient.sh
-       + installCppDriver.sh
        sharedLibs.sh
