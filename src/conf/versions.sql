@@ -271,7 +271,9 @@ INSERT INTO versions VALUES ('bqfdw-pg14', '1.9', 'amd',  0, '20211218', 'pg14',
 INSERT INTO projects VALUES ('esfdw', 5, 0, 'multicorn2', 1, 'https://pypi.org/project/pg-es-fdw/#history',
   'esfdw', 1, 'esfdw.png', 'ElasticSearch from PG', 'https://pypi.org/project/pg-es-fdw/');
 INSERT INTO releases VALUES ('esfdw-pg14',  4, 'esfdw', 'ElasticSearchFDW', '', 'prod', '', 1, 'MIT', '', '');
-INSERT INTO versions VALUES ('esfdw-pg14', '0.11.1', 'amd',  0, '20210409', 'pg14', '', '');
+INSERT INTO releases VALUES ('esfdw-pg15',  4, 'esfdw', 'ElasticSearchFDW', '', 'prod', '', 1, 'MIT', '', '');
+INSERT INTO versions VALUES ('esfdw-pg14', '0.11.2', 'amd',  1, '20220918', 'pg14', '', '');
+INSERT INTO versions VALUES ('esfdw-pg15', '0.11.2', 'amd',  1, '20220918', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('ora2pg', 6, 0, 'hub', 0, 'https://github.com/darold/ora2pg/tags',
   'ora2pg', 0, 'ora2pg.png', 'Migrate from Oracle to PG', 'https://ora2pg.darold.net');

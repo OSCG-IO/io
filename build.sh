@@ -456,6 +456,7 @@ initPG () {
 
   if [ "$pgM" == "15" ] && [  "$isEL8" == "True" ]; then
     initC "multicorn2-pg$pgM" "multicorn2" "$multicorn2V" "$outPlat" "postgres/multicorn2" "" "" "nil"
+    initC "esfdw-pg$pgM" "esfdw" "$esfdwV" "$outPlat" "postgres/esfdw" "" "" "Y"
   fi
 
   if [ "$pgM" == "14" ] && [  "$isEL8" == "True" ]; then
@@ -481,6 +482,7 @@ initPG () {
     initC "plprofiler-pg$pgM" "plprofiler" "$profV" "$outPlat" "postgres/profiler" "" "" "nil"
     initC "pldebugger-pg$pgM" "pldebugger" "$debuggerV" "$outPlat" "postgres/pldebugger" "" "" "nil"
     initC "multicorn2-pg$pgM" "multicorn2" "$multicorn2V" "$outPlat" "postgres/multicorn2" "" "" "nil"
+    initC "esfdw-pg$pgM" "esfdw" "$esfdwV" "$outPlat" "postgres/esfdw" "" "" "Y"
 
     if [ "$outPlat" == "el8" ]; then
       initC "plv8-pg$pgM" "plv8" "$v8V" "$outPlat" "postgres/plv8" "" "" "nil"
@@ -504,7 +506,6 @@ initPG () {
   
 
   ##if [ "$pgM" == "14" ]; then 
-  ##  initC "esfdw-pg$pgM" "esfdw" "$esfdwV" "$outPlat" "postgres/esfdw" "" "" "Y"
   ##  initC "bqfdw-pg$pgM" "bqfdw" "$bqfdwV" "$outPlat" "postgres/bqfdw" "" "" "Y"
 
   ##  initC "postgis-pg$pgM" "postgis" "$postgisV" "$outPlat" "postgres/postgis" "" "" "nil"

@@ -20,7 +20,7 @@ bckgrndV=1.1-1
 pgeV=14.5-1
 
 multicorn2V=2.4-1
-esfdwV=0.11.1
+esfdwV=0.11.2
 bqfdwV=1.9
 
 w2jV=2.4-1
