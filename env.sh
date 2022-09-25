@@ -1,7 +1,7 @@
 
 bundle=oscg
 api=io
-hubV=6.75
+hubV=6.76
 
 I14=14.3-1
 
@@ -25,7 +25,7 @@ bqfdwV=1.9
 
 w2jV=2.4-1
 odbcV=13.01-1
-citusV=11.0.6-1
+citusV=11.1.1-1
 hivefdwV=4.0-1
 
 oraclefdwV=2.4.0-1
@@ -69,7 +69,7 @@ adminV=5.5
 omniV=2.17.0
 
 audit16V=1.6.2-1
-postgisV=3.3.0-1
+postgisV=3.3.1-1
 
 pljavaV=1.6.2-1
 debuggerV=1.4-1

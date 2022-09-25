@@ -4,7 +4,7 @@
 
 from __future__ import print_function, division
 
-MY_VERSION = "6.75"
+MY_VERSION = "6.76"
 
 from subprocess import Popen, PIPE, STDOUT
 from datetime import datetime, timedelta
@@ -1613,7 +1613,7 @@ def get_email_address(p_email=""):
 def get_superuser_passwd(p_user="Superuser"):
   message(" ")
 
-  passwd = "password"
+  passwd = get_random_password()
   prompt = p_user + " Password [" + passwd + "]: "  
 
   isYES = str(os.getenv("isYes", "False"))

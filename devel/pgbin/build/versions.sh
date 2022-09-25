@@ -54,7 +54,7 @@ agentFullV=4.0.0
 agentShortV=
 agentBuildV=1
 
-citusFullV=11.0.6
+citusFullV=11.1.1
 citusShortV=
 citusBuildV=1
 
@@ -74,7 +74,7 @@ hypopgFullV=1.3.1
 hypopgShortV=
 hypopgBuildV=1
 
-postgisFullV=3.3.0
+postgisFullV=3.3.1
 postgisShortV=
 postgisBuildV=1
 

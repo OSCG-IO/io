@@ -104,7 +104,8 @@ INSERT INTO categories VALUES (9,  87, 'Management & Monitoring', 'Manage/Monito
 -- ## HUB ################################
 INSERT INTO projects VALUES ('hub',0, 0, 'hub', 0, 'https://github.com/pgsql-io/pgsql-io','',0,'','','');
 INSERT INTO releases VALUES ('hub', 1, 'hub', '', '', 'hidden', '', 1, '', '', '');
-INSERT INTO versions VALUES ('hub', '6.75', '',  1, '20220908', '', '', '');
+INSERT INTO versions VALUES ('hub', '6.76', '',  1, '20220925', '', '', '');
+INSERT INTO versions VALUES ('hub', '6.75', '',  0, '20220908', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.74', '',  0, '20220901', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.73', '',  0, '20220811', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.72', '',  0, '20220715', '', '', '');
@@ -405,8 +406,9 @@ INSERT INTO versions VALUES ('anon-pg14', '0.12.0-1', 'amd', 0, '20220413', 'pg1
 INSERT INTO projects VALUES ('citus', 4, 0, 'hub',0, 'https://github.com/citusdata/citus/releases',
   'citus', 1, 'citus.png', 'Distributed PostgreSQL', 'https://github.com/citusdata/citus');
 INSERT INTO releases VALUES ('citus-pg14',  0, 'citus', 'Citus', '', 'prod', '', 1, 'AGPLv3', '', '');
-INSERT INTO versions VALUES ('citus-pg14', '11.0.6-1', 'el8, arm', 1, '20220824', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.6');
-INSERT INTO versions VALUES ('citus-pg14', '11.0.5-1', 'el8, arm', 0, '20220801', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.0.5');
+INSERT INTO releases VALUES ('citus-pg15',  0, 'citus', 'Citus', '', 'prod', '', 1, 'AGPLv3', '', '');
+INSERT INTO versions VALUES ('citus-pg14', '11.1.1-1', 'el8, arm', 1, '20220919', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.1.1');
+INSERT INTO versions VALUES ('citus-pg15', '11.1.1-1', 'el8, arm', 1, '20220919', 'pg15', '', 'https://github.com/citusdata/citus/releases/tag/v11.1.1');
 
 INSERT INTO projects VALUES ('cron', 4, 0, 'hub',0, 'https://github.com/citusdata/pg_cron/releases',
   'cron', 1, 'cron.png', 'Background Job Scheduler', 'https://github.com/citusdata/pg_cron');
@@ -437,8 +439,9 @@ INSERT INTO versions VALUES ('pglogical-pg14', '2.4.1-1',  'arm, el8', 0, '20211
 INSERT INTO projects VALUES ('postgis', 4, 1, 'hub', 3, 'http://postgis.net/source',
   'postgis', 1, 'postgis.png', 'Spatial Extensions', 'http://postgis.net');
 INSERT INTO releases VALUES ('postgis-pg14', 3, 'postgis', 'PostGIS', '', 'prod', '', 1, 'GPLv2', '', '');
-INSERT INTO versions VALUES ('postgis-pg14', '3.3.0-1', 'el8, arm', 1, '20220826', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.3.0/NEWS');
-INSERT INTO versions VALUES ('postgis-pg14', '3.2.2-1', 'el8, arm', 0, '20220722', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.2.2/NEWS');
+INSERT INTO releases VALUES ('postgis-pg15', 3, 'postgis', 'PostGIS', '', 'prod', '', 1, 'GPLv2', '', '');
+INSERT INTO versions VALUES ('postgis-pg14', '3.3.1-1', 'arm', 1, '20220909', 'pg14', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.3.1/NEWS');
+INSERT INTO versions VALUES ('postgis-pg15', '3.3.1-1', 'arm', 1, '20220909', 'pg15', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.3.1/NEWS');
 
 INSERT INTO projects VALUES ('omnidb', 6, 8000, '', 1, 'https://github.com/pgsql-io/omnidb-ng/tags',
   'omnidb', 0, 'omnidb.png', 'UI for Database Mgmt', 'https://github.com/pgsql-io/omnidb-ng#omnidb-ng-306');

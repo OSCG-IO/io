@@ -457,6 +457,8 @@ initPG () {
   if [ "$pgM" == "15" ] && [  "$isEL8" == "True" ]; then
     initC "multicorn2-pg$pgM" "multicorn2" "$multicorn2V" "$outPlat" "postgres/multicorn2" "" "" "nil"
     initC "esfdw-pg$pgM" "esfdw" "$esfdwV" "$outPlat" "postgres/esfdw" "" "" "Y"
+    initC "citus-pg$pgM" "citus" "$citusV" "$outPlat" "postgres/citus" "" "" "nil"
+    initC "postgis-pg$pgM" "postgis" "$postgisV" "$outPlat" "postgres/postgis" "" "" "nil"
   fi
 
   if [ "$pgM" == "14" ] && [  "$isEL8" == "True" ]; then
