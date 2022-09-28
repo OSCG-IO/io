@@ -3,7 +3,7 @@ v11=11.17
 v12=12.12
 v13=13.8
 v14=14.5
-v15=15beta4
+v15=15rc1
 
 fatalError () {
   echo "FATAL ERROR!  $1"
