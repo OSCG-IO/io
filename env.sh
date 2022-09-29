@@ -35,7 +35,7 @@ ora2pgV=23.1
 v8V=3.1.2-1
 
 fdV=1.1.0-1
-anonV=1.0.0-1
+anonV=1.1.0-1
 ddlxV=0.17-1
 hypoV=1.3.1-1
 timescaleV=2.8.0-1
