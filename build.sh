@@ -460,6 +460,7 @@ initPG () {
     initC "citus-pg$pgM" "citus" "$citusV" "$outPlat" "postgres/citus" "" "" "nil"
     initC "postgis-pg$pgM" "postgis" "$postgisV" "$outPlat" "postgres/postgis" "" "" "nil"
     initC "spock-pg$pgM" "spock" "$spockV" "$outPlat" "postgres/spock" "" "" "nil"
+    initC "anon-pg$pgM" "anon" "$anonV" "$outPlat" "postgres/anon" "" "" "nil"
   fi
 
   if [ "$pgM" == "14" ] && [  "$isEL8" == "True" ]; then
@@ -486,6 +487,7 @@ initPG () {
     initC "pldebugger-pg$pgM" "pldebugger" "$debuggerV" "$outPlat" "postgres/pldebugger" "" "" "nil"
     initC "multicorn2-pg$pgM" "multicorn2" "$multicorn2V" "$outPlat" "postgres/multicorn2" "" "" "nil"
     initC "esfdw-pg$pgM" "esfdw" "$esfdwV" "$outPlat" "postgres/esfdw" "" "" "Y"
+    initC "anon-pg$pgM" "anon" "$anonV" "$outPlat" "postgres/anon" "" "" "nil"
 
     if [ "$outPlat" == "el8" ]; then
       initC "plv8-pg$pgM" "plv8" "$v8V" "$outPlat" "postgres/plv8" "" "" "nil"
@@ -493,7 +495,6 @@ initPG () {
       initC "oraclefdw-pg$pgM" "oraclefdw" "$oraclefdwV" "$outPlat" "postgres/oraclefdw" "" "" "nil"
       initC "mongofdw-pg$pgM" "mongofdw" "$mongofdwV" "$outPlat" "postgres/mongofdw" "" "" "nil"
 
-      ##initC "anon-pg$pgM" "anon" "$anonV" "$outPlat" "postgres/anon" "" "" "nil"
     fi
 
   fi

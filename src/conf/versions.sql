@@ -400,8 +400,9 @@ INSERT INTO versions VALUES ('hintplan-pg14', '1.4.0-1', 'arm, el8', 1, '2022011
 INSERT INTO projects VALUES ('anon', 4, 0, 'ddlx', 1, 'https://gitlab.com/dalibo/postgresql_anonymizer/-/tags',
   'anon', 1, 'anon.png', 'Anonymization & Masking', 'https://gitlab.com/dalibo/postgresql_anonymizer/blob/master/README.md');
 INSERT INTO releases VALUES ('anon-pg14', 11, 'anon', 'Anonymizer', '', 'prod', '', 1, 'POSTGRES', '', '');
-
-INSERT INTO versions VALUES ('anon-pg14', '0.12.0-1', 'amd', 0, '20220413', 'pg14', '', '');
+INSERT INTO releases VALUES ('anon-pg15', 11, 'anon', 'Anonymizer', '', 'prod', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('anon-pg14', '1.1.0-1', 'arm, el8', 1, '20220928', 'pg14', '', '');
+INSERT INTO versions VALUES ('anon-pg15', '1.1.0-1', 'arm, el8', 1, '20220928', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('citus', 4, 0, 'hub',0, 'https://github.com/citusdata/citus/releases',
   'citus', 1, 'citus.png', 'Distributed PostgreSQL', 'https://github.com/citusdata/citus');
