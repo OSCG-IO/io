@@ -1,9 +1,9 @@
  
 ####################################################################
-######          Copyright (c)  2015-2020 BigSQL           ##########
+######          Copyright (c)  2020-2022 OSCG-P           ##########
 ####################################################################
 
 import util
 
-util.remove_pgconf_keyval("pgXX", "shared_preload_libraries", "mysql_fdw")
+util.remove_pgconf_keyval("pgXX", "shared_preload_libraries", "pg_hint_plan")
 
