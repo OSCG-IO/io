@@ -72,6 +72,10 @@ fi
 
 ## PROD ##############################################
 
+if [ "$1" == "autofailover" ] || [ "$1" == "all" ]; then
+  build autofailover $afoFullV $2 autofailover
+fi
+
 if [ "$1" == "hintplan" ] || [ "$1" == "all" ]; then
   build hintplan $hintplanFullV $2 hintplan
 fi

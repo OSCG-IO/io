@@ -397,6 +397,13 @@ INSERT INTO projects VALUES ('hintplan', 6, 0, 'hub', 0, 'https://github.com/oss
 INSERT INTO releases VALUES ('hintplan-pg14', 10, 'hintplan', 'pgHintPlan', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('hintplan-pg14', '1.4.0-1', 'arm, el8', 1, '20220118', 'pg14', '', 'https://github.com/pghintplan/pghintplan/releases/tag/1.6.0');
 
+INSERT INTO projects VALUES ('autofailover', 6, 0, 'hub', 0, 'https://github.com/oscg-io/auto_failover/tags',
+  'autofailover', 1, 'autofailover.png', 'AutoFailover & HA', 'https://github.com/oscg-io/auto_failover');
+INSERT INTO releases VALUES ('autofailover-pg14', 10, 'autofailover', 'AutoFailover', '', 'test', '', 1, 'POSTGRES', '', '');
+INSERT INTO releases VALUES ('autofailover-pg15', 10, 'autofailover', 'AutoFailover', '', 'test', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('autofailover-pg14', '1.6.4-1', 'arm, el8', 1, '20221001', 'pg14', '', '');
+INSERT INTO versions VALUES ('autofailover-pg15', '1.6.4-1', 'arm, el8', 1, '20221001', 'pg15', '', '');
+
 INSERT INTO projects VALUES ('anon', 4, 0, 'ddlx', 1, 'https://gitlab.com/dalibo/postgresql_anonymizer/-/tags',
   'anon', 1, 'anon.png', 'Anonymization & Masking', 'https://gitlab.com/dalibo/postgresql_anonymizer/blob/master/README.md');
 INSERT INTO releases VALUES ('anon-pg14', 11, 'anon', 'Anonymizer', '', 'prod', '', 1, 'POSTGRES', '', '');

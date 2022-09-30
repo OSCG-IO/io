@@ -202,6 +202,10 @@ hintplanFullV=1.4.0
 hintplanShortV=
 hintplanBuildV=1
 
+afoFullV=1.6.4
+afoShortV=
+afoBuildV=1
+
 timescaledbFullV=2.8.0
 timescaledbShortV=
 timescaledbBuildV=1
