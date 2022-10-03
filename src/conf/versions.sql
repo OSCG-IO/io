@@ -360,7 +360,10 @@ INSERT INTO versions VALUES ('pgtsql-pg13', '3.0-1', 'amd', 0, '20191119', 'pg13
 INSERT INTO projects VALUES ('plprofiler', 3, 0, 'hub', 7, 'https://github.com/bigsql/plprofiler/tags',
   'plprofiler', 1, 'plprofiler.png', 'Stored Procedure Profiler', 'https://github.com/bigsql/plprofiler#plprofiler');
 INSERT INTO releases VALUES ('plprofiler-pg14', 0, 'plprofiler',    'PL/Profiler',  '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('plprofiler-pg14', '4.1-1', 'arm, el8', 1, '20211019', 'pg14', '', '');
+INSERT INTO releases VALUES ('plprofiler-pg15', 0, 'plprofiler',    'PL/Profiler',  '', 'prod', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('plprofiler-pg14', '4.2-1', 'arm, el8', 1, '20221003', 'pg14', '', '');
+INSERT INTO versions VALUES ('plprofiler-pg14', '4.1-1', 'arm, el8', 0, '20211019', 'pg14', '', '');
+INSERT INTO versions VALUES ('plprofiler-pg15', '4.2-1', 'arm, el8', 1, '20221003', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('golang', 4, 0, 'hub', 0, 'https://go.dev/dl',
   'golang', 0, 'go.png', 'Fast & Scaleable Programming', 'https://go.dev');
