@@ -415,8 +415,10 @@ INSERT INTO projects VALUES ('citus', 4, 0, 'hub',0, 'https://github.com/citusda
   'citus', 1, 'citus.png', 'Distributed PostgreSQL', 'https://github.com/citusdata/citus');
 INSERT INTO releases VALUES ('citus-pg14',  0, 'citus', 'Citus', '', 'prod', '', 1, 'AGPLv3', '', '');
 INSERT INTO releases VALUES ('citus-pg15',  0, 'citus', 'Citus', '', 'prod', '', 1, 'AGPLv3', '', '');
-INSERT INTO versions VALUES ('citus-pg14', '11.1.1-1', 'el8, arm', 1, '20220919', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.1.1');
-INSERT INTO versions VALUES ('citus-pg15', '11.1.1-1', 'el8, arm', 1, '20220919', 'pg15', '', 'https://github.com/citusdata/citus/releases/tag/v11.1.1');
+INSERT INTO versions VALUES ('citus-pg14', '11.1.2-1', 'el8, arm', 1, '20220930', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.1.2');
+INSERT INTO versions VALUES ('citus-pg14', '11.1.1-1', 'el8, arm', 0, '20220919', 'pg14', '', 'https://github.com/citusdata/citus/releases/tag/v11.1.1');
+INSERT INTO versions VALUES ('citus-pg15', '11.1.2-1', 'el8, arm', 1, '20220930', 'pg15', '', 'https://github.com/citusdata/citus/releases/tag/v11.1.2');
+INSERT INTO versions VALUES ('citus-pg15', '11.1.1-1', 'el8, arm', 0, '20220919', 'pg15', '', 'https://github.com/citusdata/citus/releases/tag/v11.1.1');
 
 INSERT INTO projects VALUES ('cron', 4, 0, 'hub',0, 'https://github.com/citusdata/pg_cron/releases',
   'cron', 1, 'cron.png', 'Background Job Scheduler', 'https://github.com/citusdata/pg_cron');

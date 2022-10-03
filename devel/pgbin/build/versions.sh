@@ -54,7 +54,7 @@ agentFullV=4.0.0
 agentShortV=
 agentBuildV=1
 
-citusFullV=11.1.1
+citusFullV=11.1.2
 citusShortV=
 citusBuildV=1
 

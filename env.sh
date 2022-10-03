@@ -25,7 +25,7 @@ bqfdwV=1.9
 
 w2jV=2.4-1
 odbcV=13.01-1
-citusV=11.1.1-1
+citusV=11.1.2-1
 hivefdwV=4.0-1
 
 oraclefdwV=2.4.0-1
