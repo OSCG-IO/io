@@ -139,7 +139,7 @@ INSERT INTO versions VALUES ('pg14', '14.4-1', 'el8, arm, osx-arm', 0, '20220616
 INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'test', 
   '<font size=-1 color=red><b>New in <a href=https://sql-info.de/postgresql/postgresql-15/articles-about-new-features-in-postgresql-15.html>2022!</a></b></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg15', '15rc1-1',  'el8, arm', 1, '20220929','', '', '');
+INSERT INTO versions VALUES ('pg15', '15rc2-1',  'el8, arm', 1, '20221006','', '', '');
 
 INSERT INTO projects VALUES ('pge14', 1, 5432, 'hub', 1, ' ', 'PGE', 0, 'postgresql.png', 'Postgres', ' ');
 INSERT INTO releases VALUES ('pge14', 10, 'pge14', 'PGE', '', 'test', '', 1, 'POSTGRES', '', '');
