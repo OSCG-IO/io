@@ -8,6 +8,7 @@ if [[ "$OS" == "Darwin" ]]; then
   export PLATFORM=osx
 
 elif [[ "$OS" == "Linux" ]]; then
+  export ARCH=`arch`
   yum --version > /dev/null 2>&1
   rc=$?
   if [ "$rc" == "0" ]; then

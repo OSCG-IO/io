@@ -1,0 +1,26 @@
+ver=1.3.2
+
+source getPKMG.sh
+if [ "$ARCH" == "aarch64" ]; then
+  plat=arm64
+else
+  plat=amd64
+fi
+
+url=wget https://releases.hashicorp.com/terraform/$ver
+file=terraform_$ver_linux_$plat.zip
+
+
+
+if [ "$PKMG" == "yum" ]; then
+  wget https://releases.hashicorp.com/terraform/1.3.2/terraform_1.3.2_linux_arm64.zip
+  sudo yum install -y yum-utils
+  sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+  sudo yum install -y terraform
+elif [ "PKMG" == "apt" ]; then
+  sudo apt install terraform
+else
+  brew install terraform
+fi
+
+
