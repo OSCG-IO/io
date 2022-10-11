@@ -436,8 +436,7 @@ INSERT INTO versions VALUES ('background-pg14', '1.1-1', 'el8, arm', 1, '2022080
 INSERT INTO projects VALUES ('timescaledb', 4, 0, 'hub', 1, 'https://github.com/timescale/timescaledb/releases',
    'timescaledb', 1, 'timescaledb.png', 'Time Series Data', 'https://github.com/timescale/timescaledb/#timescaledb');
 INSERT INTO releases VALUES ('timescaledb-pg14',  2, 'timescaledb', 'TimescaleDB', '', 'prod', '', 1, 'Apache', '', '');
-INSERT INTO versions VALUES ('timescaledb-pg14', '2.8.0-1',  'el8, arm', 1, '20220831', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.8.0');
-INSERT INTO versions VALUES ('timescaledb-pg14', '2.7.2-1',  'el8, arm', 0, '20220725', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.7.2');
+INSERT INTO versions VALUES ('timescaledb-pg14', '2.8.0-1',  'el8, arm', 0, '20220831', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.8.0');
 
 INSERT INTO projects VALUES ('spock', 10, 0, 'hub', 1, 'https://github.com/oscg-io/spock/tags',
   'spock', 1, 'spock.png', 'Logical Mulit-Master Replication', 'https://github.com/oscg-io/spock/#spock');
@@ -504,14 +503,14 @@ INSERT INTO releases VALUES ('badger', 101, 'badger','pgBadger','', 'test', '', 
 INSERT INTO versions VALUES ('badger', '11.8', '', 0, '20220408', '', '', '');
 
 INSERT INTO projects VALUES ('pool2', 4, 0, 'hub', 3, 'http://github.com/pgpool/pgpool2/tags',
-  'pool2',  0, 'pgpool2.png', 'LoadBalancer & QueryCache', 'http://pgpool.net');
+  'pool2',  0, 'pgpool2.png', 'QueryCache', 'http://pgpool.net');
 INSERT INTO releases VALUES ('pool2', 1, 'pool2',  'pgPool2', '', 'included', '', 1, 'BSD', '', '');
 INSERT INTO versions VALUES ('pool2', '4.3.1', 'el8, arm', 1, '20220216', '', '', '');
 
 INSERT INTO projects VALUES ('bouncer', 4, 0, 'hub', 3, 'http://pgbouncer.org',
   'bouncer',  0, 'pg-bouncer.png', 'Connection Pooler', 'http://pgbouncer.org');
 INSERT INTO releases VALUES ('bouncer', 2, 'bouncer',  'pgBouncer', '', 'included', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('bouncer', '1.17.0', 'el8, arm', 1, '20220323', '', '', '');
+INSERT INTO versions VALUES ('bouncer', '1.17.0', 'el8, arm', 0, '20220323', '', '', '');
 
 INSERT INTO projects VALUES ('patroni', 11, 0, 'haproxy', 4, 'https://github.com/zalando/patroni/releases',
   'patroni', 0, 'patroni.png', 'HA Template', 'https://github.com/zalando/patroni');
