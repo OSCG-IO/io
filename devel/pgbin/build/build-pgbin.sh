@@ -90,7 +90,7 @@ function checkPostgres {
 	else
 		pgSrcV=`$pgSrcDir/configure --version | head -1 | awk '{print $3}'`
 		echo "pgSrcV=$pgSrcV/rc"
-		if [[ "${pgSrcV/rc}" =~ ^15* ]]; then
+		if [[ "${pgSrcV/rc}" =~ ^15.* ]]; then
 			pgShortV="15"
 			bndlPrfx=pg15
 			pgOPT="--with-zstd --with-lz4"

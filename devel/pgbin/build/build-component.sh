@@ -26,7 +26,7 @@ function getPGVersion {
 	fi
 	pgFullVersion=`$pgBin/bin/pg_config --version | awk '{print $2}'`
 
-        if [[ "${pgFullVersion/rc}" =~ 15rc* ]]; then
+        if [[ "${pgFullVersion/rc}" =~ 15.* ]]; then
                 pgShortVersion="15"
         elif [[ "${pgFullVersion/rc}" =~ 14.* ]]; then
                 pgShortVersion="14"
@@ -36,8 +36,6 @@ function getPGVersion {
                 pgShortVersion="12"
         elif [[ "${pgFullVersion/rc}" =~ 11.* ]]; then
                 pgShortVersion="11"
-        elif [[ "${pgFullVersion/rc}" =~ 10.* ]]; then
-                pgShortVersion="10"
 	elif [[ "${pgFullVersion/rc}" == "$pgFullVersion" ]]; then
 		pgShortVersion="`echo $pgFullVersion | awk -F '.' '{print $1$2}'`"
         else
