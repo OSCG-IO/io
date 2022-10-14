@@ -133,8 +133,8 @@ INSERT INTO versions VALUES ('pg13', '13.7-1',  'amd, el8', 0, '20220512','', ''
 INSERT INTO releases VALUES ('pg14', 1, 'pg', '', '', 'prod', 
   '<font size=-1>New in <a href=https://www.postgresql.org/docs/14/release-14.html>2021</a></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg14', '14.5-1', 'el8, arm, osx-arm', 1, '20220811','', '', '');
-INSERT INTO versions VALUES ('pg14', '14.4-1', 'el8, arm, osx-arm', 0, '20220616','', '', '');
+INSERT INTO versions VALUES ('pg14', '14.5-1', 'el8, arm', 1, '20220811','', '', '');
+INSERT INTO versions VALUES ('pg14', '14.4-1', 'el8, arm', 0, '20220616','', '', '');
 
 INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'prod', 
   '<font size=-1 color=red><b>New in <a href=https://sql-info.de/postgresql/postgresql-15/articles-about-new-features-in-postgresql-15.html>2022!</a></b></font>',
@@ -399,6 +399,11 @@ INSERT INTO projects VALUES ('hintplan', 6, 0, 'hub', 0, 'https://github.com/oss
   'hintplan', 1, 'hintplan.png', 'Execution Plan Hints', 'https://github.com/ossc-db/pg_hint_plan');
 INSERT INTO releases VALUES ('hintplan-pg14', 10, 'hintplan', 'pgHintPlan', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('hintplan-pg14', '1.4.0-1', 'arm, el8', 1, '20220118', 'pg14', '', 'https://github.com/pghintplan/pghintplan/releases/tag/1.6.0');
+
+INSERT INTO projects VALUES ('odyssey', 6, 0, 'hub', 0, 'https://github.com/yandex/odyssey',
+  'odyssey', 0, 'odyssey.png', 'Connection Pooler & Request Router', 'https://github.com/yandex/odyssey');
+INSERT INTO releases VALUES ('odyssey', 10, 'odyssey', 'Odyssey', '', 'prod', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('odyssey', '1.3-1', 'arm, el8', 1, '20220517', '', '', '');
 
 INSERT INTO projects VALUES ('autofailover', 6, 0, 'hub', 0, 'https://github.com/oscg-io/auto_failover/tags',
   'autofailover', 1, 'autofailover.png', 'AutoFailover & HA', 'https://github.com/oscg-io/auto_failover');
