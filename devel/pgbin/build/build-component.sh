@@ -678,7 +678,11 @@ if [[ $buildPostGIS ==  "true" ]]; then
 	buildComp postgis "$postgisShortV" "$postgisFullV" "$postgisBuildV" "$Source"
 fi
 if [[ $buildAudit == "true" ]]; then
-	buildComp audit "$auditShortV" "$auditFull14V" "$auditBuildV" "$Source"
+	if [ "$pgShortVersion" == "15" ]; then
+		buildComp audit "$auditShortV" "$auditFull15V" "$auditBuildV" "$Source"
+	elif [ "$pgShortVersion" == "14" ]; then
+		buildComp audit "$auditShortV" "$auditFull14V" "$auditBuildV" "$Source"
+	fi
 fi
 if [[ $buildSetUser == "true" ]]; then
 	buildSetUserComponent

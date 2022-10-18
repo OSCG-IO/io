@@ -137,7 +137,11 @@ if [ "$1" == "postgis" ] || [ "$1" == "all" ]; then
 fi
 
 if [ "$1" == "audit" ] || [ "$1" == "all" ]; then
-  build audit $auditFull14V $2 audit    
+  if [ "$pgV" == "15" ]; then
+    build audit $auditFull15V $2 audit    
+  elif [ "$pgV" == "14" ]; then
+    build audit $auditFull14V $2 audit    
+  fi
 fi
 
 if [ "$1" == "orafce" ] || [ "$1" == "all" ]; then

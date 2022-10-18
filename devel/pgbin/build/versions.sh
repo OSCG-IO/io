@@ -54,7 +54,7 @@ agentFullV=4.0.0
 agentShortV=
 agentBuildV=1
 
-citusFullV=11.1.2
+citusFullV=11.1.3
 citusShortV=
 citusBuildV=1
 
@@ -86,7 +86,7 @@ cassFullV=3.1.5
 cassShortV=
 cassBuildV=1
 
-orafceFullV=3.24.4
+orafceFullV=3.25.0
 orafceShortV=
 orafceBuildV=1
 
@@ -142,6 +142,7 @@ ddlxFullV=0.17
 ddlxShortV=
 ddlxBuildV=1
 
+auditFull15V=1.7.0
 auditFull14V=1.6.2
 auditShortV=
 auditBuildV=1
@@ -178,7 +179,7 @@ repackFullV=1.4.7
 repackShortV=
 repackBuildV=1
 
-partmanFullV=4.7.0
+partmanFullV=4.7.1
 partmanShortV=
 partmanBuildV=1
 
