@@ -15,16 +15,16 @@ util.change_pgconf_keyval("pgXX", "spock.conflict_resolution", "last_update_wins
 #util.change_pgconf_keyval("pgXX", "log_min_messages", "debug3", True)
 
 util.change_pgconf_keyval("pgXX", "spock.conflict_resolution", "last_update_wins", True)
-util.change_pgconf_keyval("pgXX", "spock.log_conflict_to_table", "on", True)
+util.change_pgconf_keyval("pgXX", "spock.save_resolutions", "on", True)
 
 day = datetime.datetime.now().strftime('%a')
 
-passwd = util.get_random_password(10)
-ip = util.get_1st_ip()
-port = util.get_comp_port("pgXX")
-util.remember_pgpassword(passwd, port, ip, "*", "replication")
-sql="CREATE ROLE replication WITH SUPERUSER REPLICATION LOGIN ENCRYPTED PASSWORD '" + passwd + "'"
-util.run_sql_cmd("pgXX", sql, False)
+##passwd = util.get_random_password(10)
+##ip = util.get_1st_ip()
+##port = util.get_comp_port("pgXX")
+##util.remember_pgpassword(passwd, port, ip, "*", "replication")
+##sql="CREATE ROLE replication WITH SUPERUSER REPLICATION LOGIN ENCRYPTED PASSWORD '" + passwd + "'"
+##util.run_sql_cmd("pgXX", sql, False)
 
 datadir = util.get_column("datadir", "pgXX")
 os.system("cp " + datadir + "/pg_hba.conf " + datadir + "/pg_hba.conf.orig")
