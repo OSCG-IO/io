@@ -72,6 +72,10 @@ fi
 
 ## PROD ##############################################
 
+if [ "$1" == "odyssey" ] || [ "$1" == "all" ]; then
+  build odyssey $odysseyFullV $2 odyssey
+fi
+
 if [ "$1" == "autofailover" ] || [ "$1" == "all" ]; then
   build autofailover $afoFullV $2 autofailover
 fi

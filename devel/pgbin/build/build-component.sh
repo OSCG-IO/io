@@ -549,7 +549,7 @@ function buildTimeScaleDBComponent {
         packageComponent $componentBundle
 }
 
-TEMP=`getopt -l no-tar, copy-bin,no-copy-bin,with-pgver:,with-pgbin:,build-hypopg:,build-postgis:,build-bouncer:,build-hvefdw:,build-cassandrafdw:,build-pgtsql:,build-tdsfdw:,build-mongofdw:,build-mysqlfdw:,build-pgredis:,build-oraclefdw:,build-orafce:,build-audit:,build-set-user:,build-partman:,build-pldebugger:,build-plr:,build-pljava:,build-plv8:,build-plprofiler:,build-background:,build-bulkload:,build-backrest:,build-psqlodbc:,build-repack:,build-spock:,build-pglogical:,build-hintplan:,build-autofailover:,build-statkcache:,build-qualstats:,build-archivist:,build-waitsampling:,build-timescaledb:,build-cron:,build-multicorn2:,build-fixeddecimal:,build-anon,build-ddlx:,build-http:,build-pgtop:,build-proctab:,build-agent:,build-citus:,build-number: -- "$@"`
+TEMP=`getopt -l no-tar, copy-bin,no-copy-bin,with-pgver:,with-pgbin:,build-hypopg:,build-postgis:,build-bouncer:,build-hvefdw:,build-cassandrafdw:,build-pgtsql:,build-tdsfdw:,build-mongofdw:,build-mysqlfdw:,build-pgredis:,build-oraclefdw:,build-orafce:,build-audit:,build-set-user:,build-partman:,build-pldebugger:,build-plr:,build-pljava:,build-plv8:,build-plprofiler:,build-background:,build-bulkload:,build-backrest:,build-psqlodbc:,build-repack:,build-spock:,build-pglogical:,build-hintplan:,build-autofailover:,build-odyssey:,build-statkcache:,build-qualstats:,build-archivist:,build-waitsampling:,build-timescaledb:,build-cron:,build-multicorn2:,build-fixeddecimal:,build-anon,build-ddlx:,build-http:,build-pgtop:,build-proctab:,build-agent:,build-citus:,build-number: -- "$@"`
 
 if [ $? != 0 ] ; then
 	echo "Required parameters missing, Terminating..."
@@ -594,6 +594,7 @@ while true; do
     --build-pglogical ) buildPgLogical=true; Source=$2; shift; shift ;;
     --build-spock ) buildSpock=true; Source=$2; shift; shift ;;
     --build-hintplan ) buildHintPlan=true; Source=$2; shift; shift ;;
+    --build-odyssey ) buildOdyssey=true; Source=$2; shift; shift ;;
     --build-autofailover ) buildAFO=true; Source=$2; shift; shift ;;
     --build-archivist ) buildArchiv=true; Source=$2; shift; shift ;;
     --build-qualstats ) buildQualStats=true; Source=$2; shift; shift ;;
@@ -740,6 +741,9 @@ if [[ $buildBackrest == "true" ]]; then
 fi
 if [[ $buildHintPlan == "true" ]]; then
 	buildComp hintplan "$hintplanShortV" "$hintplanFullV" "$hintplanBuildV" "$Source"
+fi
+if [[ $buildOdyssey == "true" ]]; then
+	buildComp odyssey "$odysseyShortV" "$odysseyFullV" "$odysseyBuildV" "$Source"
 fi
 if [[ $buildAFO == "true" ]]; then
 	buildComp autofailover "$afoShortV" "$afoFullV" "$afoBuildV" "$Source"

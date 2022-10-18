@@ -406,15 +406,13 @@ INSERT INTO versions VALUES ('hintplan-pg14', '1.4.0-1', 'arm, el8', 1, '2022011
 
 INSERT INTO projects VALUES ('odyssey', 6, 0, 'hub', 0, 'https://github.com/yandex/odyssey',
   'odyssey', 0, 'odyssey.png', 'Connection Pooler & Request Router', 'https://github.com/yandex/odyssey');
-INSERT INTO releases VALUES ('odyssey', 10, 'odyssey', 'Odyssey', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('odyssey', '1.3-1', 'arm, el8', 1, '20220517', '', '', '');
+INSERT INTO releases VALUES ('odyssey', 10, 'odyssey', 'Odyssey', '', 'test', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('odyssey', '1.3-1', 'arm, el8', 1, '20221018', '', '', '');
 
 INSERT INTO projects VALUES ('autofailover', 6, 0, 'hub', 0, 'https://github.com/oscg-io/auto_failover/tags',
   'autofailover', 1, 'autofailover.png', 'AutoFailover & HA', 'https://github.com/oscg-io/auto_failover');
-INSERT INTO releases VALUES ('autofailover-pg14', 10, 'autofailover', 'AutoFailover', '', 'test', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('autofailover-pg15', 10, 'autofailover', 'AutoFailover', '', 'test', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('autofailover-pg14', '1.6.4-1', 'arm, el8', 1, '20221001', 'pg14', '', '');
-INSERT INTO versions VALUES ('autofailover-pg15', '1.6.4-1', 'arm, el8', 1, '20221001', 'pg15', '', '');
+INSERT INTO versions VALUES ('autofailover-pg15', '1.6.4-1', 'arm, el8', 1, '20221018', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('anon', 4, 0, 'ddlx', 1, 'https://gitlab.com/dalibo/postgresql_anonymizer/-/tags',
   'anon', 1, 'anon.png', 'Anonymization & Masking', 'https://gitlab.com/dalibo/postgresql_anonymizer/blob/master/README.md');

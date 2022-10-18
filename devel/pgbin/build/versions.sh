@@ -207,6 +207,10 @@ afoFullV=1.6.4
 afoShortV=
 afoBuildV=1
 
+odysseyFullV=1.3
+odysseyShortV=
+odysseyBuildV=1
+
 timescaledbFullV=2.8.0
 timescaledbShortV=
 timescaledbBuildV=1
