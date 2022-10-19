@@ -46,7 +46,9 @@ bulkloadV=3.1.19-1
 partmanV=4.7.1-1
 repackV=1.4.7-1
 hintV=1.4.0-1
+
 afoV=1.6.4-1
+odysseyV=1.3-1
 
 waV=2.1-1
 archiV=4.1.2-1

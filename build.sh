@@ -467,11 +467,12 @@ initPG () {
     initC "orafce-pg$pgM" "orafce" "$orafceV" "$outPlat" "postgres/orafce" "" "" "nil"
     initC "audit-pg$pgM" "audit" "$audit15V" "$outPlat" "postgres/audit" "" "" "nil"
 
-    initC "odyssey-pg$pgM" "odyssey" "$odysseyV" "$outPlat" "postgres/odyssey" "" "" "nil"
     initC "autofailover-pg$pgM" "autofailover" "$afoV" "$outPlat" "postgres/autofailover" "" "" "nil"
   fi
 
   if [ "$pgM" == "14" ] && [  "$isEL8" == "True" ]; then
+    initC "odyssey" "odyssey" "$odysseyV" "$outPlat" "postgres/odyssey" "" "" "nil"
+
     initC "background-pg$pgM" "background" "$bckgrndV" "$outPlat" "postgres/background" "" "" "nil"
     initC "citus-pg$pgM" "citus" "$citusV" "$outPlat" "postgres/citus" "" "" "nil"
     initC "timescaledb-pg$pgM" "timescaledb" "$timescaleV"  "$outPlat" "postgres/timescale" "" "" "nil"
