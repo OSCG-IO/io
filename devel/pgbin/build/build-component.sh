@@ -76,17 +76,17 @@ function cleanUpComponentDir {
 	rm -rf lib/postgresql/pgxs
 	rm -rf lib/libpgport.a
 	rm -rf lib/libpgcommon.a
-    rm -rf lib/libssl*
-    rm -rf lib/libpq*
-    rm -rf lib/libcrypt*
+	rm -rf lib/libssl*
+	rm -rf lib/libpq*
+	rm -rf lib/libcrypt*
 
 	if [[ ! "$(ls -A bin)" ]]; then
 		rm -rf bin
 	fi
 
-    if [ "$copyBin" == "false" ]; then
-        ls -lR
-    fi
+	if [ "$copyBin" == "false" ]; then
+		ls -lR
+	fi
 }
 
 
@@ -232,6 +232,13 @@ function configureComp {
 
     make="make"
 
+    if [ "$comp" == "odyssey" ]; then
+        echo "# configure odyssey..."
+        make="make local_build"
+        rc="0"
+
+    fi
+
     if [ "$comp" == "plv8" ]; then
         echo "# configure plv8..."
         echo "# enabling gcc-toolset-11 "
@@ -327,7 +334,8 @@ function buildComp {
         ##echo "#         src: $src"
 
         if [ "$comp" == "bouncer" ] || [ "$comp" == "agent" ] || 
-           [ "$comp" == "backrest" ] || [ "$comp" == "psqlodbc" ]; then
+           [ "$comp" == "backrest" ] || [ "$comp" == "psqlodbc" ] ||
+           [ "$comp" == "odyssey" ]; then
             componentName="$comp$shortV-$fullV-$buildV-$buildOS"
         else
             componentName="$comp$shortV-pg$pgShortVersion-$fullV-$buildV-$buildOS"
@@ -366,6 +374,9 @@ function buildComp {
             sudo mkdir -p /usr/local/lib64/python3.9/site-packages
             make_install="sudo env "PATH=$PATH" make install"
             export PYTHON_OVERRIDE=python3.9
+        fi
+        if [ "$comp" == "odyssey" ]; then
+            make_install="sudo make install"
         fi
 
         echo "# $make ..."
