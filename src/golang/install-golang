@@ -5,7 +5,15 @@ fi
 
 ver=$1
 url=https://go.dev/dl
-tar_gz=go$ver.linux-amd64.tar.gz
+
+goArch=amd64
+if [ `arch` == "aarch64" ]; then
+  goArch=arm64
+fi
+
+##set -x
+
+tar_gz=go$ver.linux-$goArch.tar.gz
 
 rm -rf $tar_gz
 wget $url/$tar_gz
@@ -22,7 +30,6 @@ sudo mv go /usr/local/.
 
 rm $tar_gz
 
-echo
-echo "## Consider adding this line to the bottom of your ~/.bashrc"
-echo "export PATH=\$PATH:/usr/local/go/bin"
+sudo rm -f /usr/local/bin/go
+sudo ln -s /usr/local/go/bin/go /usr/local/bin/go
 

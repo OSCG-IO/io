@@ -370,7 +370,7 @@ INSERT INTO versions VALUES ('plprofiler-pg15', '4.2-1', 'arm, el8', 1, '2022100
 INSERT INTO projects VALUES ('golang', 4, 0, 'hub', 0, 'https://go.dev/dl',
   'golang', 0, 'go.png', 'Fast & Scaleable Programming', 'https://go.dev');
 INSERT INTO releases VALUES ('golang', 9, 'golang', 'GO', '', 'test', '', 1, '', '', '');
-INSERT INTO versions VALUES ('golang', '1.17.4', 'amd', 0, '20210812', '', '', '');
+INSERT INTO versions VALUES ('golang', '1.19.2', '', 0, '20221021', '', '', '');
 
 INSERT INTO projects VALUES ('walg', 4, 0, 'hub', 0, 'https://github.com/wal-g/wal-g/releases',
   'walg', 0, 'walg.png', 'Archival Restoration Tool', 'https://wal-g.readthedocs.io');
@@ -382,7 +382,7 @@ INSERT INTO projects VALUES ('pgrest', 4, 3000, 'hub', 0, 'https://github.com/po
 INSERT INTO releases VALUES ('pgrest', 9, 'pgrest', 'PostgREST', '', 'test', '', 1, 'MIT', '', '');
 INSERT INTO versions VALUES ('pgrest', '9.0.1', '', 1, '20220720', '', '', 'https://postgrest.org');
 
-INSERT INTO projects VALUES ('prompgexp', 4, 9187, 'hub', 0, 'https://github.com/prometheus-community/postgres_exporter/tags',
+INSERT INTO projects VALUES ('prompgexp', 4, 9187, 'golang', 0, 'https://github.com/prometheus-community/postgres_exporter/tags',
   'prompgexp', 0, 'prometheus.png', 'Prometheus PG Exporter', 'https://github.com/prometheus-community/postgres_exporter');
 INSERT INTO releases VALUES ('prompgexp', 9, 'prompgexp', 'Prometheus PG Exporter', '', 'test', '', 1, 'Apache', '', '');
 INSERT INTO versions VALUES ('prompgexp', '0.11.1', '', 1, '20220720', '', '', 'https://github.com/prometheus-community/postgres_exporter');
