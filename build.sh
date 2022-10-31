@@ -509,12 +509,15 @@ initPG () {
 
   fi
 
-  #initC "pge14"    "pge14"    "$pgeV"     ""  "pge"              "" "" "Y"
-  #initC "nodejs"   "nodejs"   "$nodejsV" "" "nodejs"           "" "" "Y"
-  #initC "pgrest"   "pgrest"   "$pgrestV"  ""  "postgres/pgrest"  "" "" "Y"
+  initC "pge"  "pge"  "14"  ""  "pge"   "" "" "Y"
+  initC "pge"  "pge"  "15"  ""  "pge"   "" "" "Y"
+
   initC  "autossh"  "autossh"  "$autosshV"  ""  "ssh"  "" "" "Y"
   initC  "prompgexp"  "prompgexp"  "$prompgexpV"  ""  "prometheus/pg_exporter"  "" "" "Y"
   initC  "golang" "golang" "$goV" "" "golang" "" "" "Y"
+
+  #initC "nodejs"   "nodejs"   "$nodejsV" "" "nodejs"           "" "" "Y"
+  #initC "pgrest"   "pgrest"   "$pgrestV"  ""  "postgres/pgrest"  "" "" "Y"
   #initC  "walg" "walg" "$walgV" "$outPlat" "postgres/walg" "" "" "Y"
 
   ##if [ "$isEL8" == "True" ]; then

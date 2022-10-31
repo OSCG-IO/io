@@ -18,7 +18,7 @@ prompgexpV=0.11.1
 autosshV=1.4g
 nodejsV=18.6.0
 bckgrndV=1.1-1
-pgeV=14.5-1
+pgeV=15
 
 multicorn2V=2.4-1
 esfdwV=0.11.2

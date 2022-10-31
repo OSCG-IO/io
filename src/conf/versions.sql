@@ -141,9 +141,10 @@ INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'prod',
   1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('pg15', '15.0-1',  'el8, arm', 1, '20221013','', '', '');
 
-INSERT INTO projects VALUES ('pge14', 1, 5432, 'hub', 1, ' ', 'PGE', 0, 'postgresql.png', 'Postgres', ' ');
-INSERT INTO releases VALUES ('pge14', 10, 'pge14', 'PGE', '', 'test', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pge14', '14.5-1',  '', 0, '20220815', '', '', '');
+INSERT INTO projects VALUES ('pge', 1, 0, 'hub', 1, ' ', 'PGE', 0, 'postgresql.png', 'Postgres', ' ');
+INSERT INTO releases VALUES ('pge', 10, 'pge', 'PGE', '', 'test', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('pge', '15',  '', 1, '20221031', '', '', '');
+INSERT INTO versions VALUES ('pge', '14',  '', 0, '20221031', '', '', '');
 
 INSERT INTO projects VALUES ('ivory14', 6, 5432, 'hub', 1, 'https://github.com/ivorysql/ivorysql/tags',
   'IvorySQL', 0, 'highgo.png', 'Postgres w/ mode=oracle', 'https://ivorysql.org');
