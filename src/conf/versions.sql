@@ -382,6 +382,11 @@ INSERT INTO projects VALUES ('pgrest', 4, 3000, 'hub', 0, 'https://github.com/po
 INSERT INTO releases VALUES ('pgrest', 9, 'pgrest', 'PostgREST', '', 'test', '', 1, 'MIT', '', '');
 INSERT INTO versions VALUES ('pgrest', '9.0.1', '', 1, '20220720', '', '', 'https://postgrest.org');
 
+INSERT INTO projects VALUES ('autossh', 4, 0, 'hub', 0, 'https://www.harding.motd.ca/autossh/',
+  'autossh', 0, 'autossh.png', 'SSH Tunneling', 'https://www.harding.motd.ca/autossh/');
+INSERT INTO releases VALUES ('autossh', 9, 'autossh', 'AutoSSH sessions & tunnels', '', 'test', '', 1, 'Apache', '', '');
+INSERT INTO versions VALUES ('autossh', '1.4g', '', 1, '20190105', '', '', 'https://github.com/prometheus-community/postgres_exporter');
+
 INSERT INTO projects VALUES ('prompgexp', 4, 9187, 'golang', 0, 'https://github.com/prometheus-community/postgres_exporter/tags',
   'prompgexp', 0, 'prometheus.png', 'Prometheus PG Exporter', 'https://github.com/prometheus-community/postgres_exporter');
 INSERT INTO releases VALUES ('prompgexp', 9, 'prompgexp', 'Prometheus PG Exporter', '', 'test', '', 1, 'Apache', '', '');

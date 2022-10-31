@@ -1,5 +1,7 @@
+#!/bin/bash
+cd "$(dirname "$0")"
 
-source getPKMG.sh
+source ./getPKMG.sh
 
 echo "# installing autossh"
 
