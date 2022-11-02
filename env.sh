@@ -26,12 +26,12 @@ bqfdwV=1.9
 
 w2jV=2.4-1
 odbcV=13.01-1
-citusV=11.1.3-1
+citusV=11.1.4-1
 hivefdwV=4.0-1
 
-oraclefdwV=2.4.0-1
+oraclefdwV=2.5.0-1
 inclV=21.6
-orafceV=3.25.0-1
+orafceV=3.25.1-1
 ora2pgV=23.1
 v8V=3.1.2-1
 
@@ -45,7 +45,7 @@ spockV=3.0.4-1
 profV=4.2-1
 bulkloadV=3.1.19-1
 partmanV=4.7.1-1
-repackV=1.4.7-1
+repackV=1.4.8-1
 hintV=1.4.0-1
 
 afoV=1.6.4-1
@@ -82,7 +82,7 @@ cronV=1.4.2-1
 
 mysqlfdwV=2.8.0-1
 mongofdwV=5.4.0-1
-tdsfdwV=2.0.2-1
+tdsfdwV=2.0.3-1
 badgerV=11.6
 patroniV=2.1.1
 

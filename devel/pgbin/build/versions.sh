@@ -54,7 +54,7 @@ agentFullV=4.0.0
 agentShortV=
 agentBuildV=1
 
-citusFullV=11.1.3
+citusFullV=11.1.4
 citusShortV=
 citusBuildV=1
 
@@ -86,7 +86,7 @@ cassFullV=3.1.5
 cassShortV=
 cassBuildV=1
 
-orafceFullV=3.25.0
+orafceFullV=3.25.1
 orafceShortV=
 orafceBuildV=1
 
@@ -94,11 +94,11 @@ fdFullV=1.1.0-1
 fdShortV=
 fdBuildV=1
 
-oraclefdwFullV=2.4.0
+oraclefdwFullV=2.5.0
 oraclefdwShortV=
 oraclefdwBuildV=1
 
-tdsfdwFullV=2.0.2
+tdsfdwFullV=2.0.3
 tdsfdwShortV=
 tdsfdwBuildV=1
 
@@ -175,7 +175,7 @@ pgLogicalFullV=2.4.1
 pgLogicalShortV=
 pgLogicalBuildV=1
 
-repackFullV=1.4.7
+repackFullV=1.4.8
 repackShortV=
 repackBuildV=1
 

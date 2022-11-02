@@ -466,6 +466,10 @@ initPG () {
     initC "partman-pg$pgM" "partman" "$partmanV" "$outPlat" "postgres/partman" "" "" "nil"
     initC "orafce-pg$pgM" "orafce" "$orafceV" "$outPlat" "postgres/orafce" "" "" "nil"
     initC "audit-pg$pgM" "audit" "$audit15V" "$outPlat" "postgres/audit" "" "" "nil"
+    initC "repack-pg$pgM" "repack" "$repackV" "$outPlat" "postgres/repack" "" "" "nil"
+
+    initC "tdsfdw-pg$pgM" "tdsfdw" "$tdsfdwV" "$outPlat" "postgres/tdsfdw" "" "" "nil"
+    initC "oraclefdw-pg$pgM" "oraclefdw" "$oraclefdwV" "$outPlat" "postgres/oraclefdw" "" "" "nil"
 
     initC "autofailover-pg$pgM" "autofailover" "$afoV" "$outPlat" "postgres/autofailover" "" "" "nil"
   fi
@@ -509,8 +513,8 @@ initPG () {
 
   fi
 
-  initC "pge"  "pge"  "14"  ""  "pge"   "" "" "Y"
-  initC "pge"  "pge"  "15"  ""  "pge"   "" "" "Y"
+  #initC "pge"  "pge"  "14"  ""  "pge"   "" "" "Y"
+  #initC "pge"  "pge"  "15"  ""  "pge"   "" "" "Y"
 
   initC  "autossh"  "autossh"  "$autosshV"  ""  "ssh"  "" "" "Y"
   initC  "prompgexp"  "prompgexp"  "$prompgexpV"  ""  "prometheus/pg_exporter"  "" "" "Y"
