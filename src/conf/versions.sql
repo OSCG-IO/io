@@ -440,17 +440,19 @@ INSERT INTO projects VALUES ('timescaledb', 4, 0, 'hub', 1, 'https://github.com/
 INSERT INTO releases VALUES ('timescaledb-pg14',  2, 'timescaledb', 'TimescaleDB', '', 'prod', '', 1, 'Apache', '', '');
 INSERT INTO versions VALUES ('timescaledb-pg14', '2.8.0-1',  'el8, arm', 0, '20220831', 'pg14', '', 'https://github.com/timescale/timescaledb/releases/tag/2.8.0');
 
-INSERT INTO projects VALUES ('spock', 10, 0, 'hub', 1, 'https://github.com/oscg-io/spock/tags',
+INSERT INTO projects VALUES ('spock', 4, 0, 'hub', 1, 'https://github.com/oscg-io/spock/tags',
   'spock', 1, 'spock.png', 'Logical & Multi-Master Replication', 'https://github.com/oscg-io/spock/#spock');
 INSERT INTO releases VALUES ('spock-pg15', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('spock-pg15', '3.0.4-1',  'el8, arm', 1, '20221018', 'pg15', '', '');
 INSERT INTO versions VALUES ('spock-pg15', '3.0.3-1',  'el8, arm', 0, '20221005', 'pg15', '', '');
 INSERT INTO versions VALUES ('spock-pg15', '3.0.2-1',  'el8, arm', 0, '20220927', 'pg15', '', '');
 
-INSERT INTO projects VALUES ('pglogical', 10, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
+INSERT INTO projects VALUES ('pglogical', 4, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');
 INSERT INTO releases VALUES ('pglogical-pg14', 4, 'pglogical', 'pgLogical', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pglogical-pg14', '2.4.1-1',  'arm, el8', 0, '20211213', 'pg14', '', 'https://github.com/2ndQuadrant/pglogical/releases/tag/REL2_4_1');
+INSERT INTO releases VALUES ('pglogical-pg15', 4, 'pglogical', 'pgLogical', '', 'prod', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('pglogical-pg14', '2.4.2-1',  'arm, el8', 1, '20221021', 'pg14', '', 'https://github.com/2ndQuadrant/pglogical/releases/tag/REL2_4_2');
+INSERT INTO versions VALUES ('pglogical-pg15', '2.4.2-1',  'arm, el8', 1, '20221021', 'pg15', '', 'https://github.com/2ndQuadrant/pglogical/releases/tag/REL2_4_2');
 
 INSERT INTO projects VALUES ('postgis', 4, 1, 'hub', 3, 'http://postgis.net/source',
   'postgis', 1, 'postgis.png', 'Spatial Extensions', 'http://postgis.net');
