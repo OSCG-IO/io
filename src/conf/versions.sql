@@ -442,10 +442,10 @@ INSERT INTO versions VALUES ('timescaledb-pg14', '2.8.0-1',  'el8, arm', 0, '202
 
 INSERT INTO projects VALUES ('spock', 4, 0, 'hub', 1, 'https://github.com/oscg-io/spock/tags',
   'spock', 1, 'spock.png', 'Logical & Multi-Master Replication', 'https://github.com/oscg-io/spock/#spock');
+INSERT INTO releases VALUES ('spock-pg14', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('spock-pg15', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('spock-pg15', '3.0.4-1',  'el8, arm', 1, '20221018', 'pg15', '', '');
-INSERT INTO versions VALUES ('spock-pg15', '3.0.3-1',  'el8, arm', 0, '20221005', 'pg15', '', '');
-INSERT INTO versions VALUES ('spock-pg15', '3.0.2-1',  'el8, arm', 0, '20220927', 'pg15', '', '');
+INSERT INTO versions VALUES ('spock-pg14', '3.0.5-1',  'el8, arm', 1, '20221111', 'pg14', '', '');
+INSERT INTO versions VALUES ('spock-pg15', '3.0.5-1',  'el8, arm', 1, '20221111', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('pglogical', 4, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');

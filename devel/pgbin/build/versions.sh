@@ -167,7 +167,7 @@ bulkloadFullV=3.1.19
 bulkloadShortV=
 bulkloadBuildV=1
 
-spockFullV=3.0.4
+spockFullV=3.0.5
 spockShortV=
 spockBuildV=1
 
