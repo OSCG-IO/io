@@ -16,6 +16,8 @@ pg_home = os.path.join(MY_HOME, pgver)
 homedir = os.path.join(MY_HOME, pgver)
 logdir = os.path.join(homedir, pgver)
 
+util.replace('MY_HOME', MY_HOME, os.path.join(pg_home, 'pgbouncer.ini'))
+
 parser = argparse.ArgumentParser()
 parser.add_argument("--port", type=int, default=0)
 parser.add_argument("--autostart", choices=["on", "off"])
