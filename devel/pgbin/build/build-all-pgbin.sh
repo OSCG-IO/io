@@ -24,7 +24,7 @@ function runPgBin {
     pool2Src=$SRC/pool2-$pool2FullV.tar.gz
     #agentSrc=$SRC/agent-$agentV.tar.gz
     echo "majorV = $majorV"
-    if [[ "$majorV" > "13" ]] && [ "$OS" == "Linux" ]; then
+    if [[ "$majorV" > "13" ]]; then
       cmd="./build-pgbin.sh -a $pOutDir -t $pPgSrc -n $pBldV -b $bncrSrc -p $pool2Src"
     else
       cmd="./build-pgbin.sh -a $pOutDir -t $pPgSrc -n $pBldV"
@@ -32,6 +32,7 @@ function runPgBin {
   fi
 
   cmd="$cmd $optional"
+  echo "$cmd"
   $cmd
   if [[ $? -ne 0 ]]; then
     echo "Build Failed"

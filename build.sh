@@ -388,6 +388,9 @@ supplementalPG () {
   checkCmd "cp $pgXX/run-pgctl.py $newDir/"
   myReplace "pgXX" "$comp" "$newDir/run-pgctl.py"
 
+  checkCmd "cp $pgXX/pgbouncer.ini $newDir/"
+  myReplace "pgXX" "$comp" "$newDir/pgbouncer.ini"
+
   checkCmd "cp $pgXX/pg_hba.conf.nix      $newDir/init/pg_hba.conf"
 
   checkCmd "chmod 755 $newDir/bin/*"
