@@ -16,8 +16,6 @@ pg_home = os.path.join(MY_HOME, pgver)
 homedir = os.path.join(MY_HOME, pgver)
 logdir = os.path.join(homedir, pgver)
 
-util.replace('MY_HOME', MY_HOME, os.path.join(pg_home, 'pgbouncer.ini'))
-
 parser = argparse.ArgumentParser()
 parser.add_argument("--port", type=int, default=0)
 parser.add_argument("--autostart", choices=["on", "off"])
@@ -34,6 +32,12 @@ args = parser.parse_args()
 autostart = util.get_column('autostart', pgver)
 app_datadir = util.get_comp_datadir(pgver)
 port = util.get_comp_port(pgver)
+
+### basic config of pgBouncers INI file
+bouncer_ini = os.path.join(pg_home, 'pgbouncer.ini')
+util.replace('MY_HOME', MY_HOME, bouncer_ini)
+util.replace('5432', port, bouncer_ini)
+util.replace('6432', str(int(port) + 1), bouncer_ini)
 
 
 ## SECURE SECRETS MANAGMENT ###################################
