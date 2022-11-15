@@ -1614,7 +1614,7 @@ def get_superuser_passwd(p_user="Superuser"):
   message(" ")
 
   passwd = get_random_password()
-  prompt = p_user + " Password [" + passwd + "]: "  
+  prompt = p_user + " Password: "  
 
   isYES = str(os.getenv("isYes", "False"))
   if isYES == "True":
