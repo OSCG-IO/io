@@ -1994,9 +1994,11 @@ def write_string_file(p_stringname, p_filename):
 ####################################################################################
 # search and replace simple strings on a file, in-place
 ####################################################################################
-def replace(p_olddata, p_newdata, p_filename):
+def replace(p_olddata, p_newdata, p_filename, p_quiet=False):
   filestring = read_file_string(p_filename)
-  print("  replace (" + p_olddata + ") with (" + p_newdata + ") on file (" + p_filename + ")")
+  if not p_quiet:
+    print("  replace (" + p_olddata + ") with (" + p_newdata + \
+      ") on file (" + p_filename + ")")
   newstring = filestring.replace(p_olddata, p_newdata)
   write_string_file(newstring, p_filename)
   return
