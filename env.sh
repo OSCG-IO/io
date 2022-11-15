@@ -1,7 +1,7 @@
 
 bundle=oscg
 api=io
-hubV=6.76
+hubV=6.77
 
 #I14=14.3-1
 
