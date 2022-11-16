@@ -234,6 +234,7 @@ initDir () {
   copy-pgXX "plv8"
   copy-pgXX "hintplan"
   copy-pgXX "autofailover"
+  copy-pgXX "bouncer"
 
   ## POWA #######################
   ## copy-pgXX "wa"
@@ -388,9 +389,6 @@ supplementalPG () {
   checkCmd "cp $pgXX/run-pgctl.py $newDir/"
   myReplace "pgXX" "$comp" "$newDir/run-pgctl.py"
 
-  checkCmd "cp $pgXX/pgbouncer.ini $newDir/"
-  myReplace "pgXX" "$comp" "$newDir/pgbouncer.ini"
-
   checkCmd "cp $pgXX/pg_hba.conf.nix      $newDir/init/pg_hba.conf"
 
   checkCmd "chmod 755 $newDir/bin/*"
@@ -525,6 +523,7 @@ initPG () {
   initC  "autossh"  "autossh"  "$autosshV"  ""  "ssh"  "" "" "Y"
   initC  "prompgexp"  "prompgexp"  "$prompgexpV"  ""  "prometheus/pg_exporter"  "" "" "Y"
   initC  "golang" "golang" "$goV" "" "golang" "" "" "Y"
+  initC  "bouncer" "bouncer" "$bouncerV" "$outPlat" "postgres/bouncer" "" "" "nil"
 
   #initC "nodejs"   "nodejs"   "$nodejsV" "" "nodejs"           "" "" "Y"
   #initC "pgrest"   "pgrest"   "$pgrestV"  ""  "postgres/pgrest"  "" "" "Y"

@@ -33,13 +33,6 @@ autostart = util.get_column('autostart', pgver)
 app_datadir = util.get_comp_datadir(pgver)
 port = util.get_comp_port(pgver)
 
-## basic config of pgBouncer's INI file #######################
-bouncer_ini = os.path.join(pg_home, 'pgbouncer.ini')
-util.replace('MY_HOME', MY_HOME, bouncer_ini, True)
-util.replace('5432', port, bouncer_ini, True)
-util.replace('6432', str(int(port) + 1), bouncer_ini, True)
-
-
 ## SECURE SECRETS MANAGMENT ###################################
 if args.setpwd > "":
   pwdargs = args.setpwd.split()
