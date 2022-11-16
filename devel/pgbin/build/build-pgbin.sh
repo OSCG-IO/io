@@ -31,11 +31,11 @@ if [ "$IVORY" = "True" ]; then
   buildBackrest=0
   buildPool2=0
 else
-  buildBouncer=1
-  ##buildBouncer=0
+  ##buildBouncer=1
+  buildBouncer=0
   buildBackrest=0
-  buildPool2=1
-  ##buildPool2=0
+  ##buildPool2=1
+  buildPool2=0
 fi
 
 scriptName=`basename $0`
