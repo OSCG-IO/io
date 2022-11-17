@@ -134,7 +134,7 @@ else:
 
 # Does the user want to assign a password ?
 if is_password:
-  batcmd = initdb_cmd + ' -U postgres -A md5 ' + init_options + \
+  batcmd = initdb_cmd + ' -U postgres -A scram-sha-256 ' + init_options + \
            ' -D "' + pg_data + '" ' + \
            '--pwfile="' + pgpass_file + '" > "' + logfile + '" 2>&1'
 else:
