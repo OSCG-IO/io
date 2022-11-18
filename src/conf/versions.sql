@@ -140,7 +140,8 @@ INSERT INTO versions VALUES ('pg14', '14.5-1', 'el8, arm', 0, '20220811','', '',
 INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'prod', 
   '<font size=-1 color=red><b>New in <a href=https://sql-info.de/postgresql/postgresql-15/articles-about-new-features-in-postgresql-15.html>2022!</a></b></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg15', '15.1-1',  'el8, arm', 1, '20221110','', '', '');
+INSERT INTO versions VALUES ('pg15', '15.1-2',  'el8, arm', 1, '20221117','', '', '');
+INSERT INTO versions VALUES ('pg15', '15.1-1',  'el8, arm', 0, '20221110','', '', '');
 INSERT INTO versions VALUES ('pg15', '15.0-1',  'el8, arm', 0, '20221013','', '', '');
 
 INSERT INTO projects VALUES ('pge', 1, 0, 'hub', 1, ' ', 'PGE', 0, 'postgresql.png', 'Postgres', ' ');
@@ -445,8 +446,9 @@ INSERT INTO projects VALUES ('spock', 4, 0, 'hub', 1, 'https://github.com/oscg-i
   'spock', 1, 'spock.png', 'Logical & Multi-Master Replication', 'https://github.com/oscg-io/spock/#spock');
 INSERT INTO releases VALUES ('spock-pg14', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('spock-pg15', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('spock-pg14', '3.0.6-1',  'el8, arm', 1, '20221114', 'pg14', '', '');
-INSERT INTO versions VALUES ('spock-pg15', '3.0.6-1',  'el8, arm', 1, '20221114', 'pg15', '', '');
+INSERT INTO versions VALUES ('spock-pg14', '3.0.6-1',  'el8, arm', 0, '20221114', 'pg14', '', '');
+INSERT INTO versions VALUES ('spock-pg15', '3.0.6-1',  'el8, arm', 0, '20221114', 'pg15', '', '');
+INSERT INTO versions VALUES ('spock-pg15', '3.0.7-1',  'el8, arm', 1, '20221117', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('pglogical', 4, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');

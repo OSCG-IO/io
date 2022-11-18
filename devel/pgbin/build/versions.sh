@@ -4,7 +4,7 @@ ivory14V=14.3.1.3
 ivory14BuildV=1
 
 pg15V=15.1
-pg15BuildV=1
+pg15BuildV=2
 
 pg14V=14.6
 pg14BuildV=1
@@ -167,7 +167,7 @@ bulkloadFullV=3.1.19
 bulkloadShortV=
 bulkloadBuildV=1
 
-spockFullV=3.0.6
+spockFullV=3.0.7
 spockShortV=
 spockBuildV=1
 
