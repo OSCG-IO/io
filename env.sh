@@ -13,7 +13,7 @@ P11=11.18-1
 
 walgV=2.0.0
 goV=1.19.2
-pgrestV=10.1.1
+postgrestV=10.1.1
 prompgexpV=0.11.1
 autosshV=1.4g
 nodejsV=18.6.0

@@ -1,7 +1,7 @@
 now=`date`
-msg="stopping pgREST"
+msg="stopping PostgREST"
 echo $msg
-echo "$msg - $now" >> data/logs/pgrest/postgrest.log
+echo "$msg - $now" >> data/logs/postgrest/postgrest.log
 pid=`ps aux | grep [p]ostgrest | awk '{print $2}'`
 if [ "$pid" > " " ]; then
   #echo "killing ($pid)"

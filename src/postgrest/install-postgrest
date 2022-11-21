@@ -1,0 +1,22 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+port=5432
+echo " creating default file postgrest.conf:"
+cat << EOF > postgrest.conf
+db-uri = "postgres://postgres@localhost:$port/postgres"
+db-schemas = "spock"
+db-anon-role = "web_anon"
+EOF
+#cat postgrest.conf
+
+logdir="data/logs/postgrest"
+echo "  log directory: $logdir"
+mkdir -p ../$logdir
+
+if [[ "$isSTART" == "True" ]]; then
+  cd ..
+  ./io start postgrest
+fi
+
+
