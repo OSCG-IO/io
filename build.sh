@@ -524,9 +524,9 @@ initPG () {
   initC  "prompgexp"  "prompgexp"  "$prompgexpV"  ""  "prometheus/pg_exporter"  "" "" "Y"
   initC  "golang" "golang" "$goV" "" "golang" "" "" "Y"
   initC  "bouncer" "bouncer" "$bouncerV" "$outPlat" "postgres/bouncer" "" "" "nil"
+  initC  "pgrest"   "pgrest"   "$pgrestV"  "$outPlat"  "postgres/pgrest"  "" "" "nil"
 
   #initC "nodejs"   "nodejs"   "$nodejsV" "" "nodejs"           "" "" "Y"
-  #initC "pgrest"   "pgrest"   "$pgrestV"  ""  "postgres/pgrest"  "" "" "Y"
   #initC  "walg" "walg" "$walgV" "$outPlat" "postgres/walg" "" "" "Y"
 
   ##if [ "$isEL8" == "True" ]; then
