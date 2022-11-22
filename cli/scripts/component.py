@@ -33,7 +33,8 @@ def init_comp(p_comp, p_pidfile=''):
 
 
 def start_comp(p_comp, p_homedir, p_start_cmd):
-  print(p_comp + " starting")
+  port = util.get_comp_port(p_comp)
+  print(p_comp + " starting on port " + port)
 
   os.chdir(p_homedir)
 
@@ -57,7 +58,7 @@ def stop_comp(p_comp):
     except Exception as e:
       print(str(e))
   else:
-    print(p_comp + " is not running")
+    print(p_comp + " stopped")
 
   return 0
 
