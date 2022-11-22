@@ -2039,56 +2039,6 @@ def is_pid_running(p_pid):
 
 
 ####################################################################################
-# use the java JPS command to locate one or more java process id's by keyword
-####################################################################################
-def get_jps_pid(keyword):
-  pid = 0
-  out = ""
-  err = ""
-
-  args = ['jps', '-lm']
-
-  try:
-    proc = Popen(args, stdout=PIPE, stderr=PIPE, shell=False)
-    out, err = proc.communicate()
-    rc = proc.returncode
-  except OSError as e:
-    msg = "unexpected error running the command '" + str(args) + "'"
-    print (msg)
-    my_logger.error(msg)
-    my_logger.error(traceback.format_exc())
-    return -1
-
-  line = ""
-  for char in out:
-    if ( char == "\n" ):
-      if keyword in line:
-        return int(line.split()[0])
-      line = ""
-    else:
-      line = line + str(char)
-
-  return pid
-
-
-####################################################################################
-# use the java JPS command to kill a process id by keyword
-####################################################################################
-def kill_jps_pid(keyword):
-  v_pid = get_jps_pid(keyword)
-  if v_pid > 0:
-    msg = "  killing " + keyword + " (" + str(v_pid) + ")"
-    print (msg)
-    my_logger.info(msg)
-    kill_pid(v_pid)
-  else:
-    msg = keyword + " is not running."
-    print ("  " + msg)
-    my_logger.info(msg)
-  return 0
-
-
-####################################################################################
 # return the OS platform (Linux, Windows or Darwin)
 ####################################################################################
 def get_platform():
