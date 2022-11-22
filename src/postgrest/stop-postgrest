@@ -1,9 +1,10 @@
 now=`date`
-msg="stopping PostgREST"
-echo $msg
-echo "$msg - $now" >> data/logs/postgrest/postgrest.log
 pid=`ps aux | grep [p]ostgrest.conf | awk '{print $2}'`
 if [ "$pid" > " " ]; then
-  echo "killing ($pid)"
+  msg="postgrest stopping"
+  echo $msg
+  echo "$msg - $now" >> data/logs/postgrest/postgrest.log
   kill -9 $pid > /dev/null 2>&1
+else
+  echo "postgrest stopped"
 fi
