@@ -10,7 +10,7 @@ from subprocess import Popen, PIPE, STDOUT
 from datetime import datetime, timedelta
 
 import os, sys, socket, platform, sqlite3, getpass, signal, hashlib, glob
-import json, uuid, logging, tempfile, shutil, filecmp, traceback, time
+import json, uuid, logging, tempfile, shutil, filecmp, traceback, time, subprocess
 
 import api, meta
 

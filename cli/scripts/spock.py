@@ -1,5 +1,6 @@
 
-import sys, sqlite3, os
+import sys, os
+import util, meta
 
 try:
   import fire
@@ -8,10 +9,30 @@ except ImportError as e:
   sys.exit(1)
 
 
-def create_node(node_name, dsn):
-  sql = "SELECT spock.create_node(node_name := '" + node_name + "' , dsn := '" + dsn + "')"
-  print(sql)
-  pass
+def get_one_pg(pg):
+  if pg:
+    return(pg)
+
+  k = 0
+  pg_s = meta.get_installed_pg()
+  for p in pg_s:
+    k = k + 1
+    if k > 1:
+      print("ERROR: must be only one PG installed")
+      sys.exit(1)
+
+  return(str(p[0]))
+
+
+
+def create_node(node_name, dsn, db, pg=None):
+  pg_v = get_one_pg(pg)
+  os.environ['pgName'] = str(db)
+
+  sql = "SELECT spock.create_node(node_name := '" + node_name + \
+                                  "' , dsn := '" + dsn + "')"
+  rc = util.run_sql_cmd(pg_v, sql, True)
+  sys.exit(rc)
 
 
 def create_replication_set(set_name, replicate_insert=True, replicate_update=True, 

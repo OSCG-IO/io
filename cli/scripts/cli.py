@@ -1318,7 +1318,10 @@ try:
     for n in range(2, len(args)):
         cmd = cmd + " " + args[n]
     rc = os.system(cmd)
-    exit_cleanly(rc)
+    if rc == 0:
+      sys.exit(0)
+
+    sys.exit(1)
 
 
   ## DISCOVER ####################################################################
