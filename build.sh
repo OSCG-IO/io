@@ -474,6 +474,8 @@ initPG () {
     if [ "$outPlat" == "el8" ]; then
       initC "tdsfdw-pg$pgM" "tdsfdw" "$tdsfdwV" "$outPlat" "postgres/tdsfdw" "" "" "nil"
       initC "oraclefdw-pg$pgM" "oraclefdw" "$oraclefdwV" "$outPlat" "postgres/oraclefdw" "" "" "nil"
+    else
+      initC  "postgrest" "postgrest" "$postgrestV"  "$outPlat"  "postgres/postgrest"  "" "" "nil"
     fi
   fi
 
@@ -524,14 +526,11 @@ initPG () {
   initC  "prompgexp"  "prompgexp"  "$prompgexpV"  ""  "prometheus/pg_exporter"  "" "" "Y"
   initC  "golang" "golang" "$goV" "" "golang" "" "" "Y"
   initC  "bouncer" "bouncer" "$bouncerV" "$outPlat" "postgres/bouncer" "" "" "nil"
-  initC  "postgrest" "postgrest" "$postgrestV"  "$outPlat"  "postgres/postgrest"  "" "" "nil"
 
   #initC "nodejs"   "nodejs"   "$nodejsV" "" "nodejs"           "" "" "Y"
   #initC  "walg" "walg" "$walgV" "$outPlat" "postgres/walg" "" "" "Y"
 
-  ##if [ "$isEL8" == "True" ]; then
   return
-  ##fi
   
 
   ##if [ "$pgM" == "14" ]; then 

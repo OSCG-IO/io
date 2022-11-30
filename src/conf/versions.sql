@@ -108,8 +108,6 @@ INSERT INTO versions VALUES ('hub', '6.77', '',  1, '20221130', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.76', '',  0, '20220927', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.75', '',  0, '20220908', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.74', '',  0, '20220901', '', '', '');
-INSERT INTO versions VALUES ('hub', '6.73', '',  0, '20220811', '', '', '');
-INSERT INTO versions VALUES ('hub', '6.72', '',  0, '20220715', '', '', '');
 
 -- ##
 INSERT INTO projects VALUES ('pg', 1, 5432, 'hub', 1, 'https://github.com/postgres/postgres/tags',
@@ -367,7 +365,7 @@ INSERT INTO versions VALUES ('plprofiler-pg15', '4.2-1', 'arm, el8', 1, '2022100
 INSERT INTO projects VALUES ('golang', 4, 0, 'hub', 0, 'https://go.dev/dl',
   'golang', 0, 'go.png', 'Fast & Scaleable Programming', 'https://go.dev');
 INSERT INTO releases VALUES ('golang', 9, 'golang', 'GO', '', 'test', '', 1, '', '', '');
-INSERT INTO versions VALUES ('golang', '1.19.2', '', 0, '20221021', '', '', '');
+INSERT INTO versions VALUES ('golang', '1.19.3', '', 0, '20221101', '', '', '');
 
 INSERT INTO projects VALUES ('walg', 4, 0, 'hub', 0, 'https://github.com/wal-g/wal-g/releases',
   'walg', 0, 'walg.png', 'Archival Restoration Tool', 'https://wal-g.readthedocs.io');
@@ -448,7 +446,7 @@ INSERT INTO releases VALUES ('spock-pg14', 4, 'spock', 'Spock', '', 'prod', '', 
 INSERT INTO releases VALUES ('spock-pg15', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO versions VALUES ('spock-pg14', '3.0.6-1',  'el8, arm', 0, '20221114', 'pg14', '', '');
 INSERT INTO versions VALUES ('spock-pg15', '3.0.6-1',  'el8, arm', 0, '20221114', 'pg15', '', '');
-INSERT INTO versions VALUES ('spock-pg15', '3.0.7-1',  'el8, arm', 1, '20221117', 'pg15', '', '');
+INSERT INTO versions VALUES ('spock-pg15', '3.0.7-1',  'el8, arm', 1, '20221130', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('pglogical', 4, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');
