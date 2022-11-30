@@ -9,14 +9,19 @@ except ImportError as e:
 
 
 def create_node(node_name, dsn):
+  sql = "SELECT spock.create_node(node_name := '" + node_name + "' , dsn := '" + dsn + "')"
+  print(sql)
   pass
 
 
-def create_replication_set(rep_set, flag1, flag2, flag3, flag4):
+def create_replication_set(set_name, replicate_insert=True, replicate_update=True, 
+                           replicate_delete=True, replicate_truncate=True):
   pass
 
 
-def create_subscription( subscription_name, provider_dsn, forward_origins='{}', synchronize_data='false'):
+def create_subscription(subscription_name, provider_dsn, replication_sets=None,
+                        synchronize_structure=False, synchronize_data=False, 
+                        forward_origins='{}', apply_delay=0):
   pass
 
 
