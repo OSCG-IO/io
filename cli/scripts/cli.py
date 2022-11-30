@@ -74,15 +74,15 @@ mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
              "upgrade", "downgrade", "enable", "disable", "install", "tune",
              "remove", "reload", "activity", "help", "get", "set", "unset",
              "repolist", "repo-pkgs", "discover", "backrest", "change-pgconf",
-             "register", "top", "--autostart", "--relnotes", "--start",
+             "register", "top", "spock", "--autostart", "--relnotes", "--start",
              "--no-restart", "--no-preload",
              "--help", "--json", "--jsonp", "--test", "--extensions", "--svcs",
              "--list", "--old", "--showduplicates", "-y", "-t", "-d"  ,
              "--verbose", "--debug", "--debug2"]
 
-mode_list_advanced = ['kill', 'config', 'deplist', 'download', 'init', 'clean', 'useradd']
+mode_list_advanced = ['kill', 'config', 'deplist', 'download', 'init', 'clean', 'useradd', 'spock']
 
-ignore_comp_list = [ "get", "set", "unset", "register", "repolist", 
+ignore_comp_list = [ "get", "set", "unset", "register", "repolist", "spock",
                      "repo-pkgs", "discover", "useradd", "backrest", "change-pgconf"]
 
 no_log_commands = ['status', 'info', 'list', 'activity', 'top', 'register',
@@ -1311,9 +1311,19 @@ try:
   if p_mode != "update":
     update_if_needed()
 
+
+  ## SPOCK #######################################################################
+  if p_mode == 'spock':
+    cmd = 'python3 hub/scripts/spock.py'
+    for n in range(2, len(args)):
+        cmd = cmd + " " + args[n]
+    rc = os.system(cmd)
+    exit_cleanly(rc)
+
+
   ## DISCOVER ####################################################################
   if p_mode == "discover":
-    vList = ["12", "11", "10", "9.6", "9.5", "9.4" ]
+    vList = ["15", "14", "13", "12", "11", "10" ]
     if len(args) == 2:
       verList =  vList
     elif len(args) == 3:
