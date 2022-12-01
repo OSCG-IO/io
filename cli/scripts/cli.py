@@ -1316,7 +1316,7 @@ try:
   if p_mode == 'spock':
     cmd = 'python3 hub/scripts/spock.py'
     for n in range(2, len(args)):
-        cmd = cmd + " " + args[n]
+        cmd = cmd + ' "' + args[n] + '"'
     rc = os.system(cmd)
     if rc == 0:
       sys.exit(0)
