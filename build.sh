@@ -481,7 +481,7 @@ initPG () {
 
   if [ "$pgM" == "14" ] && [  "$isEL8" == "True" ]; then
     initC "pglogical-pg$pgM" "pglogical" "$logicalV" "$outPlat" "postgres/logical" "" "" "nil"
-    initC "spock-pg$pgM" "spock" "$spockV" "$outPlat" "postgres/spock" "" "" "nil"
+    #initC "spock-pg$pgM" "spock" "$spockV" "$outPlat" "postgres/spock" "" "" "nil"
 
     #initC "odyssey" "odyssey" "$odysseyV" "$outPlat" "postgres/odyssey" "" "" "nil"
 

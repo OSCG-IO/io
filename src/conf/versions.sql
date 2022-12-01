@@ -104,7 +104,8 @@ INSERT INTO categories VALUES (9,  87, 'Management & Monitoring', 'Manage/Monito
 -- ## HUB ################################
 INSERT INTO projects VALUES ('hub',0, 0, 'hub', 0, 'https://github.com/pgsql-io/pgsql-io','',0,'','','');
 INSERT INTO releases VALUES ('hub', 1, 'hub', '', '', 'hidden', '', 1, '', '', '');
-INSERT INTO versions VALUES ('hub', '6.77', '',  1, '20221130', '', '', '');
+INSERT INTO versions VALUES ('hub', '6.78', '',  1, '20221201', '', '', '');
+INSERT INTO versions VALUES ('hub', '6.77', '',  0, '20221130', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.76', '',  0, '20220927', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.75', '',  0, '20220908', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.74', '',  0, '20220901', '', '', '');
@@ -442,11 +443,10 @@ INSERT INTO versions VALUES ('timescaledb-pg14', '2.8.0-1',  'el8, arm', 0, '202
 
 INSERT INTO projects VALUES ('spock', 4, 0, 'hub', 1, 'https://github.com/oscg-io/spock/tags',
   'spock', 1, 'spock.png', 'Logical & Multi-Master Replication', 'https://github.com/oscg-io/spock/#spock');
-INSERT INTO releases VALUES ('spock-pg14', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('spock-pg15', 4, 'spock', 'Spock', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('spock-pg14', '3.0.6-1',  'el8, arm', 0, '20221114', 'pg14', '', '');
 INSERT INTO versions VALUES ('spock-pg15', '3.0.6-1',  'el8, arm', 0, '20221114', 'pg15', '', '');
-INSERT INTO versions VALUES ('spock-pg15', '3.0.7-1',  'el8, arm', 1, '20221130', 'pg15', '', '');
+INSERT INTO versions VALUES ('spock-pg15', '3.0.7-1',  'el8, arm', 0, '20221120', 'pg15', '', '');
+INSERT INTO versions VALUES ('spock-pg15', '3.0.8-1',  'el8, arm', 1, '20221130', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('pglogical', 4, 0, 'hub', 1, 'https://github.com/2ndQuadrant/pglogical/releases',
   'pglogical', 1, 'spock.png', 'Logical Replication', 'https://github.com/2ndQuadrant/pglogical');

@@ -4,7 +4,7 @@
 
 import sys, os
 
-VER="6.77"
+VER="6.78"
 REPO=os.getenv("REPO", "https://oscg-io-download.s3.amazonaws.com/REPO")
   
 if sys.version_info < (2, 7):
