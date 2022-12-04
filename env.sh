@@ -12,7 +12,7 @@ P12=12.13-1
 P11=11.18-1
 
 walgV=2.0.0
-goV=1.19.2
+goV=1.19.3
 postgrestV=10.1.1
 prompgexpV=0.11.1
 autosshV=1.4g
@@ -41,7 +41,7 @@ ddlxV=0.17-1
 hypoV=1.3.1-1
 timescaleV=2.8.0-1
 logicalV=2.4.2-1
-spockV=3.0.8-1
+spockV=3.0.10-1
 profV=4.2-1
 bulkloadV=3.1.19-1
 partmanV=4.7.1-1

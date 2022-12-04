@@ -1,7 +1,9 @@
 #!/bin/bash
 
-ivory14V=14.3.1.3
-ivory14BuildV=1
+
+spockFullV=3.0.10
+spockShortV=
+spockBuildV=1
 
 pg15V=15.1
 pg15BuildV=2
@@ -166,10 +168,6 @@ pgTSQLBuildV=1
 bulkloadFullV=3.1.19
 bulkloadShortV=
 bulkloadBuildV=1
-
-spockFullV=3.0.8
-spockShortV=
-spockBuildV=1
 
 pgLogicalFullV=2.4.2
 pgLogicalShortV=
