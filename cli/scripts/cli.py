@@ -78,7 +78,7 @@ mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
              "--no-restart", "--no-preload",
              "--help", "--json", "--jsonp", "--test", "--extensions", "--svcs",
              "--list", "--old", "--showduplicates", "-y", "-t", "-d"  ,
-             "--verbose", "--debug", "--debug2"]
+             "--verbose", "-v", "--debug", "--debug2"]
 
 mode_list_advanced = ['kill', 'config', 'deplist', 'download', 'init', 'clean', 'useradd', 'spock']
 
@@ -1150,9 +1150,14 @@ p_passwd=""
 p_host_name=""
 
 isVERBOSE = False
-if "--verbose" in args:
+if ("--verbose" in args):
   isVERBOSE = True
   args.remove("--verbose")
+if ("-v" in args):
+  isVERBOSE = True
+  args.remove("-v")
+if isVERBOSE:
+  os.environ['isVerbose'] = "True"
 
 isYES = False
 if "-y" in args:
@@ -1316,7 +1321,8 @@ try:
   if p_mode == 'spock':
     cmd = 'python3 hub/scripts/spock.py'
     for n in range(2, len(args)):
-        cmd = cmd + ' "' + args[n] + '"'
+        parm = args[n]
+        cmd = cmd + ' "' + parm + '"'
     rc = os.system(cmd)
     if rc == 0:
       sys.exit(0)
