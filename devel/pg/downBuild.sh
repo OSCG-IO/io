@@ -60,6 +60,7 @@ makeInstall () {
     export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
     export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
   fi
+  export LLVM_CONFIG=/usr/bin/llvm-config-64
   options="$options --with-openssl --with-llvm --with-gssapi --with-libxml --with-libxslt"
   ##options="--host=x86_64-w64-mingw32 --without-zlib"
   cmd="./configure --prefix=$PWD $options"

@@ -220,6 +220,7 @@ function buildPostgres {
 		##conf="$conf --with-python PYTHON=/usr/bin/python3"
 		##conf="$conf --with-uuid=ossp --with-gssapi --with-ldap --with-pam"
 	else
+                export LLVM_CONFIG=/usr/bin/llvm-config-64
 		conf="$conf "
 		conf="$conf --with-uuid=ossp --with-gssapi --with-ldap --with-pam"
 		if [ $OS == "amd" ]; then
