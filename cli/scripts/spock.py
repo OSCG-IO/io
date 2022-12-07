@@ -1,5 +1,5 @@
 
-import sys, os
+import sys, os, json
 import util, meta
 
 try:
@@ -9,14 +9,9 @@ except ImportError as e:
 
 try:
   import psycopg2
+  from psycopg2.extras import RealDictCursor
 except ImportError as e:
   util.exit_message("Missing 'psycopg2' module from pip", 1)
-
-isVerbose = os.getenv('isVerbose', 'False')
-if isVerbose == 'False':
-  isVerbose = False
-else:
-  isVerbose = True
 
 
 def run_psyco_sql(pg_v, db, cmd, usr=None):
@@ -25,20 +20,28 @@ def run_psyco_sql(pg_v, db, cmd, usr=None):
 
   dbp = util.get_column("port", pg_v)
 
+  isVerbose = os.getenv('isVerbose', 'False')
+  if isVerbose == 'True':
+    util.message(cmd, "info")
+
   try:
     con = psycopg2.connect(dbname=db, user=usr, host="localhost", port=dbp)
-    cur = con.cursor()
+    cur = con.cursor(cursor_factory=RealDictCursor)
     cur.execute(cmd)
-    data = cur.fetchall()
-    for d in data:
-      print(str(d))
-    cur.close()
-    conn.close()
+
+    print(json.dumps(cur.fetchall(), indent=2))
+
+    try:
+      cur.close()
+      con.close()
+    except Exception as e:
+      pass
+
   except Exception as e:
     util.exit_message(str(e), 1)
 
 
-def set_pg_db(pg, db):
+def get_pg_v(pg):
   pg_v = str(pg)
 
   if pg_v.isdigit():
@@ -63,8 +66,6 @@ def set_pg_db(pg, db):
   if rc != 0:
     util.exit_message(pg_v + " not ready", 1) 
 
-  os.environ['pgName'] = str(db)
-
   return(pg_v)
 
 
@@ -75,21 +76,19 @@ def get_eq(parm, val, sufx):
 
 
 def create_node(node_name, dsn, db, pg=None):
-  pg_v = set_pg_db(pg, db)
+  pg_v = get_pg_v(pg)
 
   sql = "SELECT spock.create_node(" + \
            get_eq("node_name", node_name, ", ") + \
            get_eq("dsn",       dsn,       ")")
 
-  ##rc = util.run_sql_cmd(pg_v, sql, isVerbose)
   run_psyco_sql(pg_v, db, sql)
-
-  sys.exit(rc)
+  sys.exit(0)
 
 
 def create_replication_set(set_name, db, replicate_insert=True, replicate_update=True, 
                            replicate_delete=True, replicate_truncate=True, pg=None):
-  pg_v = set_pg_db(pg, db)
+  pg_v = get_pg_v(pg)
 
   sql = "SELECT spock.create_replication_set(" + \
            get_eq("set_name", set_name, ", ") + \
@@ -98,14 +97,14 @@ def create_replication_set(set_name, db, replicate_insert=True, replicate_update
            get_eq("replicate_delete",   replicate_delete,   ", ") + \
            get_eq("replicate_truncate", replicate_truncate, ")")
 
-  rc = util.run_sql_cmd(pg_v, sql, isVerbose)
-  sys.exit(rc)
+  run_psyco_sql(pg_v, db, sql)
+  sys.exit(0)
 
 
-def create_subscription(subscription_name, provider_dsn, db, replication_sets=None,
+def create_subscription(subscription_name, provider_dsn, db, replication_sets="{default,default_insert_only,ddl_sql}",
                         synchronize_structure=False, synchronize_data=False, 
                         forward_origins='{}', apply_delay=0, pg=None):
-  pg_v = set_pg_db(pg, db)
+  pg_v = get_pg_v(pg)
 
   sql = "SELECT spock.create_subscription(" + \
            get_eq("subscription_name",     subscription_name,     ", ") + \
@@ -116,29 +115,29 @@ def create_subscription(subscription_name, provider_dsn, db, replication_sets=No
            get_eq("forward_origins",       forward_origins,       ", ") + \
            get_eq("apply_delay",           apply_delay,           ")")
 
-  rc = util.run_sql_cmd(pg_v, sql, isVerbose)
-  sys.exit(rc)
+  run_psyco_sql(pg_v, db, sql)
+  sys.exit(0)
 
 
 def alter_subscription_add_replication_set(subscription_name, replication_set, db, pg=None):
-  pg_v = set_pg_db(pg, db)
+  pg_v = get_pg_v(pg)
 
   sql = "SELECT spock.alter_subscription_add_replication_set(" + \
            get_eq("subscription_name", subscription_name, ", ") + \
            get_eq("replication_set",   replication_set,   ")")
 
-  rc = util.run_sql_cmd(pg_v, sql, isVerbose)
-  sys.exit(rc)
+  run_psyco_sql(pg_v, db, sql)
+  sys.exit(0)
 
 
 def wait_for_subscription_sync_complete(subscription_name, db, pg):
-  pg_v = set_pg_db(pg, db)
+  pg_v = get_pg_v(pg)
 
   sql = "SELECT spock.wait_for_subscription_sync_complete(" + \
            get_eq("subscription_name", subscription_name, ")")
 
-  rc = util.run_sql_cmd(pg_v, sql, isVerbose)
-  sys.exit(rc)
+  run_psyco_sql(pg_v, db, sql)
+  sys.exit(0)
 
 
 if __name__ == '__main__':
