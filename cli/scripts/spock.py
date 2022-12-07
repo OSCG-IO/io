@@ -70,6 +70,23 @@ def get_pg_v(pg):
   return(pg_v)
 
 
+def change_pg_pwd(pwd_file, db="*", user="postgres", host="localhost", pg=None ):
+  pg_v = get_pg_v(pg)
+  dbp = util.get_column("port", pg_v)
+
+  if os.path.isfile(pwd_file):
+    file = open(pwd_file, 'r')
+    line = file.readline()
+    pg_password = line.rstrip()
+    file.close()
+    os.system("rm " + pwd_file)
+  else:
+    util.exit_message("invalid pwd file: " + str(pwd_file), 1) 
+  
+  rc = util.change_pgpassword(p_passwd=pg_password, p_port=dbp, p_host=host, p_db="*", p_user=user, p_ver=pg_v)
+  sys.exit(rc)
+
+
 def get_eq(parm, val, sufx):
   colon_equal = str(parm) + " := '" + str(val) + "'" + str(sufx)
 
@@ -173,5 +190,6 @@ if __name__ == '__main__':
       'show-subscription-table': show_subscription_table,
       'alter-subscription-add-replication-set': alter_subscription_add_replication_set,
       'wait-for-subscription-sync-complete': wait_for_subscription_sync_complete,
+      'change-pg-pwd': change_pg_pwd,
   })
 
