@@ -38,7 +38,8 @@ def run_psyco_sql(pg_v, db, cmd, usr=None):
       pass
 
   except Exception as e:
-    util.exit_message(str(e), 1)
+    lines = str(e).splitlines()
+    util.exit_message(str(lines[0]), 1)
 
 
 def get_pg_v(pg):
@@ -119,6 +120,29 @@ def create_subscription(subscription_name, provider_dsn, db, replication_sets="{
   sys.exit(0)
 
 
+def show_subscription_status(subscription_name, db, pg=None):
+  pg_v = get_pg_v(pg)
+
+  sql = "SELECT spock.show_subscription_status(" 
+  if subscription_name != "*":
+    get_eq("subscription_name", subscription_name, "")
+  sql = sql + ")"
+
+  run_psyco_sql(pg_v, db, sql)
+  sys.exit(0)
+
+
+def show_subscription_table(subscription_name, relation, db, pg=None):
+  pg_v = get_pg_v(pg)
+
+  sql = "SELECT spock.show_subscription_status(" + \
+           get_eq("subscription_name", subscription_name, ", ") + \
+           "relation := '" + relation + "'::regclass)"
+
+  run_psyco_sql(pg_v, db, sql)
+  sys.exit(0)
+
+
 def alter_subscription_add_replication_set(subscription_name, replication_set, db, pg=None):
   pg_v = get_pg_v(pg)
 
@@ -145,6 +169,8 @@ if __name__ == '__main__':
       'create-node': create_node,
       'create-replication-set': create_replication_set,
       'create-subscription': create_subscription,
+      'show-subscription-status': show_subscription_status,
+      'show-subscription-table': show_subscription_table,
       'alter-subscription-add-replication-set': alter_subscription_add_replication_set,
       'wait-for-subscription-sync-complete': wait_for_subscription_sync_complete,
   })
