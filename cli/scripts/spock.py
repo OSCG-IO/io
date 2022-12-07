@@ -7,11 +7,35 @@ try:
 except ImportError as e:
   util.exit_message("Missing 'fire' module from pip", 1)
 
+try:
+  import psycopg2
+except ImportError as e:
+  util.exit_message("Missing 'psycopg2' module from pip", 1)
+
 isVerbose = os.getenv('isVerbose', 'False')
 if isVerbose == 'False':
   isVerbose = False
 else:
   isVerbose = True
+
+
+def run_psyco_sql(pg_v, db, cmd, usr=None):
+  if usr == None:
+    usr = "postgres"
+
+  dbp = util.get_column("port", pg_v)
+
+  try:
+    con = psycopg2.connect(dbname=db, user=usr, host="localhost", port=dbp)
+    cur = con.cursor()
+    cur.execute(cmd)
+    data = cur.fetchall()
+    for d in data:
+      print(str(d))
+    cur.close()
+    conn.close()
+  except Exception as e:
+    util.exit_message(str(e), 1)
 
 
 def set_pg_db(pg, db):
@@ -37,7 +61,7 @@ def set_pg_db(pg, db):
 
   rc = os.system(pg_v + "/bin/pg_isready > /dev/null 2>&1")
   if rc != 0:
-    util.exit_message(pg_v + " not ready") 
+    util.exit_message(pg_v + " not ready", 1) 
 
   os.environ['pgName'] = str(db)
 
@@ -57,7 +81,8 @@ def create_node(node_name, dsn, db, pg=None):
            get_eq("node_name", node_name, ", ") + \
            get_eq("dsn",       dsn,       ")")
 
-  rc = util.run_sql_cmd(pg_v, sql, isVerbose)
+  ##rc = util.run_sql_cmd(pg_v, sql, isVerbose)
+  run_psyco_sql(pg_v, db, sql)
 
   sys.exit(rc)
 
@@ -118,10 +143,10 @@ def wait_for_subscription_sync_complete(subscription_name, db, pg):
 
 if __name__ == '__main__':
   fire.Fire({
-      'create_node': create_node,
-      'create_replication_set': create_replication_set,
-      'create_subscription': create_subscription,
-      'alter_subscription_add_replication_set': alter_subscription_add_replication_set,
-      'wait_for_subscription_sync_complete': wait_for_subscription_sync_complete,
+      'create-node': create_node,
+      'create-replication-set': create_replication_set,
+      'create-subscription': create_subscription,
+      'alter-subscription-add-replication-set': alter_subscription_add_replication_set,
+      'wait-for-subscription-sync-complete': wait_for_subscription_sync_complete,
   })
 
