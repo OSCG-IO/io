@@ -252,7 +252,7 @@ def run_sql_cmd(p_pg, p_sql, p_display=False):
   cmd = os.path.join(p_pg, "bin", cmd)
 
   if p_display:
-    print ("$ " + cmd)
+    message("$ " + cmd, "info")
 
   cmd = os.path.join(MY_HOME, cmd)
   rc = os.system(cmd)
