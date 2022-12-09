@@ -1,7 +1,11 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
+this_dir=$PWD
+
 ver=$1
+
+##set -x
 
 url=https://nodejs.org/dist/v$ver
 file=node-v$ver
@@ -33,11 +37,12 @@ fi
 dir=$file-$flavor
 full_file=$dir.tar.xz
 
-rm -f $full_file*
-rm -f postgrest
+bindir=/usr/local/bin
+sudo rm -rf $bindir/nodejs*
+cd $bindir
 
 echo " downloading $full_file from $url .."
-wget -q $url/$full_file
+sudo wget -q $url/$full_file
 rc=$?
 if [ "$rc" != "0" ]; then
   echo "ERROR: $ver not found or cannot download"
@@ -45,37 +50,26 @@ if [ "$rc" != "0" ]; then
 fi
 
 echo " extracting $full_file ... "
-rm -rf $dir
-tar -xf $full_file
+sudo rm -rf $dir
+sudo tar -xf $full_file
 rc=$?
 if [ "$rc" != "0" ]; then
   exit 1
-else
-  rm $full_file*
 fi
 
-echo " modifying directory structure"
-cp -r $dir/* .
+sudo mv $dir nodejs
+sudo rm $full_file*
 
-echo " cleaning up"
-rm -rf $dir
-
-port=3000
-##echo " creating default config file pgrest.conf with following lines:"
-##cat << EOF > pgrest.conf
-##db-uri = "postgres://postgres@localhost:$port/postgres"
-##db-schemas = "spock"
-##db-anon-role = "web_anon"
-##EOF
-##cat pgrest.conf
-
+cd $this_dir
 logdir="data/logs/nodejs"
 mkdir -p ../$logdir
+
+echo ""
+echo "consider adding $bindir/nodejs/bin to the PATH"
+echo "goodbye"
+exit
 
 if [[ "$isSTART" == "True" ]]; then
   cd ..
   ./io start nodejs
 fi
-
-
-

@@ -3,8 +3,6 @@ bundle=oscg
 api=io
 hubV=6.78
 
-#I14=14.3-1
-
 P15=15.1-3
 P14=14.6-1
 P13=13.9-1
@@ -16,7 +14,7 @@ goV=1.19.3
 postgrestV=10.1.1
 prompgexpV=0.11.1
 autosshV=1.4g
-nodejsV=18.6.0
+nodejsV=18.12.1
 bckgrndV=1.1-1
 pgeV=15
 

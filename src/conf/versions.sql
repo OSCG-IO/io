@@ -116,7 +116,7 @@ INSERT INTO projects VALUES ('pg', 1, 5432, 'hub', 1, 'https://github.com/postgr
 
 INSERT INTO releases VALUES ('pg11', 4, 'pg', 'PostgreSQL', '', 'prod', 
   '<font size=-1>New in <a href=https://www.postgresql.org/docs/11/release-11.html>2018</a></font>', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg11', '11.18-1', 'arm, amd, el8', 1, '20221110', '', '', '');
+INSERT INTO versions VALUES ('pg11', '11.18-1', 'arm, amd, el8', 0, '20221110', '', '', '');
 INSERT INTO versions VALUES ('pg11', '11.17-1', 'arm, amd, el8', 0, '20220811', '', '', '');
 
 INSERT INTO releases VALUES ('pg12', 3, 'pg', 'PostgreSQL', '', 'prod', 
@@ -389,16 +389,14 @@ INSERT INTO projects VALUES ('prompgexp', 4, 9187, 'golang', 0, 'https://github.
 INSERT INTO releases VALUES ('prompgexp', 9, 'prompgexp', 'Prometheus PG Exporter', '', 'test', '', 1, 'Apache', '', '');
 INSERT INTO versions VALUES ('prompgexp', '0.11.1', '', 1, '20220720', '', '', 'https://github.com/prometheus-community/postgres_exporter');
 
-INSERT INTO projects VALUES ('nodejs', 4, 3000, 'hub', 0, 'https://github.com/postgrest/postgrest/tags',
-  'nodejs', 0, 'prest.png', 'a RESTful API', 'https://nodejs.org');
+INSERT INTO projects VALUES ('nodejs', 4, 3000, 'hub', 0, 'https://github.com/',
+  'nodejs', 0, 'nodejs.png', 'Javascrip Runtime', 'https://nodejs.org');
 INSERT INTO releases VALUES ('nodejs', 9, 'nodejs', 'Node.js', '', 'test', '', 1, 'MIT', '', '');
-INSERT INTO versions VALUES ('nodejs', '18.6.0', '', 1, '20220720', '', '', 'https://nodejs.org');
+INSERT INTO versions VALUES ('nodejs', '18.12.1', '', 1, '20221104', '', '', 'https://nodejs.org');
 
 INSERT INTO projects VALUES ('audit', 4, 0, 'hub', 0, 'https://github.com/pgaudit/pgaudit/releases',
   'audit', 1, 'audit.png', 'Audit Logging', 'https://github.com/pgaudit/pgaudit');
-INSERT INTO releases VALUES ('audit-pg14', 10, 'audit', 'pgAudit', '', 'prod', '', 1, 'POSTGRES', '', '');
 INSERT INTO releases VALUES ('audit-pg15', 10, 'audit', 'pgAudit', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('audit-pg14', '1.6.2-1', 'arm, el8', 1, '20220225', 'pg14', '', 'https://github.com/pgaudit/pgaudit/releases/tag/1.6.2');
 INSERT INTO versions VALUES ('audit-pg15', '1.7.0-1', 'arm, el8', 1, '20221013', 'pg15', '', 'https://github.com/pgaudit/pgaudit/releases/tag/1.7.0');
 
 INSERT INTO projects VALUES ('hintplan', 6, 0, 'hub', 0, 'https://github.com/ossc-db/pg_hint_plan/tags',

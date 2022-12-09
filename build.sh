@@ -527,7 +527,7 @@ initPG () {
   initC  "golang" "golang" "$goV" "" "golang" "" "" "Y"
   initC  "bouncer" "bouncer" "$bouncerV" "$outPlat" "postgres/bouncer" "" "" "nil"
 
-  #initC "nodejs"   "nodejs"   "$nodejsV" "" "nodejs"           "" "" "Y"
+  initC "nodejs"   "nodejs"   "$nodejsV" "" "nodejs"           "" "" "Y"
   #initC  "walg" "walg" "$walgV" "$outPlat" "postgres/walg" "" "" "Y"
 
   return
