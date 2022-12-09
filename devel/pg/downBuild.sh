@@ -1,9 +1,12 @@
 
-v11=11.18
+## set -x
+
 v12=12.13
 v13=13.9
 v14=14.6
 v15=15.1
+
+UNAME=`uname`
 
 fatalError () {
   echo "FATAL ERROR!  $1"
@@ -54,13 +57,20 @@ downBuild () {
 makeInstall () {
   brew --version > /dev/null 2>&1
   rc=$?
-  if [ "$rc" == "0" ]; then
+  if [ "$UNAME" = "Darwin" ] && [ ! "$rc" == "0" ]; then
+    echo "ERROR: Darwin requires BREW"
+    exit 1
+  fi
+
+  if [ "$UNAME" = "Darwin" ]; then
     export LLVM_CONFIG="/opt/homebrew/opt/llvm/bin/llvm-config"
     export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
     export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
     export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+  else
+    export LLVM_CONFIG=/usr/bin/llvm-config-64
   fi
-  export LLVM_CONFIG=/usr/bin/llvm-config-64
+
   options="$options --with-openssl --with-llvm --with-gssapi --with-libxml --with-libxslt"
   ##options="--host=x86_64-w64-mingw32 --without-zlib"
   cmd="./configure --prefix=$PWD $options"
@@ -89,10 +99,7 @@ makeInstall () {
 ## MAINLINE ##############################
 
 options=""
-if [ "$1" == "11" ]; then
-  options=""
-  downBuild $v11
-elif [ "$1" == "12" ]; then
+if [ "$1" == "12" ]; then
   options=""
   downBuild $v12
 elif [ "$1" == "13" ]; then
@@ -103,10 +110,9 @@ elif [ "$1" == "14" ]; then
   downBuild $v14
 elif [ "$1" == "15" ]; then
   options="--with-zstd --with-lz4"
-  ##options=""
   downBuild $v15
 else
-  echo "ERROR: Incorrect PG version.  Must be between 11  and 15"
+  echo "ERROR: Incorrect PG version.  Must be between 12 and 15"
   exit 1
 fi
  
