@@ -66,10 +66,11 @@ mkdir -p ../$logdir
 
 echo ""
 echo "consider adding $bindir/nodejs/bin to the PATH"
-echo "goodbye"
-exit
 
 if [[ "$isSTART" == "True" ]]; then
   cd ..
   ./io start nodejs
 fi
+
+echo "goodbye"
+exit
