@@ -28,6 +28,7 @@ def run_psyco_sql(pg_v, db, cmd, usr=None):
     con = psycopg2.connect(dbname=db, user=usr, host="localhost", port=dbp)
     cur = con.cursor(cursor_factory=RealDictCursor)
     cur.execute(cmd)
+    con.commit()
 
     print(json.dumps(cur.fetchall(), indent=2))
 
@@ -171,7 +172,7 @@ def alter_subscription_add_replication_set(subscription_name, replication_set, d
   sys.exit(0)
 
 
-def wait_for_subscription_sync_complete(subscription_name, db, pg):
+def wait_for_subscription_sync_complete(subscription_name, db, pg=None):
   pg_v = get_pg_v(pg)
 
   sql = "SELECT spock.wait_for_subscription_sync_complete(" + \
@@ -180,6 +181,36 @@ def wait_for_subscription_sync_complete(subscription_name, db, pg):
   run_psyco_sql(pg_v, db, sql)
   sys.exit(0)
 
+def get_pii_cols(db,schema=None,pg=None):
+  pg_v = get_pg_v(pg)
+
+  if schema == None:
+    schema="public"
+  sql = "SELECT pii_table, pii_column FROM spock.pii WHERE pii_schema='" + schema + "' ORDER BY pii_table;"
+
+  run_psyco_sql(pg_v, db, sql)
+  sys.exit(0)
+
+def get_replication_tables(db,schema=None,pg=None):
+  pg_v = get_pg_v(pg)
+
+  if schema == None:
+    schema="public"
+  sql = "SELECT col.table_name, ARRAY_AGG(col.column_name) FROM information_schema.columns col LEFT OUTER JOIN spock.pii on col.table_name=pii.pii_table and col.column_name=pii.pii_column WHERE pii.pii_column IS NULL and table_schema='" + schema + "' GROUP BY 1 ORDER BY 1;"
+
+  run_psyco_sql(pg_v, db, sql)
+  sys.exit(0)
+
+def replication_set_add_table(db, replication_set, table, cols=None, pg=None):
+  pg_v = get_pg_v(pg)
+
+  if cols == None:
+    sql="SELECT spock.replication_set_add_table('" + replication_set + "','" + table + "')"
+  else:
+    sql="SELECT spock.replication_set_add_table('" + replication_set + "','" + table + "','" + cols +"')"
+
+  run_psyco_sql(pg_v, db, sql)
+  sys.exit(0)
 
 if __name__ == '__main__':
   fire.Fire({
@@ -191,5 +222,8 @@ if __name__ == '__main__':
       'alter-subscription-add-replication-set': alter_subscription_add_replication_set,
       'wait-for-subscription-sync-complete': wait_for_subscription_sync_complete,
       'change-pg-pwd': change_pg_pwd,
+      'get-pii-columns': get_pii_cols,
+      'get-replication-tables': get_replication_tables,
+      'replication-set-add-table':replication_set_add_table,
   })
 
