@@ -40,11 +40,11 @@ bckgrndFullV=1.1
 bckgrndShortV=
 bckgrndBuildV=1
 
-pool2FullV=4.3.3
+pool2FullV=4.4.0
 pool2ShortV=
 pool2BuildV=1
 
-bouncerFullV=1.17.0
+bouncerFullV=1.18.0
 bouncerShortV=
 bouncerBuildV=1
 
@@ -76,7 +76,7 @@ hypopgFullV=1.3.1
 hypopgShortV=
 hypopgBuildV=1
 
-postgisFullV=3.3.1
+postgisFullV=3.3.2
 postgisShortV=
 postgisBuildV=1
 
@@ -88,7 +88,7 @@ cassFullV=3.1.5
 cassShortV=
 cassBuildV=1
 
-orafceFullV=3.25.1
+orafceFullV=4.0.1
 orafceShortV=
 orafceBuildV=1
 
@@ -128,7 +128,7 @@ plv8FullV=3.1.2
 plv8ShortV=
 plv8BuildV=1
 
-debugFullV=1.4
+debugFullV=1.5
 debugShortV=
 debugBuildV=1
 

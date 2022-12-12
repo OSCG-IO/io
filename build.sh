@@ -460,11 +460,14 @@ initPG () {
     initC "multicorn2-pg$pgM" "multicorn2" "$multicorn2V" "$outPlat" "postgres/multicorn2" "" "" "nil"
     initC "esfdw-pg$pgM" "esfdw" "$esfdwV" "$outPlat" "postgres/esfdw" "" "" "Y"
     initC "citus-pg$pgM" "citus" "$citusV" "$outPlat" "postgres/citus" "" "" "nil"
-    #initC "postgis-pg$pgM" "postgis" "$postgisV" "$outPlat" "postgres/postgis" "" "" "nil"
+    if [ "$outPlat" == "arm" ]; then
+      initC "postgis-pg$pgM" "postgis" "$postgisV" "$outPlat" "postgres/postgis" "" "" "nil"
+    fi
     initC "spock-pg$pgM" "spock" "$spockV" "$outPlat" "postgres/spock" "" "" "nil"
     initC "pglogical-pg$pgM" "pglogical" "$logicalV" "$outPlat" "postgres/logical" "" "" "nil"
     initC "anon-pg$pgM" "anon" "$anonV" "$outPlat" "postgres/anon" "" "" "nil"
     initC "plprofiler-pg$pgM" "plprofiler" "$profV" "$outPlat" "postgres/profiler" "" "" "nil"
+    initC "pldebugger-pg$pgM" "pldebugger" "$debuggerV" "$outPlat" "postgres/pldebugger" "" "" "nil"
     initC "partman-pg$pgM" "partman" "$partmanV" "$outPlat" "postgres/partman" "" "" "nil"
     initC "orafce-pg$pgM" "orafce" "$orafceV" "$outPlat" "postgres/orafce" "" "" "nil"
     initC "audit-pg$pgM" "audit" "$audit15V" "$outPlat" "postgres/audit" "" "" "nil"

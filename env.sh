@@ -29,7 +29,7 @@ hivefdwV=4.0-1
 
 oraclefdwV=2.5.0-1
 inclV=21.6
-orafceV=3.25.1-1
+orafceV=4.0.1-1
 ora2pgV=23.1
 v8V=3.1.2-1
 
@@ -48,7 +48,7 @@ hintV=1.4.0-1
 
 afoV=1.6.4-1
 odysseyV=1.3-1
-bouncerV=1.17.0-1
+bouncerV=1.18.0-1
 
 waV=2.1-1
 archiV=4.1.2-1
@@ -76,7 +76,7 @@ audit15V=1.7.0-1
 postgisV=3.3.1-1
 
 pljavaV=1.6.2-1
-debuggerV=1.4-1
+debuggerV=1.5-1
 cronV=1.4.2-1
 
 mysqlfdwV=2.8.0-1

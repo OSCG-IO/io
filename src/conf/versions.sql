@@ -308,7 +308,8 @@ INSERT INTO versions VALUES ('plusql', '0.2',  'amd', 0, '20210908', '', '', '')
 INSERT INTO projects VALUES ('orafce', 6, 0, 'hub', 0, 'https://github.com/orafce/orafce/releases',
   'orafce', 1, 'larry.png', 'Ora Built-in Packages', 'https://github.com/orafce/orafce#orafce---oracles-compatibility-functions-and-packages');
 INSERT INTO releases VALUES ('orafce-pg15', 2, 'orafce', 'OraFCE', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('orafce-pg15', '3.25.1-1',  'arm, el8', 1, '20221025', 'pg15', '', '');
+INSERT INTO versions VALUES ('orafce-pg15', '4.0.1-1',   'arm, el8', 1, '20221119', 'pg15', '', '');
+INSERT INTO versions VALUES ('orafce-pg15', '3.25.1-1',  'arm, el8', 0, '20221025', 'pg15', '', '');
 INSERT INTO versions VALUES ('orafce-pg15', '3.25.0-1',  'arm, el8', 0, '20221006', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('fixeddecimal', 6, 0, 'hub', 0, 'https://github.com/pgsql-io/fixeddecimal/tags',
@@ -343,8 +344,8 @@ INSERT INTO versions VALUES ('pljava-pg13', '1.6.2-1',  'amd',  0, '20201127', '
 
 INSERT INTO projects VALUES ('pldebugger', 3, 0, 'hub', 0, 'https://github.com/EnterpriseDB/pldebugger/tags',
   'pldebugger', 1, 'debugger.png', 'Stored Procedure Debugger', 'https://github.com/EnterpriseDB/pldebugger');
-INSERT INTO releases VALUES ('pldebugger-pg14', 2, 'pldebugger', 'PL/Debugger', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pldebugger-pg14', '1.4-1',  'arm, el8',  1, '20210923', 'pg14', '', '');
+INSERT INTO releases VALUES ('pldebugger-pg15', 2, 'pldebugger', 'PL/Debugger', '', 'prod', '', 1, 'POSTGRES', '', '');
+INSERT INTO versions VALUES ('pldebugger-pg15', '1.5-1',  'arm, el8',  1, '20220720', 'pg15', '', '');
 
 INSERT INTO projects VALUES ('plpgsql', 3, 0, 'hub', 0, 'https://www.postgresql.org/docs/13/plpgsql-overview.html',
   'plpgsql', 0, 'jan.png', 'Postgres Procedural Language', 'https://www.postgresql.org/docs/13/plpgsql-overview.html');
@@ -457,7 +458,8 @@ INSERT INTO versions VALUES ('pglogical-pg15', '2.4.2-1',  'arm, el8', 1, '20221
 INSERT INTO projects VALUES ('postgis', 4, 1, 'hub', 3, 'http://postgis.net/source',
   'postgis', 1, 'postgis.png', 'Spatial Extensions', 'http://postgis.net');
 INSERT INTO releases VALUES ('postgis-pg15', 3, 'postgis', 'PostGIS', '', 'prod', '', 1, 'GPLv2', '', '');
-INSERT INTO versions VALUES ('postgis-pg15', '3.3.1-1', 'arm', 1, '20220909', 'pg15', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.3.1/NEWS');
+INSERT INTO versions VALUES ('postgis-pg15', '3.3.2-1', 'arm', 1, '20221112', 'pg15', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.3.2/NEWS');
+INSERT INTO versions VALUES ('postgis-pg15', '3.3.1-1', 'arm', 0, '20220909', 'pg15', '', 'https://git.osgeo.org/gitea/postgis/postgis/raw/tag/3.3.1/NEWS');
 
 INSERT INTO projects VALUES ('omnidb', 6, 8000, '', 1, 'https://github.com/pgsql-io/omnidb-ng/tags',
   'omnidb', 0, 'omnidb.png', 'UI for Database Mgmt', 'https://github.com/pgsql-io/omnidb-ng#omnidb-ng-306');
@@ -504,12 +506,14 @@ INSERT INTO versions VALUES ('badger', '11.8', '', 0, '20220408', '', '', '');
 INSERT INTO projects VALUES ('pool2', 4, 0, 'hub', 3, 'http://github.com/pgpool/pgpool2/tags',
   'pool2',  0, 'pgpool2.png', 'QueryCache', 'http://pgpool.net');
 INSERT INTO releases VALUES ('pool2', 1, 'pool2',  'pgPool2', '', 'included', '', 1, 'BSD', '', '');
-INSERT INTO versions VALUES ('pool2', '4.3.1', 'el8, arm', 1, '20220216', '', '', '');
+INSERT INTO versions VALUES ('pool2', '4.4.0', 'el8, arm', 0, '20221206', '', '', '');
+INSERT INTO versions VALUES ('pool2', '4.3.1', 'el8, arm', 0, '20220216', '', '', '');
 
 INSERT INTO projects VALUES ('bouncer', 4, 5433, 'hub', 3, 'http://pgbouncer.org',
   'bouncer',  0, 'pg-bouncer.png', 'Connection Pooler', 'http://pgbouncer.org');
 INSERT INTO releases VALUES ('bouncer', 2, 'bouncer',  'pgBouncer', '', 'prod', '', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('bouncer', '1.17.0-1', 'el8, arm', 1, '20220323', '', '', '');
+INSERT INTO versions VALUES ('bouncer', '1.18.0-1', 'el8, arm', 1, '20221212', '', '', '');
+INSERT INTO versions VALUES ('bouncer', '1.17.0-1', 'el8, arm', 0, '20220323', '', '', '');
 
 INSERT INTO projects VALUES ('patroni', 11, 0, 'haproxy', 4, 'https://github.com/zalando/patroni/releases',
   'patroni', 0, 'patroni.png', 'HA Template', 'https://github.com/zalando/patroni');
