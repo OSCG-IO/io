@@ -4,7 +4,8 @@
 
 import sys, os
 
-VER="6.78"
+VER="6.79"
+BUNDLE=os.getenv("BUNDLE", "oscg")
 REPO=os.getenv("REPO", "https://oscg-io-download.s3.amazonaws.com/REPO")
   
 if sys.version_info < (2, 7):
@@ -25,8 +26,8 @@ if not IS_64BITS:
   print("ERROR: This is a 32-bit machine and our packages are 64-bit.")
   sys.exit(1)
 
-if os.path.exists("oscg"):
-  print("ERROR: Cannot install over an existing 'oscg' directory.")
+if os.path.exists(BUNDLE):
+  print("ERROR: Cannot install over an existing '" + str(BUNDLE) + "' directory.")
   sys.exit(1)
 
 my_file="oscg-io-" + VER + ".tar.bz2"
@@ -53,7 +54,11 @@ except Exception as e:
   print("ERROR: Unable to unpack \n" + str(e))
   sys.exit(1)
 
-cmd = "oscg" + os.sep + "io"
+if BUNDLE != "oscg":
+  print("Renaming to " + str(BUNDLE))
+  os.system("mv oscg " + str(BUNDLE))
+
+cmd = str(BUNDLE) + os.sep + "io"
 os.system(cmd + " set GLOBAL REPO " + REPO)
 
 print("IO installed.\n")

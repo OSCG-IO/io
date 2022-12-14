@@ -391,7 +391,7 @@ def info(p_json, p_home, p_repo, print_flag=True):
     glibc_v_display = 'glibc-' + glibcV
 
   print(style_start + ("#" * 70) + style_end)
-  print(style_start + "#           OSCG.IO: " + style_end + "v" + ver + "  " + p_home)
+  print(style_start + "#                IO: " + style_end + "v" + ver + "  " + p_home)
   print(style_start + "#       User & Host: " + style_end + p_user + admin_display + "  " + host_display)
   print(style_start + "#  Operating System: " + style_end + os.rstrip() + " " + glibc_v_display + "-" + os_arch)
   print(style_start + "#           Machine: " + style_end + mem + ", " + cores + " vCPU, " + cpu)

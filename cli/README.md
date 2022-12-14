@@ -1,6 +1,6 @@
 # README for IO #
 
-IO is the API & CLI for PGSQL.IO
+IO is an API for management of a Postgres eco-system of components
 
 ## Usage ##
 ```
