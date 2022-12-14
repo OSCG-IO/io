@@ -14,6 +14,10 @@ logdir="data/logs/postgrest"
 echo "  log directory: $logdir"
 mkdir -p ../$logdir
 
+sudo dnf module install nodejs:18
+sudo npm install -g swagger-ui-dist
+sudo npm install -g http-server
+
 if [[ "$isSTART" == "True" ]]; then
   cd ..
   ./io start postgrest
