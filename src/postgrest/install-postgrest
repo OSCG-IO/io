@@ -14,7 +14,12 @@ logdir="data/logs/postgrest"
 echo "  log directory: $logdir"
 mkdir -p ../$logdir
 
-sudo dnf module install nodejs:18
+set -x
+
+sudo yum remove nodejs -y
+sudo dnf module reset nodejs -y
+
+sudo dnf module install nodejs:18 -y
 sudo npm install -g swagger-ui-dist
 sudo npm install -g http-server
 

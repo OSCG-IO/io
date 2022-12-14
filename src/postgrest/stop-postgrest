@@ -19,3 +19,5 @@ if [ "$pid" > " " ]; then
 else
   echo "swagger stopped"
 fi
+
+exit 0
