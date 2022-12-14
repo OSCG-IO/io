@@ -1,0 +1,5 @@
+
+sudo dnf module install nodejs:18
+sudo npm install -g swagger-ui-dist
+sudo npm install -g http-server
+
