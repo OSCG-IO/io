@@ -10,7 +10,7 @@ os.environ['PGREST_SERVER_PORT'] = port
 PGREST_SERVER_HOST = os.getenv("PGRST_SERVER_HOST", util.get_host())
 os.environ['PGREST_SERVER_HOST'] = PGREST_SERVER_HOST
 
-print("postgrest starting on $PGREST_SERVER_HOST:$PGREST_SERVER_PORT")
+print("postgrest starting on " + PGREST_SERVER_HOST + ":" + str(port))
 os.system("postgrest/postgrest postgrest/postgrest.conf >> " + logdir + "/postgrest.log 2>&1 &")
 
 print("swagger starting on port 8080")
