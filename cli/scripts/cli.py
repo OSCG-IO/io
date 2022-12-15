@@ -74,15 +74,15 @@ mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
              "upgrade", "downgrade", "enable", "disable", "install", "tune",
              "remove", "reload", "activity", "help", "get", "set", "unset",
              "repolist", "repo-pkgs", "discover", "backrest", "change-pgconf",
-             "register", "top", "spock", "--autostart", "--relnotes", "--start",
+             "register", "top", "spock", "pgbin", "--autostart", "--relnotes", "--start",
              "--no-restart", "--no-preload",
              "--help", "--json", "--jsonp", "--test", "--extensions", "--svcs",
              "--list", "--old", "--showduplicates", "-y", "-t", "-d"  ,
              "--verbose", "-v", "--debug", "--debug2"]
 
-mode_list_advanced = ['kill', 'config', 'deplist', 'download', 'init', 'clean', 'useradd', 'spock']
+mode_list_advanced = ['kill', 'config', 'deplist', 'download', 'init', 'clean', 'useradd', 'spock', 'pgbin']
 
-ignore_comp_list = [ "get", "set", "unset", "register", "repolist", "spock",
+ignore_comp_list = [ "get", "set", "unset", "register", "repolist", "spock", "pgbin",
                      "repo-pkgs", "discover", "useradd", "backrest", "change-pgconf"]
 
 no_log_commands = ['status', 'info', 'list', 'activity', 'top', 'register',
@@ -1098,7 +1098,6 @@ if ((args[1] == "help") or (args[1] == "--help")):
   print(get_help_text())
   exit_cleanly(0)
 
-
 ## process global parameters #################
 os.environ['isPreload'] = "True"  
 if "--no-preload" in args:
@@ -1272,37 +1271,40 @@ p_version=""
 requested_p_version=""
 info_arg=0
 try:
-  for i in range((arg + 1), len(args)):
-    if p_host > "":
-      break
-    if p_mode in ("update", "cancel"):
-      util.print_error("No additional parameters allowed.")
-      exit_cleanly(1)
-    comp1 = meta.wildcard_component(args[i])
-    if meta.is_component(comp1):
-      p_comp_list.append(comp1)
-      if( p_mode == "info" and args[i]== "all"):
-        info_arg=1
-        p_version = "all"
-    else:
-      if p_mode in ("config" , "init", "provision") and len(p_comp_list) == 1:
-        if str(args[i]) > '':
-          extra_args = extra_args + '"' + str(args[i]) + '" '
-      elif( p_mode in ("info", "download", "install", "update") and len(p_comp_list) == 1 and info_arg == 0 ):
-        if p_mode == "info":
-          p_version = args[i]
-        else:
-          ver1 = meta.wildcard_version(p_comp_list[0], args[i])
-          p_version = meta.get_platform_specific_version(p_comp_list[0], ver1)
-          if p_version == "-1":
-            util.print_error("Invalid component version parameter  (" + ver1 + ")")
-            exit_cleanly(1)
-          requested_p_version=ver1
-        info_arg = 1
-      elif p_mode in ignore_comp_list:
-        pass
+  if p_mode in ignore_comp_list:
+    pass
+  else:
+    for i in range((arg + 1), len(args)):
+      if p_host > "":
+        break
+      if p_mode in ("update", "cancel"):
+        util.print_error("No additional parameters allowed.")
+        exit_cleanly(1)
+      comp1 = meta.wildcard_component(args[i])
+      if meta.is_component(comp1):
+        p_comp_list.append(comp1)
+        if( p_mode == "info" and args[i]== "all"):
+          info_arg=1
+          p_version = "all"
       else:
-        util.exit_message("Invalid component parameter (" + args[i] + ")", 1, isJSON)
+        if p_mode in ("config" , "init", "provision") and len(p_comp_list) == 1:
+          if str(args[i]) > '':
+            extra_args = extra_args + '"' + str(args[i]) + '" '
+        elif( p_mode in ("info", "download", "install", "update") and len(p_comp_list) == 1 and info_arg == 0 ):
+          if p_mode == "info":
+            p_version = args[i]
+          else:
+            ver1 = meta.wildcard_version(p_comp_list[0], args[i])
+            p_version = meta.get_platform_specific_version(p_comp_list[0], ver1)
+            if p_version == "-1":
+              util.print_error("Invalid component version parameter  (" + ver1 + ")")
+              exit_cleanly(1)
+              requested_p_version=ver1
+            info_arg = 1
+        elif p_mode in ignore_comp_list:
+          pass
+        else:
+          util.exit_message("Invalid component parameter (" + args[i] + ")", 1, isJSON)
 
   if len(p_comp_list) == 0:
     if p_mode == "download":
@@ -1315,6 +1317,27 @@ try:
 
   if p_mode != "update":
     update_if_needed()
+
+
+  ## PGBIN #######################################################################
+  if p_mode == 'pgbin':
+    if len(args) != 4:
+      util.exit_message('invalid command, try: pgbin 15 "any valid command"', 1, isJSON)
+
+    pg_dir = "pg" + str(args[2]) + "/bin/"
+    if not os.path.isdir(pg_dir):
+      util.exit_message("postgres not found at: " + pg_dir, 1, isJSON)
+
+    cmd = pg_dir + str(args[3])
+
+    if isVERBOSE:
+      print(cmd)
+
+    rc = os.system(cmd)
+    if rc == 0:
+      sys.exit(0)
+
+    sys.exit(1)
 
 
   ## SPOCK #######################################################################
