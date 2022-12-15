@@ -28,9 +28,5 @@ cp init-swagger-initializer.js swagger-initializer.js
 sed -i "s/localhost/$hostname/" swagger-initializer.js
 sudo cp swagger-initializer.js /usr/local/lib/node_modules/swagger-ui-dist/.
 
-if [[ "$isSTART" == "True" ]]; then
-  cd ..
-  ./io start postgrest
-fi
-
-
+cd ..
+./io start postgrest
