@@ -12,5 +12,7 @@ fi
 
 sudo systemctl enable nginx
 
+./selfSignCert.sh
+
 exit 0
 

@@ -72,6 +72,18 @@ buildONE () {
 }
 
 
+############# MAINLINE ######################
+
+outp="out/posix"
+
+if [ -d $outp ]; then
+  echo "Removing current '$outp' directory..."
+  $outp/$api stop
+  sleep 2
+  $sudo rm -rf $outp
+fi
+
+
 echo "############### Build Package Manager ###################"
 rm -f $OUT/hub-$hubV*
 rm -f $OUT/$bundle-$api-$hubV*

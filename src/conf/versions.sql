@@ -504,13 +504,18 @@ INSERT INTO versions VALUES ('badger', '11.8', '', 0, '20220408', '', '', '');
 
 INSERT INTO projects VALUES ('pool2', 4, 0, 'hub', 3, 'http://github.com/pgpool/pgpool2/tags',
   'pool2',  0, 'pgpool2.png', 'QueryCache', 'http://pgpool.net');
-INSERT INTO releases VALUES ('pool2', 1, 'pool2',  'pgPool2', '', 'included', '', 1, 'BSD', '', '');
+INSERT INTO releases VALUES ('pool2', 1, 'pool2',  'pgPool2', '', 'test', '', 1, 'BSD', '', '');
 INSERT INTO versions VALUES ('pool2', '4.4.0', 'el8, arm', 0, '20221206', '', '', '');
 INSERT INTO versions VALUES ('pool2', '4.3.1', 'el8, arm', 0, '20220216', '', '', '');
 
+INSERT INTO projects VALUES ('nginx', 4, 443, 'hub', 3, 'http://nginx.org',
+  'nginx',  0, 'pg-nginx.png', 'HTTPS & Reverse Proxy Server', 'http://nginx.org');
+INSERT INTO releases VALUES ('nginx', 2, 'nginx',  'NGINX', '', 'test', '', 1, '', '', '');
+INSERT INTO versions VALUES ('nginx', '1-1', '', 1, '20221215', '', '', '');
+
 INSERT INTO projects VALUES ('bouncer', 4, 5433, 'hub', 3, 'http://pgbouncer.org',
   'bouncer',  0, 'pg-bouncer.png', 'Connection Pooler', 'http://pgbouncer.org');
-INSERT INTO releases VALUES ('bouncer', 2, 'bouncer',  'pgBouncer', '', 'prod', '', 1, 'POSTGRES', '', '');
+INSERT INTO releases VALUES ('bouncer', 2, 'bouncer',  'pgBouncer', '', 'prod', '', 1, '', '', '');
 INSERT INTO versions VALUES ('bouncer', '1.18.0-1', 'el8, arm', 1, '20221212', '', '', '');
 INSERT INTO versions VALUES ('bouncer', '1.17.0-1', 'el8, arm', 0, '20220323', '', '', '');
 

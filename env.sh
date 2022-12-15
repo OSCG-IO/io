@@ -47,26 +47,27 @@ repackV=1.4.8-1
 hintV=1.4.0-1
 
 afoV=1.6.4-1
-odysseyV=1.3-1
+#odysseyV=1.3-1
 bouncerV=1.18.0-1
+nginxV=1-1
 
-waV=2.1-1
-archiV=4.1.2-1
-qstatV=2.0.3-1
-statkV=2.2.0-1
-waitsV=1.1.3-1
+#waV=2.1-1
+#archiV=4.1.2-1
+#qstatV=2.0.3-1
+#statkV=2.2.0-1
+#waitsV=1.1.3-1
 
-dbzV=1.8.1.Final
-apicV=2.2.0
-decbufsV=1.7.0-1
+#dbzV=1.8.1.Final
+#apicV=2.2.0
+#decbufsV=1.7.0-1
 
-zooV=3.7.0
-kfkV=3.1.0
-redisV=6.2
-mariaV=10.6
-sqlsvrV=2019
-mongoV=5.0
-esV=7.x
+#zooV=3.7.0
+#kfkV=3.1.0
+#redisV=6.2
+#mariaV=10.6
+#sqlsvrV=2019
+#mongoV=5.0
+#esV=7.x
 
 adminV=5.5
 omniV=2.17.0
