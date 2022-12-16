@@ -5,8 +5,8 @@
 from __future__ import print_function, division
 
 import sys
-if sys.version_info < (3, 4):
-  print("Currently we run on Python 3.4+")
+if sys.version_info < (3, 9):
+  print("Currently we run on Python 3.9+")
   sys.exit(1)
 
 IS_64BITS = sys.maxsize > 2**32
@@ -1322,18 +1322,36 @@ try:
   ## PGBIN #######################################################################
   if p_mode == 'pgbin':
     if len(args) != 4:
-      util.exit_message('invalid command, try: pgbin 15 "any valid command"', 1, isJSON)
+      util.exit_message('invalid command, try: pgbin 15 "any valid command in pg15/bin"', 1, isJSON)
 
-    pg_dir = "pg" + str(args[2]) + "/bin/"
+    pg_v = str(args[2])
+    cmd_full = str(args[3])
+    cmd_a = str(args[3]).split()
+    cmd0 = cmd_a[0]
+
+    if not pg_v.isnumeric():
+      util.exit_message("'" + pg_v + "' must be a numeric value for an installed pg version", 1, isJSON)
+
+    pg_dir = "pg" + pg_v + "/bin/"
     if not os.path.isdir(pg_dir):
       util.exit_message("postgres not found at: " + pg_dir, 1, isJSON)
 
-    cmd = pg_dir + str(args[3])
+    cmd1 = pg_dir + cmd0
+    if not os.path.exists(cmd1):
+      util.exit_message("'" + cmd1 +"' not a valid pgbin command", 1, isJSON)
 
+    cmd_parms  = cmd_full.removeprefix(cmd0).removesuffix(';')
+    cmd_parms_arr = cmd_parms.split(';')
+    if len(cmd_parms_arr) > 1:
+      util.exit_message("command params must not contain an embeded semi-colon", 1, isJSON)
+
+    final_safe_cmd = cmd1 + " " + cmd_parms
     if isVERBOSE:
-      print(cmd)
+      print(final_safe_cmd)
 
-    rc = os.system(cmd)
+    ## cannot use subprocess.Popen() because it won't allow us to use ./pg_pass
+
+    rc = os.system(final_safe_cmd)
     if rc == 0:
       sys.exit(0)
 
