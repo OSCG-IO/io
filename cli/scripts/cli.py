@@ -1345,7 +1345,7 @@ try:
     if len(cmd_parms_arr) > 1:
       util.exit_message("command params must not contain an embeded semi-colon", 1, isJSON)
 
-    final_safe_cmd = cmd1 + " " + cmd_parms
+    final_safe_cmd = cmd1 + " " + cmd_parms + " -U postgres"
     if isVERBOSE:
       print(final_safe_cmd)
 
