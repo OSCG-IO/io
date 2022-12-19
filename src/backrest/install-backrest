@@ -1,8 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
-set -x 
-
 thisDir=$PWD
 
 sudo cp bin/pgbackrest  /usr/bin
@@ -20,11 +18,10 @@ sudo mkdir -p /var/lib/pgbackrest
 sudo chmod 750 /var/lib/pgbackrest
 sudo chown $USER:$USER /var/lib/pgbackrest
 
-
 cd ../data
 dataDir=$PWD
 pgV=`ls -d pg?? | head -1`
-sed -i -e "s/pg1-path=xx/pg1-path=$dataDir/$pgV/g" $thisDir/pgbackrest.conf 
+sed -i -e "s!pg1-path=xx!pg1-path=$dataDir/$pgV!g" $thisDir/pgbackrest.conf 
 
 myCipher=`dd if=/dev/urandom bs=256 count=1 2> /dev/null | LC_ALL=C tr -dc 'A-Za-z0-9' | head -c32`
 sed -i -e "s/repo1-cipher-pass=xx/repo1-cipher-pass=$myCipher/g" $thisDir/pgbackrest.conf 
