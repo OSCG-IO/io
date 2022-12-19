@@ -1,6 +1,9 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
+rm -rf lib
+rm -rf share
+
 thisDir=$PWD
 
 sudo cp bin/pgbackrest  /usr/bin
