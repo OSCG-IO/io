@@ -32,7 +32,7 @@ odbcFullV=13.01
 odbcShortV=
 odbcBuildV=1
 
-backrestFullV=2.38
+backrestFullV=2.43
 backrestShortV=
 backrestBuildV=1
 

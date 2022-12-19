@@ -376,7 +376,7 @@ INSERT INTO versions VALUES ('walg', '2.0.0', 'amd', 1, '20220519', '', '', '');
 
 INSERT INTO projects VALUES ('postgrest', 4, 3000, 'hub', 0, 'https://github.com/postgrest/postgrest/tags',
   'postgrest', 0, 'postgrest.png', 'a RESTful API', 'https://postgrest.org');
-INSERT INTO releases VALUES ('postgrest', 9, 'postgrest', 'PostgREST', '', 'prod', '', 1, 'MIT', '', '');
+INSERT INTO releases VALUES ('postgrest', 9, 'postgrest', 'PostgREST', '', 'test', '', 1, 'MIT', '', '');
 INSERT INTO versions VALUES ('postgrest', '10.1.1', 'arm, el8', 1, '20221121', '', '', 'https://postgrest.org');
 
 INSERT INTO projects VALUES ('autossh', 4, 0, 'hub', 0, 'https://www.harding.motd.ca/autossh/',
@@ -386,7 +386,7 @@ INSERT INTO versions VALUES ('autossh', '1.4g', '', 1, '20190105', '', '', 'http
 
 INSERT INTO projects VALUES ('prompgexp', 4, 9187, 'golang', 0, 'https://github.com/prometheus-community/postgres_exporter/tags',
   'prompgexp', 0, 'prometheus.png', 'Prometheus PG Exporter', 'https://github.com/prometheus-community/postgres_exporter');
-INSERT INTO releases VALUES ('prompgexp', 9, 'prompgexp', 'Prometheus PG Exporter', '', 'prod', '', 1, 'Apache', '', '');
+INSERT INTO releases VALUES ('prompgexp', 9, 'prompgexp', 'Prometheus PG Exporter', '', 'test', '', 1, 'Apache', '', '');
 INSERT INTO versions VALUES ('prompgexp', '0.11.1', '', 1, '20220720', '', '', 'https://github.com/prometheus-community/postgres_exporter');
 
 INSERT INTO projects VALUES ('nodejs', 4, 3000, 'hub', 0, 'https://github.com/',
@@ -515,9 +515,13 @@ INSERT INTO versions VALUES ('nginx', '1-1', '', 1, '20221215', '', '', '');
 
 INSERT INTO projects VALUES ('bouncer', 4, 5433, 'hub', 3, 'http://pgbouncer.org',
   'bouncer',  0, 'pg-bouncer.png', 'Connection Pooler', 'http://pgbouncer.org');
-INSERT INTO releases VALUES ('bouncer', 2, 'bouncer',  'pgBouncer', '', 'prod', '', 1, '', '', '');
+INSERT INTO releases VALUES ('bouncer', 2, 'bouncer',  'pgBouncer', '', 'test', '', 1, '', '', '');
 INSERT INTO versions VALUES ('bouncer', '1.18.0-1', 'el8, arm', 1, '20221212', '', '', '');
-INSERT INTO versions VALUES ('bouncer', '1.17.0-1', 'el8, arm', 0, '20220323', '', '', '');
+
+INSERT INTO projects VALUES ('backrest', 4, 0, 'hub', 3, 'http://pgbackrest.org',
+  'backrest',  0, 'backrest.png', 'Backup & Restore', 'http://pgbackrest.org');
+INSERT INTO releases VALUES ('backrest', 2, 'backrest',  'pgBackRest', '', 'test', '', 1, '', '', '');
+INSERT INTO versions VALUES ('backrest', '2.43-1', 'el8, arm', 1, '20221128', '', '', '');
 
 INSERT INTO projects VALUES ('patroni', 11, 0, 'haproxy', 4, 'https://github.com/zalando/patroni/releases',
   'patroni', 0, 'patroni.png', 'HA Template', 'https://github.com/zalando/patroni');

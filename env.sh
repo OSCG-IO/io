@@ -17,6 +17,7 @@ autosshV=1.4g
 nodejsV=18.12.1
 bckgrndV=1.1-1
 pgeV=15
+backrestV=2.43-1
 
 multicorn2V=2.4-1
 esfdwV=0.11.2

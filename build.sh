@@ -529,6 +529,7 @@ initPG () {
   initC  "prompgexp"  "prompgexp"  "$prompgexpV"  ""  "prometheus/pg_exporter"  "" "" "Y"
   initC  "golang" "golang" "$goV" "" "golang" "" "" "Y"
   initC  "bouncer" "bouncer" "$bouncerV" "$outPlat" "postgres/bouncer" "" "" "nil"
+  initC  "backrest" "backrest" "$backrestV" "$outPlat" "postgres/backrest" "" "" "nil"
   initC  "nginx" "nginx" "$nginxV" "" "nginx" "" "" "Y"
 
   initC "nodejs"   "nodejs" "$nodejsV" "" "nodejs"           "" "" "Y"
