@@ -15,62 +15,50 @@ function test14 {
 
 
 function testCommon {
+  pgV=pg15
+  ./io install pg15; 
+  ./io start pg15 -y -d demo;
+
   ./io install multicorn2-$pgV    -d demo
   ./io install plprofiler-$pgV    -d demo
   ./io install pldebugger-$pgV    -d demo
 
   ./io install decoderbufs-$pgV   -d demo
   ./io install postgis-$pgV       -d demo
-  ./io install hypopg-$pgV        -d demo
-  ./io install cron-$pgV
   ./io install repack-$pgV        -d demo
   ./io install orafce-$pgV        -d demo
   ./io install spock-$pgV        -d demo
-  ##./io install wal2json-$pgV      -d demo
-  ##./io install pglogical-$pgV     -d demo
-  ##./io install anon-$pgV          -d demo
 
   ./io install bulkload-$pgV      -d demo
   ./io install partman-$pgV       -d demo
 
   #./io install plv8-$pgV          -d demo
 
-  ./io install mysqlfdw-$pgV      -d demo
-  ./io install mongofdw-$pgV      -d demo
-  ./io install oraclefdw-$pgV     -d demo
+  if [ ! `arch` == "aarch64" ]; then
+    ./io install mysqlfdw-$pgV     -d demo
+    ./io install mongofdw-$pgV     -d demo
+    ./io install oraclefdw-$pgV    -d demo
+  fi
 
-  #./io install archivist-pg13     -d demo
-  #./io install qualstats-pg13     -d demo
-  #./io install statkcache-pg13    -d demo
-  #./io install waitsampling-pg13  -d demo
-
-  #./io install redisfdw-pg13      -d demo
+  #./io install hypopg-$pgV        -d demo
+  #./io install cron-$pgV
 
   #./io install esfdw-pg13         -d demo
 }
 
 
-function test13 {
-  pgV=pg13
-  ./io install pg13; 
-  ./io start pg13 -y -d demo;
-}
-
-
 cd ../..
-
-if [ "$1" == "13" ]; then
-  test13
-  testCommon
-  exit 0
-fi
 
 if [ "$1" == "14" ]; then
   test14
+  exit 0
+fi
+
+if [ "$1" == "15" ]; then
   testCommon
   exit 0
 fi
 
-echo "ERROR: Invalid parm, must be '13' or '14'"
+echo "ERROR: Invalid parm, must be '14' or '15'"
 exit 1
 

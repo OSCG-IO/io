@@ -9,14 +9,11 @@ P13=13.9-1
 P12=12.13-1
 P11=11.18-1
 
-walgV=2.0.0
 goV=1.19.3
 postgrestV=10.1.1
 prompgexpV=0.11.1
-autosshV=1.4g
 nodejsV=18.12.1
 bckgrndV=1.1-1
-pgeV=15
 backrestV=2.43-1
 
 multicorn2V=2.4-1
@@ -24,9 +21,7 @@ esfdwV=0.11.2
 bqfdwV=1.9
 
 w2jV=2.4-1
-odbcV=13.01-1
 citusV=11.1.4-1
-hivefdwV=4.0-1
 
 oraclefdwV=2.5.0-1
 inclV=21.6
@@ -47,16 +42,8 @@ partmanV=4.7.1-1
 repackV=1.4.8-1
 hintV=1.4.0-1
 
-afoV=1.6.4-1
-#odysseyV=1.3-1
 bouncerV=1.18.0-1
 nginxV=1-1
-
-#waV=2.1-1
-#archiV=4.1.2-1
-#qstatV=2.0.3-1
-#statkV=2.2.0-1
-#waitsV=1.1.3-1
 
 #dbzV=1.8.1.Final
 #apicV=2.2.0
@@ -64,14 +51,9 @@ nginxV=1-1
 
 #zooV=3.7.0
 #kfkV=3.1.0
-#redisV=6.2
-#mariaV=10.6
-#sqlsvrV=2019
-#mongoV=5.0
-#esV=7.x
 
-adminV=5.5
-omniV=2.17.0
+##adminV=5.5
+##omniV=2.17.0
 
 audit14V=1.6.2-1
 audit15V=1.7.0-1

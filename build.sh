@@ -201,48 +201,46 @@ initDir () {
   copy-pgXX "fixeddecimal"
   copy-pgXX "spock"
   copy-pgXX "pglogical"
-  ##copy-pgXX "timescaledb"
   copy-pgXX "anon"
-  ##copy-pgXX "cassandrafdw"
-  ##copy-pgXX "hivefdw"
   copy-pgXX "plprofiler"
   copy-pgXX "pldebugger"
-  copy-pgXX "pgtsql"
   copy-pgXX "hypopg"
   copy-pgXX "partman"
-  copy-pgXX "proctab"
   copy-pgXX "repack"
   copy-pgXX "bulkload"
   copy-pgXX "audit"   
   copy-pgXX "postgis"   
   copy-pgXX "mysqlfdw"  
-  ##copy-pgXX "pgredis"  
-  ##copy-pgXX "kubernetes" 
   copy-pgXX "apicurio"
   copy-pgXX "mongofdw"  
-  copy-pgXX "wal2json"  
   copy-pgXX "decoderbufs"  
   copy-pgXX "oraclefdw"  
   copy-pgXX "tdsfdw"  
   copy-pgXX "cron"
   copy-pgXX "citus"
-  ##copy-pgXX "background"
   copy-pgXX "multicorn2"
   copy-pgXX "esfdw"
   copy-pgXX "bqfdw"
   copy-pgXX "pljava"
   copy-pgXX "plv8"
   copy-pgXX "hintplan"
-  ##copy-pgXX "autofailover"
-  ##copy-pgXX "bouncer"
   copy-pgXX "nginx"
 
-  ## POWA #######################
-  ## copy-pgXX "wa"
-  ## copy-pgXX "archivist"
-  ## copy-pgXX "qualstats"
-  ## copy-pgXX "statkcache"
-  ## copy-pgXX "waitsampling"
+  ## ARCHIVED #########
+  ##copy-pgXX "timescaledb"
+  ##copy-pgXX "cassandrafdw"
+  ##copy-pgXX "hivefdw"
+  ##copy-pgXX "pgtsql"
+  ##copy-pgXX "proctab"
+  ##copy-pgXX "pgredis"  
+  ##copy-pgXX "kubernetes" 
+  ##copy-pgXX "wal2json"  
+  ##copy-pgXX "autofailover"
+  ##copy-pgXX "wa"
+  ##copy-pgXX "archivist"
+  ##copy-pgXX "qualstats"
+  ##copy-pgXX "statkcache"
+  ##copy-pgXX "waitsampling"
 
   if [ -f $myNewDir/LICENSE.TXT ]; then
     mv $myNewDir/LICENSE.TXT $myNewDir/$pComponent-LICENSE.TXT
@@ -473,7 +471,6 @@ initPG () {
     initC "orafce-pg$pgM" "orafce" "$orafceV" "$outPlat" "postgres/orafce" "" "" "nil"
     initC "audit-pg$pgM" "audit" "$audit15V" "$outPlat" "postgres/audit" "" "" "nil"
     initC "repack-pg$pgM" "repack" "$repackV" "$outPlat" "postgres/repack" "" "" "nil"
-    initC "autofailover-pg$pgM" "autofailover" "$afoV" "$outPlat" "postgres/autofailover" "" "" "nil"
     initC  "postgrest" "postgrest" "$postgrestV"  "$outPlat"  "postgres/postgrest"  "" "" "nil"
 
     if [ "$outPlat" == "el8" ]; then
@@ -485,8 +482,6 @@ initPG () {
   if [ "$pgM" == "14" ] && [  "$isEL8" == "True" ]; then
     initC "pglogical-pg$pgM" "pglogical" "$logicalV" "$outPlat" "postgres/logical" "" "" "nil"
     #initC "spock-pg$pgM" "spock" "$spockV" "$outPlat" "postgres/spock" "" "" "nil"
-
-    #initC "odyssey" "odyssey" "$odysseyV" "$outPlat" "postgres/odyssey" "" "" "nil"
 
     #initC "background-pg$pgM" "background" "$bckgrndV" "$outPlat" "postgres/background" "" "" "nil"
     #initC "citus-pg$pgM" "citus" "$citusV" "$outPlat" "postgres/citus" "" "" "nil"
@@ -522,10 +517,6 @@ initPG () {
 
   fi
 
-  #initC "pge"  "pge"  "14"  ""  "pge"   "" "" "Y"
-  #initC "pge"  "pge"  "15"  ""  "pge"   "" "" "Y"
-
-  initC  "autossh"  "autossh"  "$autosshV"  ""  "ssh"  "" "" "Y"
   initC  "prompgexp"  "prompgexp"  "$prompgexpV"  ""  "prometheus/pg_exporter"  "" "" "Y"
   initC  "golang" "golang" "$goV" "" "golang" "" "" "Y"
   initC  "bouncer" "bouncer" "$bouncerV" "$outPlat" "postgres/bouncer" "" "" "nil"
@@ -533,65 +524,19 @@ initPG () {
   initC  "nginx" "nginx" "$nginxV" "" "nginx" "" "" "Y"
 
   initC "nodejs"   "nodejs" "$nodejsV" "" "nodejs"           "" "" "Y"
-  #initC  "walg" "walg" "$walgV" "$outPlat" "postgres/walg" "" "" "Y"
+  
+  ##initC "instantclient" "instantclient" "$inclV" "" "oracle/instantclient" "" "" "Y"
+  ##initC "golang" "golang" "$goV" "$outPlat" "golang" "" "" "Y"
+  ##initC "kafka"     "kafka"     "$kfkV"   "" "kafka"            "" "" "Y"
+  ##initC "apicurio"  "apicurio"  "$apicV"  "" "apicurio"         "" "" "nil"
+  ##initC "debezium"  "debezium"  "$dbzV"   "" "debezium"         "" "" "Y"
+  ##initC "pgadmin"   "pgadmin"   "$adminV" "" "postgres/pgadmin" "" "" "Y"
+  ##initC "omnidb"    "omnidb"    "$omniV"  "" "postgres/omnidb"  "" "" "Y"
+
+  ##initC "ora2pg"    "ora2pg"    "$ora2pgV" "" "postgres/ora2pg" "" "" "Y"
+  ##initC "patroni"   "patroni"   "$patroniV" "" "postgres/patroni" "" "" "nil"
 
   return
-  
-
-  ##if [ "$pgM" == "14" ]; then 
-  ##  initC "bqfdw-pg$pgM" "bqfdw" "$bqfdwV" "$outPlat" "postgres/bqfdw" "" "" "Y"
-
-  ##  initC "postgis-pg$pgM" "postgis" "$postgisV" "$outPlat" "postgres/postgis" "" "" "nil"
-  ##  initC "wal2json-pg$pgM" "wal2json" "$w2jV" "$outPlat" "postgres/wal2json" "" "" "nil"
-
-
-  ##  initC "oraclefdw-pg$pgM" "oraclefdw" "$oraclefdwV" "$outPlat" "postgres/oraclefdw" "" "" "nil"
-  ##  initC "mysqlfdw-pg$pgM" "mysqlfdw" "$mysqlfdwV" "$outPlat" "postgres/mysqlfdw" "" "" "nil"
-  ##  initC "mongofdw-pg$pgM" "mongofdw" "$mongofdwV" "$outPlat" "postgres/mongofdw" "" "" "nil"
-
-  ##  initC "plv8-pg$pgM" "plv8" "$v8V" "$outPlat" "postgres/plv8" "" "" "nil"
-
-    #initC "fixeddecimal-pg$pgM" "fixeddecimal" "$fdV" "$outPlat" "postgres/fixeddecimal" "" "" "nil"
-    #initC "psqlodbc" "psqlodbc" "$odbcV" "$outPlat" "postgres/psqlodbc" "" "" "nil"
-    #if [ "$outPlat" == "amd" ]; then
-    #  initC "pljava-pg$pgM" "pljava" "$pljavaV" "$outPlat" "postgres/pljava" "" "" "nil"
-    #  initC "tdsfdw-pg$pgM" "tdsfdw" "$tdsfdwV" "$outPlat" "postgres/tdsfdw" "" "" "nil"
-    #fi
-    #initC "hivefdw-pg$pgM" "hivefdw" "$hivefdwV" "$outPlat" "postgres/hivefdw" "" "" "nil"
-    #initC "ddlx-pg$pgM" "ddlx" "$ddlxV" "$outPlat" "postgres/ddlx" "" "" "nil"
-    #initC "wa-pg$pgM" "wa" "$waV" "$outPlat" "postgres/wa" "" "" "nil"
-    #initC "archivist-pg$pgM" "archivist" "$archiV" "$outPlat" "postgres/archivist" "" "" "nil"
-    #initC "qualstats-pg$pgM" "qualstats" "$qstatV" "$outPlat" "postgres/qualstats" "" "" "nil"
-    #initC "statkcache-pg$pgM" "statkcache" "$statkV" "$outPlat" "postgres/statkcache" "" "" "nil"
-    #initC "waitsampling-pg$pgM" "waitsampling" "$waitsV" "$outPlat" "postgres/waitsampling" "" "" "nil"
-    #if [ "$outPlat" == "amd" ]; then
-    #  initC "cassandrafdw-pg$pgM" "cassandrafdw" "$cstarfdwV" "$outPlat" "postgres/cassandrafdw" "" "" "nil"
-    #  initC "pgtop-pg$pgM" "pgtop" "$pgtopV" "$outPlat" "postgres/pgtop" "" "" "nil"
-    #  initC "proctab-pg$pgM" "proctab" "$proctabV" "$outPlat" "postgres/proctab" "" "" "nil"
-    #fi
-
-    #initC "cassandra" "cassandra" "$cstarV" "" "cassandra" "" "" "nil"
-
-    ##initC "timescaledb-pg$pgM" "timescaledb" "$timescaleV"  "$outPlat" "postgres/timescale" "" "" "nil"
-    ##initC "citus-pg$pgM" "citus" "$citusV" "$outPlat" "postgres/citus" "" "" "nil"
- ## fi
-
-  initC "instantclient" "instantclient" "$inclV" "" "oracle/instantclient" "" "" "Y"
-  initC "walg" "walg" "$walgV" "$outPlat" "postgres/walg" "" "" "Y"
-  initC "golang" "golang" "$goV" "$outPlat" "golang" "" "" "Y"
-  initC "mariadb"   "mariadb"   "$mariaV" "" "mariadb"          "" "" "Y"
-  ##initC "zookeeper" "zookeeper" "$zooV"   "" "zookeeper"        "" "" "Y"
-  initC "kafka"     "kafka"     "$kfkV"   "" "kafka"            "" "" "Y"
-  initC "apicurio"  "apicurio"  "$apicV"  "" "apicurio"         "" "" "nil"
-  initC "debezium"  "debezium"  "$dbzV"   "" "debezium"         "" "" "Y"
-  initC "kubernetes" "kubernetes" "$k8sV" "" "kubernetes"       "" "" "Y"
-  initC "pgadmin"   "pgadmin"   "$adminV" "" "postgres/pgadmin" "" "" "Y"
-  initC "omnidb"    "omnidb"    "$omniV"  "" "postgres/omnidb"  "" "" "Y"
-  initC "sqlsvr"    "sqlsvr"    "$sqlsvrV" "" "sqlsvr"          "" "" "Y"
-  initC "mongodb"   "mongodb"   "$mongoV"  "" "mongodb"         "" "" "Y"
-
-  initC "ora2pg"    "ora2pg"    "$ora2pgV" "" "postgres/ora2pg" "" "" "Y"
-  #initC "patroni"   "patroni"   "$patroniV" "" "postgres/patroni" "" "" "nil"
 
 }
 
