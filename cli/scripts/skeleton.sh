@@ -38,12 +38,11 @@ function testCommon {
     ./io install mysqlfdw-$pgV     -d demo
     ./io install mongofdw-$pgV     -d demo
     ./io install oraclefdw-$pgV    -d demo
+    ./io install esfdw-$pgV        -d demo
   fi
 
   #./io install hypopg-$pgV        -d demo
-  #./io install cron-$pgV
-
-  #./io install esfdw-pg13         -d demo
+  ./io install cron-$pgV
 }
 
 
