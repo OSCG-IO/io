@@ -184,7 +184,7 @@ INSERT INTO versions VALUES ('zookeeper', '3.7.0', '',  0, '20210327', '', '',
 INSERT INTO projects VALUES ('decoderbufs', 10, 0, 'hub', 0, 'https://github.com/debezium/postgres-decoderbufs', 
   'decoderbufs', 1, 'protobuf.png', 'Logical decoding via ProtoBuf', 'https://github.com/debezium/postgres-decoderbufs');
 INSERT INTO releases VALUES ('decoderbufs-pg14',  4, 'decoderbufs', 'DecoderBufs', '', 'test', '', 1, 'MIT', '', '');
-INSERT INTO versions VALUES ('decoderbufs-pg14', '1.7.0-1', 'arm, el8', 1, '20211001', 'pg14', '', '');
+INSERT INTO versions VALUES ('decoderbufs-pg14', '1.7.0-1', 'arm, el8', 0, '20211001', 'pg14', '', '');
 
 INSERT INTO projects VALUES ('mongofdw', 5, 0, 'hub', 0, 'https://github.com/EnterpriseDB/mongo_fdw/tags', 
   'mongofdw', 1, 'mongodb.png', 'MongoDB from PG', 'https://github.com/EnterpriseDB/mongo_fdw#mongo_fdw');

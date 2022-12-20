@@ -14,7 +14,7 @@ function test14 {
 }
 
 
-function testCommon {
+function test15 {
   pgV=pg15
   ./io install pg15; 
   ./io start pg15 -y -d demo;
@@ -23,26 +23,27 @@ function testCommon {
   ./io install plprofiler-$pgV    -d demo
   ./io install pldebugger-$pgV    -d demo
 
-  ./io install decoderbufs-$pgV   -d demo
-  ./io install postgis-$pgV       -d demo
   ./io install repack-$pgV        -d demo
   ./io install orafce-$pgV        -d demo
   ./io install spock-$pgV        -d demo
 
   ./io install bulkload-$pgV      -d demo
   ./io install partman-$pgV       -d demo
+  ./io install cron-$pgV
 
   #./io install plv8-$pgV          -d demo
 
-  if [ ! `arch` == "aarch64" ]; then
-    ./io install mysqlfdw-$pgV     -d demo
-    ./io install mongofdw-$pgV     -d demo
-    ./io install oraclefdw-$pgV    -d demo
-    ./io install esfdw-$pgV        -d demo
+  if [ `arch` == "aarch64" ]; then
+    ./io install postgis-$pgV      -d demo
+  #else
+  #  ./io install mysqlfdw-$pgV     -d demo
+  #  ./io install mongofdw-$pgV     -d demo
+  #  ./io install oraclefdw-$pgV    -d demo
+  #  ./io install esfdw-$pgV        -d demo
   fi
 
+  #./io install decoderbufs-$pgV   -d demo
   #./io install hypopg-$pgV        -d demo
-  ./io install cron-$pgV
 }
 
 
@@ -54,7 +55,7 @@ if [ "$1" == "14" ]; then
 fi
 
 if [ "$1" == "15" ]; then
-  testCommon
+  test15
   exit 0
 fi
 
