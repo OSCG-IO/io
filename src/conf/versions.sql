@@ -115,7 +115,7 @@ INSERT INTO projects VALUES ('pg', 1, 5432, 'hub', 1, 'https://github.com/postgr
 
 INSERT INTO releases VALUES ('pg11', 4, 'pg', 'PostgreSQL', '', 'prod', 
   '<font size=-1>New in <a href=https://www.postgresql.org/docs/11/release-11.html>2018</a></font>', 1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg11', '11.18-1', 'arm, amd, el8', 0, '20221110', '', '', '');
+INSERT INTO versions VALUES ('pg11', '11.18-1', 'arm, amd, el8', 1, '20221110', '', '', '');
 INSERT INTO versions VALUES ('pg11', '11.17-1', 'arm, amd, el8', 0, '20220811', '', '', '');
 
 INSERT INTO releases VALUES ('pg12', 3, 'pg', 'PostgreSQL', '', 'prod', 
