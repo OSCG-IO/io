@@ -74,19 +74,19 @@ mode_list = ["start", "stop", "restart", "status", "list", "info", "update",
              "upgrade", "downgrade", "enable", "disable", "install", "tune",
              "remove", "reload", "activity", "help", "get", "set", "unset",
              "repolist", "repo-pkgs", "discover", "backrest", "change-pgconf",
-             "register", "top", "spock", "pgbin", "--autostart", "--relnotes", "--start",
-             "--no-restart", "--no-preload",
+             "register", "top", "spock", "pgbin", "ssl", "--autostart", 
+             "--relnotes", "--start", "--no-restart", "--no-preload",
              "--help", "--json", "--jsonp", "--test", "--extensions", "--svcs",
              "--list", "--old", "--showduplicates", "-y", "-t", "-d"  ,
              "--verbose", "-v", "--debug", "--debug2"]
 
-mode_list_advanced = ['kill', 'config', 'deplist', 'download', 'init', 'clean', 'useradd', 'spock', 'pgbin']
+mode_list_advanced = ['kill', 'config', 'deplist', 'download', 'init', 'clean', 
+                      'useradd', 'spock', 'pgbin', 'ssl']
 
-ignore_comp_list = [ "get", "set", "unset", "register", "repolist", "spock", "pgbin",
+ignore_comp_list = [ "get", "set", "unset", "register", "repolist", "spock", "pgbin", "ssl",
                      "repo-pkgs", "discover", "useradd", "backrest", "change-pgconf"]
 
-no_log_commands = ['status', 'info', 'list', 'activity', 'top', 'register',
-                   'cancel', 'get']
+no_log_commands = ['status', 'info', 'list', 'activity', 'top', 'register', 'cancel', 'get']
 
 lock_commands = ["install", "remove", "update", "upgrade", "downgrade"]
 
@@ -1361,6 +1361,19 @@ try:
   ## SPOCK #######################################################################
   if p_mode == 'spock':
     cmd = 'python3 hub/scripts/spock.py'
+    for n in range(2, len(args)):
+        parm = args[n]
+        cmd = cmd + ' "' + parm + '"'
+    rc = os.system(cmd)
+    if rc == 0:
+      sys.exit(0)
+
+    sys.exit(1)
+
+
+  ## SSL #########################################################################
+  if p_mode == 'ssl':
+    cmd = 'python3 hub/scripts/ssl.py'
     for n in range(2, len(args)):
         parm = args[n]
         cmd = cmd + ' "' + parm + '"'

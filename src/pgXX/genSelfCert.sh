@@ -1,7 +1,10 @@
+
 rm -f server.key
-openssl genrsa -des3 -out server.key 2048
-openssl rsa -in server.key -out server.key
-chmod 400 server.key
-#sudo chown $USER:$USER server.key
-openssl req -new -key server.key -days 365 -out server.crt -x509 -subj '/C=US/ST=Virginia/L=Alexandria/O=STelthy.io/CN=stelthy.io/emailAddress=info@stelthy.io'
+rm -f server.crt
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -subj "/C=US/ST=Virginia/L=Alexandria/O=self/OU=signed/CN=localhost"\
+  -keyout server.key -out server.crt
+
 cp server.crt root.crt
+
