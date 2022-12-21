@@ -104,7 +104,7 @@ INSERT INTO categories VALUES (9,  87, 'Management & Monitoring', 'Manage/Monito
 -- ## HUB ################################
 INSERT INTO projects VALUES ('hub',0, 0, 'hub', 0, 'https://github.com/pgsql-io/pgsql-io','',0,'','','');
 INSERT INTO releases VALUES ('hub', 1, 'hub', '', '', 'hidden', '', 1, '', '', '');
-INSERT INTO versions VALUES ('hub', '6.79', '',  1, '20221220', '', '', '');
+INSERT INTO versions VALUES ('hub', '6.79', '',  1, '20221221', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.78', '',  0, '20221201', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.77', '',  0, '20221130', '', '', '');
 INSERT INTO versions VALUES ('hub', '6.76', '',  0, '20220927', '', '', '');
@@ -138,7 +138,8 @@ INSERT INTO versions VALUES ('pg14', '14.5-1', 'el8, arm', 0, '20220811','', '',
 INSERT INTO releases VALUES ('pg15', 5, 'pg', '', '', 'prod', 
   '<font size=-1 color=red><b>New in <a href=https://sql-info.de/postgresql/postgresql-15/articles-about-new-features-in-postgresql-15.html>2022!</a></b></font>',
   1, 'POSTGRES', '', '');
-INSERT INTO versions VALUES ('pg15', '15.1-3',  'el8, arm', 1, '20221207','', '', '');
+INSERT INTO versions VALUES ('pg15', '15.1-4',  'el8, arm', 1, '20221221','', '', '');
+INSERT INTO versions VALUES ('pg15', '15.1-3',  'el8, arm', 0, '20221207','', '', '');
 INSERT INTO versions VALUES ('pg15', '15.1-2',  'el8, arm', 0, '20221117','', '', '');
 INSERT INTO versions VALUES ('pg15', '15.1-1',  'el8, arm', 0, '20221110','', '', '');
 INSERT INTO versions VALUES ('pg15', '15.0-1',  'el8, arm', 0, '20221013','', '', '');
