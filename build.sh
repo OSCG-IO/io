@@ -385,6 +385,7 @@ supplementalPG () {
   copyReplaceScript "activity" "$newDir"
   copyReplaceScript "remove"   "$newDir"
 
+  checkCmd "cp $pgXX/*.sh         $newDir/"
   checkCmd "cp $pgXX/run-pgctl.py $newDir/"
   myReplace "pgXX" "$comp" "$newDir/run-pgctl.py"
 

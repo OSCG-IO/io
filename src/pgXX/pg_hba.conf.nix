@@ -2,7 +2,9 @@
 # TYPE  DATABASE        USER            CIDR-ADDRESS            METHOD
 
 # "local" is for Unix domain socket connections only
-local   all             all                                     scram-sha-256
+local   all             all                                     trust
+hostssl all             all             0.0.0.0/0               scram-sha-256
+
 
 # IPv4 local & remote connections:
 host    all             all             127.0.0.1/32            scram-sha-256

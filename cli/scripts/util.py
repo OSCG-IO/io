@@ -1441,6 +1441,7 @@ def change_pgconf_keyval(p_pgver, p_key, p_val, p_replace=False):
 def update_postgresql_conf(p_pgver, p_port, is_new=True,update_listen_addr=True):
   set_column("port", p_pgver, str(p_port))
 
+  pg_data = get_column('datadir', p_pgver)
   s = get_pgconf(p_pgver)
   ns = ""
   lines = s.split('\n')
@@ -1450,6 +1451,18 @@ def update_postgresql_conf(p_pgver, p_port, is_new=True,update_listen_addr=True)
       pt = "port = " + str(p_port) + \
              "\t\t\t\t# (change requires restart)"
       ns = ns + "\n" + pt
+
+    elif is_new and line.startswith("#ssl = "):
+      l_ssl = "ssl = on"
+      ns = ns + "\n" + l_ssl
+
+    elif is_new and line.startswith("#ssl_cert_file = "):
+      l_scf = "ssl_cert_file = '" + pg_data + "/server.crt'"
+      ns = ns + "\n" + l_scf
+
+    elif is_new and line.startswith("#ssl_key_file = "):
+      l_skf = "ssl_key_file = '" + pg_data + "/server.key'"
+      ns = ns + "\n" + l_skf
 
     elif is_new and line.startswith("#listen_addresses = 'localhost'") and update_listen_addr:
       # override default to match default for pg_hba.conf
