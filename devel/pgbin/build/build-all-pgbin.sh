@@ -65,11 +65,22 @@ elif [ "$majorV" == "14" ]; then
 elif [ "$majorV" == "15" ]; then
   pgV=$pg15V
   pgBuildV=$pg15BuildV
-elif [ "$majorV" == "i14" ]; then
-  export IVORY="True"
-  pgV=$ivory14V
-  pgBuildV=$ivory14BuildV
-  pgSrc=$SRC/ivorysql
+
+  cd spock
+  git checkout delta_apply || get checkout -b delta_apply origin/delta_apply
+  rc=$?
+  if [ "$rc" == "0" ]; then
+    git pull
+    diff1=$PWD/pg15-log_old_value.diff
+    if [ -f "$diff1" ]; then
+      export DIFF1="$diff1"
+    fi
+  else
+    echo "# FATAL ERROR: cant find spock apply_delta branch"
+    exit 1
+  fi
+  cd ..
+
 fi
 
 if [ "$majorV" == "all" ]; then

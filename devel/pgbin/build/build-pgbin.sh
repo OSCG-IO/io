@@ -103,20 +103,11 @@ function checkPostgres {
 			pgShortV="12"
 			bndlPrfx=pg12
 			pgOPT=""
-		elif [[ "${pgSrcV/rc}" =~ ^11.* ]]; then
-			pgShortV="11"
-			bndlPrfx=pg11
-			pgOPT=""
 		else
 			echo "ERROR: Could not determine Postgres Version for '$pgSrcV'"
 			exit 1
 		fi
 		
-		if [ "$IVORY" == "True" ]; then
-			pgShortV="14"                        
-			bndlPrfx=ivory$pgShortV
-			pgOPT="--with-llvm"
-		fi
 	fi
 }
 
@@ -192,13 +183,24 @@ function checkAgent {
 
 
 function buildPostgres {
-	if [ "$IVORY" == "True" ]; then
-		echo "# buildIVORY"
+	echo "# buildPOSTGRES"	
+	cd $baseDir/$workDir/$pgSrcDir
+
+	if [ ! -f "$DIFF1" ]; then
+		echo "# DIFF1 not found : $DIFF1"
+		exit 1
 	else
-		echo "# buildPOSTGRES"	
+		echo "# Applying $DIFF1"
+		patch -p1 -i $DIFF1
+		rc=$?
+		if [ "$rc" == "0" ]; then
+			echo "# patch succesfully applied"
+		else
+			echo "# FATAL ERROR: applying patch"
+			exit 1
+		fi
 	fi
 
-	cd $baseDir/$workDir/$pgSrcDir
 	mkdir -p $baseDir/$workDir/logs
 	#buildLocation="$baseDir/$workDir/build/pg$pgShortV-$pgSrcV-$pgBldV-$OS"
 	buildLocation="$baseDir/$workDir/build/$bndlPrfx-$pgSrcV-$pgBldV-$OS"
