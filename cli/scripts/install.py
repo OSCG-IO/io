@@ -8,8 +8,8 @@ VER="6.79"
 BUNDLE=os.getenv("BUNDLE", "oscg")
 REPO=os.getenv("REPO", "https://oscg-io-download.s3.amazonaws.com/REPO")
   
-if sys.version_info < (2, 7):
-  print("ERROR: Requires Python 2.7 or greater")
+if sys.version_info < (3, 6):
+  print("ERROR: Requires Python 3.6 or greater")
   sys.exit(1)
 
 try:

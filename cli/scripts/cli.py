@@ -1,12 +1,12 @@
 ####################################################
-#  Copyright 2020-2022  OSCG  All rights reserved. #
+#  Copyright 2020-2023  OSCG  All rights reserved. #
 ####################################################
 
 from __future__ import print_function, division
 
 import sys
-if sys.version_info < (3, 9):
-  print("Currently we run on Python 3.9+")
+if sys.version_info < (3, 6):
+  print("Currently we run on Python 3.6+")
   sys.exit(1)
 
 IS_64BITS = sys.maxsize > 2**32
