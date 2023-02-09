@@ -435,7 +435,7 @@ initPG () {
     if [ "$isEL8" == "True" ]; then
       outPlat="el8"
     else
-      outPlat="amd"
+      outPlat="el8"
     fi
   fi
 
